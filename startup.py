@@ -21,6 +21,7 @@ class MyFrame(wx.Frame):
         #File Submenu
         menuFile = wx.Menu()
         menuFile.Append(identityCodes.FILE_NEW_PROJECT, "New Project...")
+        menuFile.Append(identityCodes.FILE_NEW_GRAPH, "New Graph/Plot...")
         menuFile.Append(identityCodes.FILE_OPEN, "Open...")
         menuFile.Append(identityCodes.FILE_SAVE, "&Save")
         menuFile.Append(identityCodes.FILE_SAVE_AS, "&Save As...")
@@ -74,6 +75,7 @@ class MyFrame(wx.Frame):
         self.SetMenuBar(menuBar)
         self.CreateStatusBar()
         self.SetStatusText("Welcome to Genesis!")
+        self.Bind(wx.EVT_MENU, self.OnNewGraph, id=identityCodes.FILE_NEW_GRAPH)
         self.Bind(wx.EVT_MENU, self.OnAbout, id=identityCodes.HELP_ABOUT)
         self.Bind(wx.EVT_MENU, self.OnQuit, id=identityCodes.FILE_EXIT)
 
@@ -83,6 +85,11 @@ class MyFrame(wx.Frame):
     def OnAbout(self, event):
         wx.MessageBox("This is a wxPython Hello world sample",
                       "About Hello World", wx.OK | wx.ICON_INFORMATION, self)
+
+    def OnNewGraph(self, event):
+        wx.MessageBox("Give options about ploting graph",
+                      "Hy you", wx.OK | wx.ICON_HAND, self)
+
 
 
 if __name__ == '__main__':
