@@ -1,5 +1,7 @@
 import wx
 
+from helpers import identityCodes
+
 
 class AppMain(wx.App):
 
@@ -18,26 +20,26 @@ class MyFrame(wx.Frame):
 
         #File Submenu
         menuFile = wx.Menu()
-        menuFile.Append(1, "New Project...")
-        menuFile.Append(2, "Open...")
-        menuFile.Append(3, "&Save")
-        menuFile.Append(4, "&Save As...")
+        menuFile.Append(identityCodes.FILE_NEW_PROJECT, "New Project...")
+        menuFile.Append(identityCodes.FILE_OPEN, "Open...")
+        menuFile.Append(identityCodes.FILE_SAVE, "&Save")
+        menuFile.Append(identityCodes.FILE_SAVE_AS, "&Save As...")
         menuFile.AppendSeparator()
-        menuFile.Append(5, "&Settings")
+        menuFile.Append(identityCodes.FILE_SETTINGS, "&Settings")
         menuFile.AppendSeparator()
-        menuFile.Append(6, "&Exit")
+        menuFile.Append(identityCodes.FILE_EXIT, "&Exit")
         menuBar.Append(menuFile, "&File")
 
         #Edit Submenu
         menuEdit = wx.Menu()
-        menuEdit.Append(8, "&Undo...")
-        menuEdit.Append(9, "&Redo...")
+        menuEdit.Append(identityCodes.EDIT_UNDO, "&Undo...")
+        menuEdit.Append(identityCodes.EDIT_REDO, "&Redo...")
         menuEdit.AppendSeparator()
-        menuEdit.Append(10, "&Copy")
-        menuEdit.Append(11, "&Cut")
-        menuEdit.Append(12, "&Paste")
+        menuEdit.Append(identityCodes.EDIT_COPY, "&Copy")
+        menuEdit.Append(identityCodes.EDIT_CUT, "&Cut")
+        menuEdit.Append(identityCodes.EDIT_PASTE, "&Paste")
         menuEdit.AppendSeparator()
-        menuEdit.Append(13, "&Font...")
+        menuEdit.Append(identityCodes.EDIT_FONT, "&Font...")
         menuBar.Append(menuEdit, "&Edit")
 
         #View Submenu
@@ -46,34 +48,34 @@ class MyFrame(wx.Frame):
 
         #Find Submenu
         menuFind = wx.Menu()
-        menuFind.Append(14, "&Individual")
-        menuFind.Append(15, "&Group")
+        menuFind.Append(identityCodes.FIND_INDIVIDUAL, "&Individual")
+        menuFind.Append(identityCodes.FIND_GROUP, "&Group")
         menuBar.Append(menuFind, "&Find")
 
         #Export Submenu
         menuExport = wx.Menu()
-        menuExport.Append(16, "&PDF")
-        menuExport.Append(17, "&PNG")
-        menuExport.Append(18, "&SVG")
+        menuExport.Append(identityCodes.EXPORT_PDF, "&PDF")
+        menuExport.Append(identityCodes.EXPORT_PNG, "&PNG")
+        menuExport.Append(identityCodes.EXPORT_SVG, "&SVG")
         menuBar.Append(menuExport, "&Export")
 
         #Help Submenu
         menuHelp = wx.Menu()
-        menuHelp.Append(19, "&Documentation (link)")
-        menuHelp.Append(19, "&FAQ (link)")
+        menuHelp.Append(identityCodes.HELP_DOCUMENTATION, "&Documentation (link)")
+        menuHelp.Append(identityCodes.HELP_FAQ, "&FAQ (link)")
         menuHelp.AppendSeparator()
-        menuHelp.Append(20, "&Report Issue")
-        menuHelp.Append(20, "&Feedback")
+        menuHelp.Append(identityCodes.HELP_REPORT_ISSUE, "&Report Issue")
+        menuHelp.Append(identityCodes.HELP_FEEDBACK, "&Feedback")
         menuHelp.AppendSeparator()
-        menuHelp.Append(21, "&Check for Updates...")
-        menuHelp.Append(1, "&About")
+        menuHelp.Append(identityCodes.HELP_CHECK_UPDATES, "&Check for Updates...")
+        menuHelp.Append(identityCodes.HELP_ABOUT, "&About")
         menuBar.Append(menuHelp, "&Help")
 
         self.SetMenuBar(menuBar)
         self.CreateStatusBar()
         self.SetStatusText("Welcome to Genesis!")
-        self.Bind(wx.EVT_MENU, self.OnAbout, id=1)
-        self.Bind(wx.EVT_MENU, self.OnQuit, id=6)
+        self.Bind(wx.EVT_MENU, self.OnAbout, id=identityCodes.HELP_ABOUT)
+        self.Bind(wx.EVT_MENU, self.OnQuit, id=identityCodes.FILE_EXIT)
 
     def OnQuit(self, event):
         self.Close()
