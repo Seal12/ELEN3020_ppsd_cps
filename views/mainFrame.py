@@ -14,22 +14,22 @@ class MyFrame(wx.Frame):
         mainPanel = wx.Panel(self)
         menuBar = wx.MenuBar()
 
-        #File Submenu
+        # File Submenu
         menuBar.Append(mainMenuViews.create_menu_file(), "&File")
 
-        #Edit Submenu
+        # Edit Submenu
         menuBar.Append(mainMenuViews.create_menu_edit(), "&Edit")
 
-        #View Submenu
-        menuBar.Append(mainMenuViews.create_menu_view(), "&View")
+        # View Submenu
+        menuBar.Append(mainMenuViews.create_menu_plot(), "&Plot")
 
-        #Find Submenu
+        # Find Submenu
         menuBar.Append(mainMenuViews.create_menu_find(), "&Find")
 
-        #Export Submenu
+        # Export Submenu
         menuBar.Append(mainMenuViews.create_menu_export(), "&Export")
 
-        #Help Submenu
+        # Help Submenu
         menuBar.Append(mainMenuViews.create_menu_help(), "&Help")
 
         self.SetMenuBar(menuBar)
@@ -52,4 +52,3 @@ class MyFrame(wx.Frame):
     def OnNewGraph(self, event):
         wx.MessageBox("Give options about ploting graph",
                       "Hy you", wx.OK | wx.ICON_HAND, self)
-
