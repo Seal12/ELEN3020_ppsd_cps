@@ -8,6 +8,9 @@ class MyFrame(wx.Frame):
 
     def __init__(self, title, pos, size):
         wx.Frame.__init__(self, None, -1, title, pos, size)
+        self.InitUI()
+
+    def InitUI(self):
         menuBar = wx.MenuBar()
 
         #File Submenu
