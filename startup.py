@@ -7,8 +7,6 @@ class AppMain(wx.App):
 
     def OnInit(self):
         frame = mainFrame.MyFrame("Genesis", (50, 60), (850, 440))
-        frame.Center()
-        frame.Show()
         self.SetTopWindow(frame)
         return True
 
@@ -17,3 +15,4 @@ class AppMain(wx.App):
 if __name__ == '__main__':
     app = AppMain(False)
     app.MainLoop()
+

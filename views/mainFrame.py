@@ -35,6 +35,9 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnAbout, id=identityCodes.HELP_ABOUT)
         self.Bind(wx.EVT_MENU, self.OnQuit, id=identityCodes.FILE_EXIT)
 
+        self.Center()
+        self.Show()
+
     def OnQuit(self, event):
         self.Close()
 
