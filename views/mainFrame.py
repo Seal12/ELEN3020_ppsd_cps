@@ -11,6 +11,7 @@ class MyFrame(wx.Frame):
         self.InitUI()
 
     def InitUI(self):
+        mainPanel = wx.Panel(self)
         menuBar = wx.MenuBar()
 
         #File Submenu
