@@ -6,7 +6,6 @@ from helpers import identityCodes
 def create_menu_file():
     menu_file = wx.Menu()
     menu_file.Append(identityCodes.FILE_NEW_PROJECT, "New Project...")
-    menu_file.Append(identityCodes.FILE_NEW_GRAPH, "New Graph/Plot...")
     menu_file.Append(identityCodes.FILE_OPEN, "Open...")
     menu_file.Append(identityCodes.FILE_SAVE, "&Save")
     menu_file.Append(identityCodes.FILE_SAVE_AS, "&Save As...")
@@ -32,10 +31,12 @@ def create_menu_edit():
     return menu_edit
 
 
-def create_menu_view():
-    menu_view = wx.Menu()
+def create_menu_plot():
+    menu_plot = wx.Menu()
+    menu_plot.Append(identityCodes.PLOT_PCA, "&PCA")
+    menu_plot.Append(identityCodes.PLOT_ADMIX, "&Structure/Admixture")
 
-    return menu_view
+    return menu_plot
 
 
 def create_menu_find():
