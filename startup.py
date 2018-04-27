@@ -6,7 +6,7 @@ from views import mainFrame
 class AppMain(wx.App):
 
     def OnInit(self):
-        frame = mainFrame.MyFrame("Genesis", (50, 60), (850, 440))
+        frame = mainFrame.MyFrame("Genesis", (50, 60), (1020, 660))
         self.SetTopWindow(frame)
         return True
 
