@@ -34,9 +34,6 @@ class PCAGraph:
 
         plt.show()
 
-    def search(self, id_num):
-        
-
 
  # testing functionality
 graph = PCAGraph(heading='Random')
