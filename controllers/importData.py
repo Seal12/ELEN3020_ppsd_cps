@@ -5,7 +5,6 @@ from models.pcaGroup import PCAGroup
 class ImportData:
 
     def __init__(self):
-        self.filename = None
         self.subject_list = []
         self.group_list = []
 
