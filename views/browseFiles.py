@@ -11,7 +11,7 @@ def get_file_dir(parent, file_type, extension):
 
     path = dialog.GetPath()
 
-    if os.path.exists():
+    if os.path.exists(path):
         return path
     else:
         return  # show some error messaage

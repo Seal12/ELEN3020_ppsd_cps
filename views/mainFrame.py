@@ -2,6 +2,7 @@ import wx
 
 from helpers import identityCodes
 from views.mainMenu import mainMenuViews
+from views.plotGraph import PlotGraphFrame
 
 
 class MyFrame(wx.Frame):
@@ -35,9 +36,10 @@ class MyFrame(wx.Frame):
         self.SetMenuBar(menuBar)
         self.CreateStatusBar()
         self.SetStatusText("Welcome to Genesis!")
-        self.Bind(wx.EVT_MENU, self.OnNewGraph, id=identityCodes.FILE_NEW_GRAPH)
         self.Bind(wx.EVT_MENU, self.OnAbout, id=identityCodes.HELP_ABOUT)
         self.Bind(wx.EVT_MENU, self.OnQuit, id=identityCodes.FILE_EXIT)
+        self.Bind(wx.EVT_MENU, self.OnPlotPCA, id=identityCodes.PLOT_PCA)
+        self.Bind(wx.EVT_MENU, self.OnPlotAdmix, id=identityCodes.PLOT_ADMIX)
 
         self.Center()
         self.Show()
@@ -49,6 +51,13 @@ class MyFrame(wx.Frame):
         wx.MessageBox("This is a wxPython Hello world sample",
                       "About Hello World", wx.OK | wx.ICON_INFORMATION, self)
 
-    def OnNewGraph(self, event):
-        wx.MessageBox("Give options about ploting graph",
-                      "Hy you", wx.OK | wx.ICON_HAND, self)
+    def OnPlotPCA(self, event):
+        form = PlotGraphFrame(self, "PCA")
+        form.Center()
+        form.Show()
+
+    def OnPlotAdmix(self, event):
+        form = PlotGraphFrame(self, "Admix")
+        form.Center()
+        form.Show()
+
