@@ -1,19 +1,23 @@
 import matplotlib.pyplot as plt
-from matplotlib import style
+from matplotlib import rcParams
+import numpy as np
 from controllers import importData
 
 
 class PCAGraph:
 
-    def __init__(self, heading):
-        self.heading = heading
+    def __init__(self):
         self.groups = []
         self.importer = importData.ImportData()
-        #Default PC to plot
+        # Default PC to plot
         self.x = 0
         self.y = 1
         # Create Figure and Axes instances
-        self.fig, self.ax = plt.subplots(1)
+        self.fig = plt.figure()
+        self.ax = self.fig.subplots(1)
+        # Set Font
+        rcParams['font.family'] = 'sans-serif'
+        rcParams['font.sans-serif'] = ['Tahoma']
 
     def import_fam_file(self, file_path):
         self.importer.import_values(file_path)
@@ -28,14 +32,43 @@ class PCAGraph:
         plt.xlabel('PC{}'.format(x))
         plt.ylabel('PC{}'.format(y))
 
+        # Plot each group individually
         for group in self.groups:
             if group.visible:
-                self.ax.scatter(group.pca_dict[x], group.pca_dict[y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size)
-                # Turn off tick labels
-                self.ax.set_yticklabels([])
-                self.ax.set_xticklabels([])
+                self.ax.scatter(group.pca_dict[x], group.pca_dict[y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
 
+        # Create legend
         self.ax.legend(loc='best', frameon=False, prop={'size': 7})
+
+        # Set the ticks
+        v = plt.axis()
+        x_min = v[0]
+        x_max = v[1]
+        y_min = v[2]
+        y_max = v[3]
+
+        major_x_step = (x_max - x_min)/2
+        major_y_step = (y_max - y_min)/2
+        x_major_ticks = np.arange(x_min, x_max, major_x_step)
+        y_major_ticks = np.arange(y_min, y_max, major_y_step)
+
+        minor_x_step = (x_max - x_min)/10
+        minor_y_step = (y_max - y_min)/10
+        x_minor_ticks = np.arange(x_min, x_max, minor_x_step)
+        y_minor_ticks = np.arange(y_min, y_max, minor_y_step)
+
+        self.ax.set_xticks(x_major_ticks)
+        self.ax.set_xticks(x_minor_ticks, minor=True)
+        self.ax.set_yticks(y_major_ticks)
+        self.ax.set_yticks(y_minor_ticks, minor=True)
+
+        # Turn off tick labels
+        self.ax.set_yticklabels([])
+        self.ax.set_xticklabels([])
+
+        # Set the grid
+        self.ax.grid(which='major', alpha=0.5, zorder=0)
+        self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
 
         return self.fig
 
@@ -52,7 +85,7 @@ class PCAGraph:
             if group.name == group_name:
                 return group
 
-        return 1
+        return 'No group with that name'
 
     def set_all_markers(self, marker, size):
         for group in self.groups:
@@ -80,13 +113,12 @@ class PCAGraph:
     def set_graph_title(self, title):
         self.ax.set_title(title)
 
-
- # testing functionality
-# graph = PCAGraph(heading='Random')
+# Testing functionality
+# graph = PCAGraph()
 # graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.evec')
 # graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
 #
-# graph.plot_pca(0,1)
+# graph.plot_pca(0,2)
 # graph.set_graph_title('PCA')
 #
 # print(graph.importer.group_names)
