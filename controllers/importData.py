@@ -7,6 +7,7 @@ class ImportData:
     def __init__(self):
         self.subject_list = []
         self.group_list = []
+        self.group_names = []
 
     def import_values(self, file_path):
 
@@ -26,32 +27,32 @@ class ImportData:
         return self.subject_list
 
     def import_pca_pheno(self, file_path):
-        group_names = []
+        # group_names = []
 
         with open(file_path, 'r') as f:
 
             all_lines = f.readlines()
 
-            for i in range(0, len(self.subject_list)):  # len(all_lines)
+            for i in range(0, len(all_lines)):
                 line = all_lines[i].split()
 
-                # subject_id = '{}:{}'.format(line[0], line[1])
-                individual = self.subject_list[i]
-
+                subject_id = '{}:{}'.format(line[0], line[1])
                 subject_group_name = '{}:{}'.format(line[2], line[3])
-                individual.set_group(group=subject_group_name)
 
-                # if the group doesnt exist create a new one
-                if subject_group_name not in group_names:
-                    group_names.append(subject_group_name)
-                    population_group = PCAGroup(name=subject_group_name)
-                    self.group_list.append(population_group)
+                for subject in self.subject_list:
+                    if subject.id_num == subject_id:
 
-                else:
-                    group_pos = group_names.index(subject_group_name)
-                    population_group = self.group_list[group_pos]
+                        # if the group doesnt exist create a new one
+                        if subject_group_name not in self.group_names:
+                            self.group_names.append(subject_group_name)
+                            population_group = PCAGroup(name=subject_group_name)
+                            self.group_list.append(population_group)
 
-                population_group.add_subject(individual)
+                        else:
+                            group_pos = self.group_names.index(subject_group_name)
+                            population_group = self.group_list[group_pos]
+
+                        population_group.add_subject(subject)
 
         return self.group_list
 
