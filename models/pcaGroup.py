@@ -6,6 +6,7 @@ class PCAGroup(PopulationGroup):
     def __init__(self, name):
         # Icon for the group
         self.marker = None
+        self.marker_size= None
         self.colour = None
         self.pca_dict = defaultdict(list)
         super(PCAGroup, self).__init__(name)

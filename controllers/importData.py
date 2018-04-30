@@ -32,7 +32,7 @@ class ImportData:
 
             all_lines = f.readlines()
 
-            for i in range(0, len(self.subject_list)): # len(all_lines)
+            for i in range(0, len(self.subject_list)):  # len(all_lines)
                 line = all_lines[i].split()
 
                 # subject_id = '{}:{}'.format(line[0], line[1])
