@@ -82,20 +82,20 @@ class PCAGraph:
 
 
  # testing functionality
-graph = PCAGraph(heading='Random')
-graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.evec')
-graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
-
-graph.plot_pca(0,1)
-graph.set_graph_title('PCA')
-
-print(graph.importer.group_names)
-plt.show()
-
-# graph.set_group_marker(group_name='CEU:EUR', marker='x')
-# graph.set_group_colour(group_name='CEU:EUR', colour='k')
-# graph.set_all_markers(size=1, marker='o')
-# graph.set_group_marker_size(group_name='CHD:ASN', size=10)
-# #graph.plot_pca(0,1)
+# graph = PCAGraph(heading='Random')
+# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.evec')
+# graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
 #
-# #plt.show()
+# graph.plot_pca(0,1)
+# graph.set_graph_title('PCA')
+#
+# print(graph.importer.group_names)
+# plt.show()
+#
+# # graph.set_group_marker(group_name='CEU:EUR', marker='x')
+# # graph.set_group_colour(group_name='CEU:EUR', colour='k')
+# # graph.set_all_markers(size=1, marker='o')
+# # graph.set_group_marker_size(group_name='CHD:ASN', size=10)
+# # #graph.plot_pca(0,1)
+# #
+# # #plt.show()
