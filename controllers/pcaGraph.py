@@ -80,14 +80,14 @@ class PCAGraph:
 
 
  # testing functionality
-graph = PCAGraph(heading='Random')
-graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.evec')
-graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
-graph.plot_pca(0,1)
-graph.set_graph_title('PCA')
-
-print(graph.importer.group_names)
-plt.show()
+# graph = PCAGraph(heading='Random')
+# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.evec')
+# graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
+# graph.plot_pca(0,1)
+# graph.set_graph_title('PCA')
+#
+# print(graph.importer.group_names)
+# plt.show()
 
 # graph.set_group_marker(group_name='CEU:EUR', marker='x')
 # graph.set_group_colour(group_name='CEU:EUR', colour='k')
