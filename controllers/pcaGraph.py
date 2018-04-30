@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
+from matplotlib import style
 from controllers import importData
 
 
 class PCAGraph:
-   # fig = plt.figure()
 
     def __init__(self, heading):
         self.heading = heading
@@ -17,20 +17,26 @@ class PCAGraph:
         self.groups = self.importer.import_pca_pheno(file_path)
 
     def plot_pca(self, x, y):
-        for group in self.groups:
-            pc_x = []
-            pc_y = []
-            for subject in group.subjects:
-                pc_x.append(subject.values[x])
-                pc_y.append(subject.values[y])
+        style.use('ggplot')
 
-            plt.scatter(pc_x, pc_y, marker=group.marker, c=group.colour)
+        # Create Figure and Axes instances
+        fig, ax = plt.subplots(1)
+
+        plt.xlabel('PC{}'.format(x))
+        plt.ylabel('PC{}'.format(y))
+
+        for group in self.groups:
+            if group.visible:
+                ax.scatter(group.pca_dict[x], group.pca_dict[y], marker=group.marker, c=group.colour)
+                # Turn off tick labels
+                ax.set_yticklabels([])
+                ax.set_xticklabels([])
 
         plt.show()
 
 
  # testing functionality
 graph = PCAGraph(heading='Random')
-graph.import_fam_file('C:/Users/Phatho/Desktop/ELEN3020_ppsd_cps/exampleData/PCA/comm-SYMCL.pca.evec')
-graph.import_pheno_file('C:/Users/Phatho/Desktop/ELEN3020_ppsd_cps/exampleData/PCA/comm.phe')
-graph.plot_pca(3,1)
+graph.import_fam_file('C:\\Users\\Apprentice\\Documents\\GitHub\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.evec')
+graph.import_pheno_file('C:\\Users\\Apprentice\\Documents\\GitHub\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
+graph.plot_pca(0,1)

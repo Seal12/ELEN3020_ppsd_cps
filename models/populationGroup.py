@@ -7,3 +7,6 @@ class PopulationGroup:
 
     def add_subject(self, subject):
         self.subjects.append(subject)
+
+    def set_visibility(self, visibility):
+        self.visible = visibility
