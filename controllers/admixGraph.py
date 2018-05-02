@@ -41,11 +41,11 @@ class AdmixGraph:
             self.ax.bar(ind, height=self.ancestries[key],width=1.0)
 
 # Test functionality
-graph = AdmixGraph()
-fam_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
-Q_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
-graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp)
-
-graph.plot_admix()
-
-plt.show()
+# graph = AdmixGraph()
+# fam_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
+# Q_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
+# graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp)
+#
+# graph.plot_admix()
+#
+# plt.show()
