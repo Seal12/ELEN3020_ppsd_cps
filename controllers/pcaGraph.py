@@ -8,7 +8,7 @@ class PCAGraph:
 
     def __init__(self):
         self.groups = []
-        self.importer = importData.ImportData()
+        self.importer = importData.ImportPCAData()
         # Default PC to plot
         self.x = 0
         self.y = 1
@@ -20,7 +20,7 @@ class PCAGraph:
         rcParams['font.sans-serif'] = ['Tahoma']
 
     def import_fam_file(self, file_path):
-        self.importer.import_values(file_path)
+        self.importer.import_pca_evec(file_path)
 
     def import_pheno_file(self, file_path):
         self.groups = self.importer.import_pca_pheno(file_path)
@@ -123,7 +123,7 @@ class PCAGraph:
 #
 # print(graph.importer.group_names)
 # plt.show()
-#
+
 # # graph.set_group_marker(group_name='CEU:EUR', marker='x')
 # # graph.set_group_colour(group_name='CEU:EUR', colour='k')
 # # graph.set_all_markers(size=1, marker='o')
