@@ -18,7 +18,11 @@ class ImportData:
             # Splitting each line and populating subject list
             for i in range(0, len(all_lines)):
                 line = all_lines[i].split()
+
                 subject_id = line[0]
+                if subject_id == '#eigvals:':   # check to omit the top line of the evec file
+                    continue
+
                 subject_values = line[1:(len(line)-1)]  # this omits the last value in the line
 
                 individual = Subject(id_num=subject_id, values=subject_values)
