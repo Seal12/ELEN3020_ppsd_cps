@@ -115,7 +115,7 @@ class PCAGraph:
 
 # Testing functionality
 # graph = PCAGraph()
-# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.pca_evec')
+# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm-SYMCL.pca.evec')
 # graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
 #
 # graph.plot_pca(0,2)
