@@ -93,8 +93,9 @@ class ImportAdmixData:
 
                 for line in all_lines:
                     # Following line of code splits the line into a list of ratios,casts the list to a list of floats then normalizes the values
-                    ratios = self.normalize_ratios([float(i) for i in line.split()])
+                    ratios = self.normalize_ratios([float(j) for j in line.split()])
                     self.subject_list[i].values = ratios
+                    i += 1
 
                 return self.subject_list
 
@@ -104,7 +105,7 @@ class ImportAdmixData:
     def normalize_ratios(self, ratios):
         total = sum(ratios)
 
-        for i in range(0, len(ratios)-1):
+        for i in range(0, len(ratios)):
             ratios[i] = ratios[i]/total * 100
 
         return ratios
