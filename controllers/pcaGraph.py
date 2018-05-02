@@ -78,7 +78,7 @@ class PCAGraph:
                 if subject.id_num == subject_id:
                     return subject
 
-        return 'No subject with that ID'
+        return 'No subject with id {}'.format(subject_id)
 
     def find_group(self, group_name):
         for group in self.groups:
@@ -115,7 +115,7 @@ class PCAGraph:
 
 # Testing functionality
 # graph = PCAGraph()
-# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.evec')
+# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\PCA\\comm-SYMCL.pca.pca_evec')
 # graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
 #
 # graph.plot_pca(0,2)

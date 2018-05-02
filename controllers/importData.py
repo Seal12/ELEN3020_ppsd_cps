@@ -20,7 +20,7 @@ class ImportData:
                 line = all_lines[i].split()
 
                 subject_id = line[0]
-                if subject_id == '#eigvals:':   # check to omit the top line of the evec file
+                if subject_id == '#eigvals:':   # check to omit the top line of the pca_evec file
                     continue
 
                 subject_values = line[1:(len(line)-1)]  # this omits the last value in the line

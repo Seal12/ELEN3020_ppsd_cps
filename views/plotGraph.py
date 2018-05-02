@@ -60,7 +60,7 @@ class PlotGraphFrame(wx.Frame):
         self.vBox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
         self.vBox.Add((-1, 10))
 
-        # Choose pheno data column
+        # Choose pca_pheno data column
         hbox4 = wx.BoxSizer(wx.HORIZONTAL)
         text = "Which column represents the phenotype data?"
         st1 = wx.StaticText(self.Panel, label=text)
@@ -135,7 +135,7 @@ class PlotGraphFrame(wx.Frame):
         self.vBox.Add((-1, 25))
 
 
-        # Choose pheno data column
+        # Choose pca_pheno data column
         hbox5 = wx.BoxSizer(wx.HORIZONTAL)
         text = "Which column represents the phenotype data?"
         st1 = wx.StaticText(self.Panel, label=text)
