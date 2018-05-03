@@ -88,7 +88,7 @@ class ImportAdmixData:
         with open(file_path, 'r') as f:
             all_lines = f.readlines()
 
-            if len(all_lines) == len(self.subject_list):
+            if len(all_lines) == len(self.subject_list):  # Check that the lines in the Q file match the lines in the fam
                 i = 0
 
                 for line in all_lines:
