@@ -19,11 +19,9 @@ class PCAGraph:
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
 
-    def import_fam_file(self, file_path):
-        self.importer.import_pca_evec(file_path)
-
-    def import_pheno_file(self, file_path):
-        self.groups = self.importer.import_pca_pheno(file_path)
+    def import_data(self, evec_file_path, pheno_file_path, column):
+        self.importer.import_pca_evec(file_path=evec_file_path)
+        self.groups = self.importer.import_pca_pheno(file_path=pheno_file_path, column=column)
 
     def plot_pca(self, x, y):
         self.x = x
@@ -114,15 +112,17 @@ class PCAGraph:
         self.ax.set_title(title)
 
 # Testing functionality
-# graph = PCAGraph()
-# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm-SYMCL.pca.evec')
-# graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
-#
-# graph.plot_pca(0,2)
-# graph.set_graph_title('PCA')
-#
-# print(graph.importer.group_names)
-# plt.show()
+graph = PCAGraph()
+evec_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm-SYMCL.pca.evec'
+pheno_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe'
+
+graph.import_data(evec_file_path=evec_fp, pheno_file_path=pheno_fp, column=3)
+
+graph.plot_pca(0,2)
+graph.set_graph_title('PCA')
+
+print(graph.importer.group_names)
+plt.show()
 
 # # graph.set_group_marker(group_name='CEU:EUR', marker='x')
 # # graph.set_group_colour(group_name='CEU:EUR', colour='k')

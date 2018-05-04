@@ -1,5 +1,6 @@
 from models.subject import Subject
 from models.pcaGroup import PCAGroup
+from models.populationGroup import PopulationGroup
 
 
 class ImportPCAData:
@@ -30,7 +31,7 @@ class ImportPCAData:
 
         return self.subject_list
 
-    def import_pca_pheno(self, file_path):
+    def import_pca_pheno(self, file_path, column):
         # group_names = []
 
         with open(file_path, 'r') as f:
@@ -41,7 +42,7 @@ class ImportPCAData:
                 line = all_lines[i].split()
 
                 subject_id = '{}:{}'.format(line[0], line[1])
-                subject_group_name = '{}:{}'.format(line[2], line[3])
+                subject_group_name = line[column]
 
                 for subject in self.subject_list:
                     if subject.id_num == subject_id:
@@ -83,6 +84,37 @@ class ImportAdmixData:
                 self.subject_list.append(individual)
 
         return self.subject_list
+
+
+    def import_admix_pheno(self, file_path, column):
+        # group_names = []
+
+        with open(file_path, 'r') as f:
+
+            all_lines = f.readlines()
+
+            for i in range(0, len(all_lines)):
+                line = all_lines[i].split()
+
+                subject_id = '{}:{}'.format(line[0], line[1])
+                subject_group_name = line[column]
+
+                for subject in self.subject_list:
+                    if subject.id_num == subject_id:
+
+                        # if the group doesnt exist create a new one
+                        if subject_group_name not in self.group_names:
+                            self.group_names.append(subject_group_name)
+                            population_group = PopulationGroup(name=subject_group_name)
+                            self.group_list.append(population_group)
+
+                        else:
+                            group_pos = self.group_names.index(subject_group_name)
+                            population_group = self.group_list[group_pos]
+
+                        population_group.add_subject(subject)
+
+        return self.group_list
 
     def import_admix_Q(self,file_path):
         with open(file_path, 'r') as f:
