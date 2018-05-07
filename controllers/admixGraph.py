@@ -25,7 +25,8 @@ class AdmixGraph:
         self.groups = self.importer.import_admix_pheno(Phen_file_path, column)
 
     def plot_admix(self):
-        self.ax = self.fig.subplots(nrows=1, ncols=len(self.groups))
+        self.ax = self.fig.subplots(ncols=len(self.groups))
+        print(len(self.groups))
         # I actually don't know what ths value does
         #ind = np.arange(len(self.subjects))
         i = 0
@@ -42,12 +43,13 @@ class AdmixGraph:
                     # Store the heights in a dictionary of lists
                     self.ancestries[key].append(value)
             # Loop through the dictionary plot each ancestry
-            axes = self.ax[i]
+            if len(self.groups) > 1:
+                axes = self.ax[i]
+            else:
+                axes = self.ax
             for key in self.ancestries:
                 axes.bar(ind, height=self.ancestries[key], width=1.0)
                 #self.fig.suptitle(str(index[group]))
-            print((self.ancestries[3]))
-
 
             i  += 1
             if i >= len(self.groups):
@@ -67,5 +69,4 @@ phen_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\
 graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=5)
 
 graph.plot_admix()
-# print(str(graph.subjects;;''))
 plt.show()
