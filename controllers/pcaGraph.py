@@ -81,6 +81,8 @@ class PCAGraph(wx.Panel):
         self.ax.grid(which='major', alpha=0.5, zorder=0)
         self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
 
+        self.ax.set_title("Title")
+
         return self.figure
 
     def find_subject(self, subject_id):

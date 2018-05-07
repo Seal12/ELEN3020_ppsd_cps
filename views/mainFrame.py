@@ -37,24 +37,7 @@ class MyFrame(wx.Frame):
         # Help Submenu
         menuBar.Append(mainMenuViews.create_menu_help(), "&Help")
 
-        newCanvasPanel = pcaGraph.PCAGraph(self.mainPanel)
-        pca_dir = "C:\\Users\\Seale\\Documents\\wits\\PPSD\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm-SYMCL.pca.evec"
-        phe_dir = "C:\\Users\\Seale\\Documents\\wits\\PPSD\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe"
-        newCanvasPanel.import_pca_file(pca_dir)
-        newCanvasPanel.import_pheno_file(phe_dir)
-        newCanvasPanel.plot_pca(0, 2)
 
-        hBox1 = wx.BoxSizer(wx.HORIZONTAL)
-        hBox1.Add(newCanvasPanel, flag=wx.EXPAND | wx.RIGHT | wx.LEFT, proportion=1, border=0)
-        self.vBox.Add(hBox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=0)
-
-        hbox2 = wx.BoxSizer(wx.HORIZONTAL)
-        btn1 = wx.Button(self.mainPanel, id=536, label='Chenge Title', size=(100, 30))
-        hbox2.Add(btn1, flag=wx.EXPAND | wx.RIGHT | wx.LEFT, border=0)
-        self.vBox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=0)
-        self.Bind(wx.EVT_BUTTON, self.changeTitle, id=536)
-
-        self.mainPanel.SetSizer(self.vBox)
         self.SetMenuBar(menuBar)
         self.CreateStatusBar()
         self.SetStatusText("Welcome to Genesis!")
@@ -74,15 +57,29 @@ class MyFrame(wx.Frame):
                       "About Hello World", wx.OK | wx.ICON_INFORMATION, self)
 
     def OnPlotPCA(self, event):
-        form = PlotGraphFrame(self, "PCA")
-        form.Center()
-        form.Show()
+        self.plotForm = PlotGraphFrame(self, "PCA")
+        self.plotForm.Bind(wx.EVT_CLOSE, self.OnPlotAdmixFormClose)
+        self.plotForm.Center()
+        self.plotForm.Show()
 
     def OnPlotAdmix(self, event):
-        form = PlotGraphFrame(self, "Admix")
-        form.Center()
-        form.Show()
+        self.plotForm = PlotGraphFrame(self, "Admix")
+        self.plotForm.Bind(wx.EVT_CLOSE, self.OnPlotAdmixFormClose)
+        self.plotForm.Center()
+        self.plotForm.Show()
 
-    def changeTitle(self, event):
-        self.canvasPanel.changeTitle("Chicken farm")
+    def OnPlotAdmixFormClose(self, event):
+        event.Skip()
+
+        if self.plotForm.plotGraph:
+
+            newCanvasPanel = pcaGraph.PCAGraph(self.mainPanel)
+            newCanvasPanel.import_pca_file(self.plotForm.dataFile)
+            newCanvasPanel.import_pheno_file(self.plotForm.phenotypeFile)
+            newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
+
+            hBox1 = wx.BoxSizer(wx.HORIZONTAL)
+            hBox1.Add(newCanvasPanel, flag=wx.EXPAND | wx.RIGHT | wx.LEFT, proportion=1, border=0)
+            self.vBox.Add(hBox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=0)
+            self.mainPanel.SetSizer(self.vBox)
 
