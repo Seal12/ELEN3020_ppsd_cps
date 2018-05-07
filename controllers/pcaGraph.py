@@ -1,25 +1,36 @@
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
 import numpy as np
+import wx
+
 from controllers import importData
 
 
-class PCAGraph:
+class PCAGraph(wx.Panel):
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent)
 
-    def __init__(self):
         self.groups = []
         self.importer = importData.ImportPCAData()
         # Default PC to plot
         self.x = 0
         self.y = 1
         # Create Figure and Axes instances
-        self.fig = plt.figure()
-        self.ax = self.fig.subplots(1)
+        self.figure = plt.figure()
+        self.ax = self.figure.subplots(1)
+        self.canvas = FigureCanvas(self, -1, self.figure)
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
 
-    def import_fam_file(self, file_path):
+        self.sizer = wx.BoxSizer(wx.VERTICAL)
+        self.sizer.Add(self.canvas, 1, wx.LEFT | wx.RIGHT | wx.TOP | wx.GROW)
+        self.SetSizer(self.sizer)
+        self.Fit()
+
+    def import_pca_file(self, file_path):
         self.importer.import_pca_evec(file_path)
 
     def import_pheno_file(self, file_path):
@@ -70,7 +81,7 @@ class PCAGraph:
         self.ax.grid(which='major', alpha=0.5, zorder=0)
         self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
 
-        return self.fig
+        return self.figure
 
     def find_subject(self, subject_id):
         for group in self.groups:
