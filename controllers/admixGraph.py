@@ -14,7 +14,7 @@ class AdmixGraph:
         self.importer = importData.ImportAdmixData()
         # Create Figure and Axes instances
         self.fig = plt.figure()
-        self.ax = self.fig.subplots(nrows=1, ncols=len(self.groups))
+        self.ax = self.fig.subplots(1)
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
@@ -27,30 +27,52 @@ class AdmixGraph:
     def plot_admix(self):
         self.ax = self.fig.subplots(nrows=1, ncols=len(self.groups))
         # I actually don't know what ths value does
-        ind = np.arange(len(self.subjects))
-
-        # Populate the dictionary with ancestry values
-        for subject in self.subjects:
-            # Calculate the height of the ancestry bar graphs
-            for key in range(0, len(subject.values)):
-                value = 0
-                for j in range(key, len(subject.values)):
-                    value += subject.values[j]
-                # Store the heights in a dictionary of lists
-                self.ancestries[key].append(value)
-        # Loop through the dictionary plot each ancestry
-        for group in range(len(self.groups)):
+        #ind = np.arange(len(self.subjects))
+        i = 0
+        for group in self.groups:
+            ind = np.arange(len(group.subjects))
+            self.ancestries = defaultdict(list)
+            # Populate the dictionary with ancestry values
+            for subject in group.subjects:
+                # Calculate the height of the ancestry bar graphs
+                for key in range(0, len(subject.values)):
+                    value = 0
+                    for j in range(key, len(subject.values)):
+                        value += subject.values[j]
+                    # Store the heights in a dictionary of lists
+                    self.ancestries[key].append(value)
+            # Loop through the dictionary plot each ancestry
+            axes = self.ax[i]
             for key in self.ancestries:
-                self.ax[group].bar(ind, height=self.ancestries[key], width=1.0)
+                axes.bar(ind, height=self.ancestries[key], width=1.0)
+                #self.fig.suptitle(str(index[group]))
+            print((self.ancestries[3]))
+
+
+            i  += 1
+            if i >= len(self.groups):
+                break
+        self.fig.set_label([])
+        self.fig.tick_params(axis='x',          # changes apply to the x-axis
+                which='both',      # both major and minor ticks are affected
+                bottom=False,      # ticks along the bottom edge are off
+                top=False,         # ticks along the top edge are off
+                labelbottom=False) # labels along the bottom edge are off
+
+        #self.fig.set_label('admix')
+
+
+
+
+
 
 # Test functionality
 graph = AdmixGraph()
 fam_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
 Q_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
 phen_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.phe'
-graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=3)
+graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=5)
 
 graph.plot_admix()
-print(graph.importer.group_names)
-
+# print(str(graph.subjects;;''))
 plt.show()
