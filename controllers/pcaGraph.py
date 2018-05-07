@@ -15,8 +15,8 @@ class PCAGraph(wx.Panel):
         self.groups = []
         self.importer = importData.ImportPCAData()
         # Default PC to plot
-        self.x = 0
-        self.y = 1
+        self.pcaX = 0
+        self.pcaY = 1
         # Create Figure and Axes instances
         self.figure = plt.figure()
         self.ax = self.figure.subplots(1)
@@ -36,17 +36,17 @@ class PCAGraph(wx.Panel):
     def import_pheno_file(self, file_path):
         self.groups = self.importer.import_pca_pheno(file_path)
 
-    def plot_pca(self, x, y):
-        self.x = x
-        self.y = y
+    def plot_pca(self, pcaX, pcaY):
+        self.pcaX = pcaX
+        self.pcaY = pcaY
 
-        plt.xlabel('PC{}'.format(x))
-        plt.ylabel('PC{}'.format(y))
+        plt.xlabel('PC{}'.format(pcaX))
+        plt.ylabel('PC{}'.format(pcaY))
 
         # Plot each group individually
         for group in self.groups:
             if group.visible:
-                self.ax.scatter(group.pca_dict[x], group.pca_dict[y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
+                self.ax.scatter(group.pca_dict[pcaX], group.pca_dict[pcaY], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
 
         # Create legend
         self.ax.legend(loc='best', frameon=False, prop={'size': 7})
@@ -110,12 +110,12 @@ class PCAGraph(wx.Panel):
     def set_group_marker(self,group_name, marker):
         group = self.find_group(group_name)
         group.marker = marker
-        # return self.plot_pca(self.x, self.y)
+        # return self.plot_pca(self.pcaX, self.pcaY)
 
     def set_group_colour(self,group_name, colour):
         group = self.find_group(group_name)
         group.colour = colour
-        # return self.plot_pca(self.x, self.y)
+        # return self.plot_pca(self.pcaX, self.pcaY)
 
     def set_group_visibility(self, group_name, visible):
         group = self.find_group(group_name)
