@@ -1,10 +1,10 @@
 import wx
 
-import test_plot
 from helpers import identityCodes
 from views.mainMenu import mainMenuViews
 from views.plotGraph import PlotGraphFrame
 from controllers import pcaGraph
+from views import graphTabs
 
 
 class MyFrame(wx.Frame):
@@ -37,6 +37,10 @@ class MyFrame(wx.Frame):
         # Help Submenu
         menuBar.Append(mainMenuViews.create_menu_help(), "&Help")
 
+        self.tabInterface = graphTabs.TabInterface(self.mainPanel)
+        vbox = wx.BoxSizer(wx.VERTICAL)
+        vbox.Add(self.tabInterface, wx.ID_ANY, wx.EXPAND | wx.ALL, 0)
+        self.mainPanel.SetSizer(vbox)
 
         self.SetMenuBar(menuBar)
         self.CreateStatusBar()
@@ -45,6 +49,7 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnQuit, id=identityCodes.FILE_EXIT)
         self.Bind(wx.EVT_MENU, self.OnPlotPCA, id=identityCodes.PLOT_PCA)
         self.Bind(wx.EVT_MENU, self.OnPlotAdmix, id=identityCodes.PLOT_ADMIX)
+        self.Bind(wx.EVT_MENU, self.OnFindIndividual, id=identityCodes.FIND_INDIVIDUAL)
 
         self.Center()
         self.Show()
@@ -73,13 +78,12 @@ class MyFrame(wx.Frame):
 
         if self.plotForm.plotGraph:
             if self.plotForm.plotType == "PCA":
-                newCanvasPanel = pcaGraph.PCAGraph(self.mainPanel)
+                newCanvasPanel = pcaGraph.PCAGraph(self.tabInterface.Notebook3)
                 newCanvasPanel.import_pca_file(self.plotForm.dataFile)
                 newCanvasPanel.import_pheno_file(self.plotForm.phenotypeFile)
                 newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
 
-                hBox1 = wx.BoxSizer(wx.HORIZONTAL)
-                hBox1.Add(newCanvasPanel, flag=wx.EXPAND | wx.RIGHT | wx.LEFT, proportion=1, border=0)
-                self.vBox.Add(hBox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=0)
-            self.mainPanel.SetSizer(self.vBox)
+                self.tabInterface.addGraphPage(newCanvasPanel, "PCA")
 
+    def OnFindIndividual(self, event):
+        print("Find Nemo")
