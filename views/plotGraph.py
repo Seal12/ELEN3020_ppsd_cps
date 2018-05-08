@@ -18,7 +18,7 @@ class PlotGraphFrame(wx.Frame):
     plotGraph = False
 
     def __init__(self, parent, type):
-        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(500, 250))
+        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(500, 300))
         self.Panel = wx.Panel(self)
         self.plotType = type
         self.vBox = wx.BoxSizer(wx.VERTICAL)
@@ -76,7 +76,7 @@ class PlotGraphFrame(wx.Frame):
 
         self.vBox.Add(hbox4, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
 
-        self.vBox.Add((-1, 25))
+        self.vBox.Add((-1, 70))
 
         hbox5 = wx.BoxSizer(wx.HORIZONTAL)
         btn2 = wx.Button(self.Panel, id=identityCodes.PLOT_CLOSE, label='Cancel', size=(70, 30))
