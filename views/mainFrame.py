@@ -72,14 +72,14 @@ class MyFrame(wx.Frame):
         event.Skip()
 
         if self.plotForm.plotGraph:
+            if self.plotForm.plotType == "PCA":
+                newCanvasPanel = pcaGraph.PCAGraph(self.mainPanel)
+                newCanvasPanel.import_pca_file(self.plotForm.dataFile)
+                newCanvasPanel.import_pheno_file(self.plotForm.phenotypeFile)
+                newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
 
-            newCanvasPanel = pcaGraph.PCAGraph(self.mainPanel)
-            newCanvasPanel.import_pca_file(self.plotForm.dataFile)
-            newCanvasPanel.import_pheno_file(self.plotForm.phenotypeFile)
-            newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
-
-            hBox1 = wx.BoxSizer(wx.HORIZONTAL)
-            hBox1.Add(newCanvasPanel, flag=wx.EXPAND | wx.RIGHT | wx.LEFT, proportion=1, border=0)
-            self.vBox.Add(hBox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=0)
+                hBox1 = wx.BoxSizer(wx.HORIZONTAL)
+                hBox1.Add(newCanvasPanel, flag=wx.EXPAND | wx.RIGHT | wx.LEFT, proportion=1, border=0)
+                self.vBox.Add(hBox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=0)
             self.mainPanel.SetSizer(self.vBox)
 

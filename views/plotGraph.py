@@ -6,6 +6,7 @@ from helpers import identityCodes
 class PlotGraphFrame(wx.Frame):
 
     title = "Input files: "
+    plotType = ""
     dataFile = None
     famFile = None
     phenotypeFile = None
@@ -19,6 +20,7 @@ class PlotGraphFrame(wx.Frame):
     def __init__(self, parent, type):
         wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(500, 250))
         self.Panel = wx.Panel(self)
+        self.plotType = type
         self.vBox = wx.BoxSizer(wx.VERTICAL)
         self.title = self.title + type
 
@@ -204,6 +206,9 @@ class PlotGraphFrame(wx.Frame):
     def OnPlotClick(self, event):
         if self.dataFile is None or self.phenotypeFile is None:
             print("Need data")
+            return
+        if self.pcaX is None or self.pcaY is None:
+            print("Must choose")
             return
         self.plotGraph = True
         self.Close()
