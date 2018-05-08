@@ -1,6 +1,5 @@
 import wx
 
-import test_plot
 from helpers import identityCodes
 from views.mainMenu import mainMenuViews
 from views.plotGraph import PlotGraphFrame
@@ -84,11 +83,7 @@ class MyFrame(wx.Frame):
                 newCanvasPanel.import_pheno_file(self.plotForm.phenotypeFile)
                 newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
 
-                '''hBox1 = wx.BoxSizer(wx.HORIZONTAL)
-                hBox1.Add(newCanvasPanel, flag=wx.EXPAND | wx.RIGHT | wx.LEFT, proportion=1, border=0)
-                self.vBox.Add(hBox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=0)'''
                 self.tabInterface.addGraphPage(newCanvasPanel)
 
     def OnFindIndividual(self, event):
-        print("Add Tab")
-        self.tabInterface.addPage()
+        print("Find Nemo")

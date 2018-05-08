@@ -1,5 +1,4 @@
 import wx
-from controllers import pcaGraph
 
 
 class Page(wx.Panel):
