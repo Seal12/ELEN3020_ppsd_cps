@@ -1,41 +1,52 @@
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
 import numpy as np
+import wx
+
 from controllers import importData
 
 
-class PCAGraph:
+class PCAGraph(wx.Panel):
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent)
 
-    def __init__(self):
         self.groups = []
         self.importer = importData.ImportPCAData()
         # Default PC to plot
-        self.x = 0
-        self.y = 1
+        self.pcaX = 0
+        self.pcaY = 1
         # Create Figure and Axes instances
-        self.fig = plt.figure()
-        self.ax = self.fig.subplots(1)
+        self.figure = plt.figure()
+        self.ax = self.figure.subplots(1)
+        self.canvas = FigureCanvas(self, -1, self.figure)
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
 
-    def import_fam_file(self, file_path):
+        self.sizer = wx.BoxSizer(wx.VERTICAL)
+        self.sizer.Add(self.canvas, 1, wx.LEFT | wx.RIGHT | wx.TOP | wx.GROW)
+        self.SetSizer(self.sizer)
+        self.Fit()
+
+    def import_pca_file(self, file_path):
         self.importer.import_pca_evec(file_path)
 
     def import_pheno_file(self, file_path):
         self.groups = self.importer.import_pca_pheno(file_path)
 
-    def plot_pca(self, x, y):
-        self.x = x
-        self.y = y
+    def plot_pca(self, pcaX, pcaY):
+        self.pcaX = pcaX
+        self.pcaY = pcaY
 
-        plt.xlabel('PC{}'.format(x))
-        plt.ylabel('PC{}'.format(y))
+        plt.xlabel('PC{}'.format(pcaX))
+        plt.ylabel('PC{}'.format(pcaY))
 
         # Plot each group individually
         for group in self.groups:
             if group.visible:
-                self.ax.scatter(group.pca_dict[x], group.pca_dict[y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
+                self.ax.scatter(group.pca_dict[pcaX], group.pca_dict[pcaY], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
 
         # Create legend
         self.ax.legend(loc='best', frameon=False, prop={'size': 7})
@@ -70,7 +81,9 @@ class PCAGraph:
         self.ax.grid(which='major', alpha=0.5, zorder=0)
         self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
 
-        return self.fig
+        self.ax.set_title("Title")
+
+        return self.figure
 
     def find_subject(self, subject_id):
         for group in self.groups:
@@ -99,12 +112,12 @@ class PCAGraph:
     def set_group_marker(self,group_name, marker):
         group = self.find_group(group_name)
         group.marker = marker
-        # return self.plot_pca(self.x, self.y)
+        # return self.plot_pca(self.pcaX, self.pcaY)
 
     def set_group_colour(self,group_name, colour):
         group = self.find_group(group_name)
         group.colour = colour
-        # return self.plot_pca(self.x, self.y)
+        # return self.plot_pca(self.pcaX, self.pcaY)
 
     def set_group_visibility(self, group_name, visible):
         group = self.find_group(group_name)
