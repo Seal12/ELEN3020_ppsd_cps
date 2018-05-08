@@ -83,7 +83,7 @@ class MyFrame(wx.Frame):
                 newCanvasPanel.import_pheno_file(self.plotForm.phenotypeFile)
                 newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
 
-                self.tabInterface.addGraphPage(newCanvasPanel)
+                self.tabInterface.addGraphPage(newCanvasPanel, "PCA")
 
     def OnFindIndividual(self, event):
         print("Find Nemo")
