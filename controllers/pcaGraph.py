@@ -33,8 +33,8 @@ class PCAGraph(wx.Panel):
     def import_pca_file(self, file_path):
         self.importer.import_pca_evec(file_path)
 
-    def import_pheno_file(self, file_path):
-        self.groups = self.importer.import_pca_pheno(file_path)
+    def import_pheno_file(self, file_path, column):
+        self.groups = self.importer.import_pca_pheno(file_path, column)
 
     def plot_pca(self, pcaX, pcaY):
         self.pcaX = pcaX

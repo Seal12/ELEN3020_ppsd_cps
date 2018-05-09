@@ -30,7 +30,7 @@ class ImportPCAData:
 
         return self.subject_list
 
-    def import_pca_pheno(self, file_path):
+    def import_pca_pheno(self, file_path, column):
         # group_names = []
 
         with open(file_path, 'r') as f:
@@ -41,7 +41,7 @@ class ImportPCAData:
                 line = all_lines[i].split()
 
                 subject_id = '{}:{}'.format(line[0], line[1])
-                subject_group_name = '{}:{}'.format(line[2], line[3])
+                subject_group_name = line[column]
 
                 for subject in self.subject_list:
                     if subject.id_num == subject_id:
