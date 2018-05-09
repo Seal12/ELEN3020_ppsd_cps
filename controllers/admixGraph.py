@@ -26,6 +26,7 @@ class AdmixGraph:
 
     def plot_admix(self):
         self.ax = self.fig.subplots(ncols=len(self.groups))
+
         print(len(self.groups))
         # I actually don't know what ths value does
         #ind = np.arange(len(self.subjects))
@@ -47,22 +48,27 @@ class AdmixGraph:
                 axes = self.ax[i]
             else:
                 axes = self.ax
+            self.fig.subplots_adjust(wspace=0.0)
+            #self.fig.tight_layout()
+
             for key in self.ancestries:
                 axes.bar(ind, height=self.ancestries[key], width=1.0)
-
-                axes.set_xticks([])
+                axes.axis('off')
+                axes.xaxis.set_xticks([])
                 axes.set_yticks([])
+
                 #axes.xaxis.set_visible(False)
                 #self.fig.suptitle(str(index[group]))
                 axes.set_xlabel(str(group.name))
 
-                self.fig.subplots_adjust(left=None, wspace=None)
-                #axes.set_xticks(str(group))
+
 
             i  += 1
             if i >= len(self.groups):
                 break
-        self.fig.set_label('admix')
+
+
+
 
 
 
@@ -75,7 +81,7 @@ graph = AdmixGraph()
 fam_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
 Q_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
 phen_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.phe'
-graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=4)
+graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=3)
 
 graph.plot_admix()
 plt.show()
