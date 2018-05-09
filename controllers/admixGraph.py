@@ -53,8 +53,8 @@ class AdmixGraph:
 
             for key in self.ancestries:
                 axes.bar(ind, height=self.ancestries[key], width=1.0)
-                axes.axis('off')
-                axes.xaxis.set_xticks([])
+                #axes.axis('off')
+                axes.set_xticks([])
                 axes.set_yticks([])
 
                 #axes.xaxis.set_visible(False)
