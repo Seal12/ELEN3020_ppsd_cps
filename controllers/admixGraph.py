@@ -49,12 +49,21 @@ class AdmixGraph:
                 axes = self.ax
             for key in self.ancestries:
                 axes.bar(ind, height=self.ancestries[key], width=1.0)
+
+                axes.set_xticks([])
+                axes.set_yticks([])
+                #axes.xaxis.set_visible(False)
                 #self.fig.suptitle(str(index[group]))
+                axes.set_xlabel(str(group.name))
+
+                self.fig.subplots_adjust(left=None, wspace=None)
+                #axes.set_xticks(str(group))
 
             i  += 1
             if i >= len(self.groups):
                 break
-        #self.fig.set_label('admix')
+        self.fig.set_label('admix')
+
 
 
 
@@ -66,7 +75,7 @@ graph = AdmixGraph()
 fam_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
 Q_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
 phen_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.phe'
-graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=5)
+graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=4)
 
 graph.plot_admix()
 plt.show()
