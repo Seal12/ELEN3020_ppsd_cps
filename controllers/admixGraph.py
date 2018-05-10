@@ -13,8 +13,12 @@ class AdmixGraph:
         self.ancestries = defaultdict(list)
         self.importer = importData.ImportAdmixData()
         # Create Figure and Axes instances
-        self.fig = plt.figure()
+        self.fig = plt.figure(frameon=False)
+        self.fig.tight_layout(pad=0, w_pad=0)
         self.ax = self.fig.subplots(1)
+        self.axes = plt.axes()
+        self.axes.yaxis.set_major_locator(plt.NullLocator())
+        self.axes.xaxis.set_major_formatter(plt.NullFormatter())
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
@@ -27,11 +31,15 @@ class AdmixGraph:
     def plot_admix(self):
         self.ax = self.fig.subplots(ncols=len(self.groups))
 
+        # for each in self.groups:
+        #     self.ax.axes[each].xticks([])
+
         print(len(self.groups))
-        # I actually don't know what ths value does
-        #ind = np.arange(len(self.subjects))
+
+
         i = 0
         for group in self.groups:
+            # calculates where each column appears
             ind = np.arange(len(group.subjects))
             self.ancestries = defaultdict(list)
             # Populate the dictionary with ancestry values
@@ -43,37 +51,34 @@ class AdmixGraph:
                         value += subject.values[j]
                     # Store the heights in a dictionary of lists
                     self.ancestries[key].append(value)
-            # Loop through the dictionary plot each ancestry
+
+
+
             if len(self.groups) > 1:
                 axes = self.ax[i]
             else:
                 axes = self.ax
-            self.fig.subplots_adjust(wspace=0.0)
-            #self.fig.tight_layout()
 
+            # Remove white horizontal space between subplots
+            self.fig.subplots_adjust(wspace=0.0)
+
+            # Loop through the dictionary plot each ancestry
             for key in self.ancestries:
                 axes.bar(ind, height=self.ancestries[key], width=1.0)
-                #axes.axis('off')
+                axes.set_frame_on(False)
+
                 axes.set_xticks([])
                 axes.set_yticks([])
+                # axes.set_yticks([])
 
-                #axes.xaxis.set_visible(False)
-                #self.fig.suptitle(str(index[group]))
-                axes.set_xlabel(str(group.name))
+                if i > 1:
+                    axes.get_shared_y_axes().join(self.ax[i],self.ax[i-1])
 
-
+            axes.set_xlabel(str(group.name))
 
             i  += 1
             if i >= len(self.groups):
                 break
-
-
-
-
-
-
-
-
 
 
 # Test functionality
