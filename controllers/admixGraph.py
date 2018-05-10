@@ -9,6 +9,7 @@ class AdmixGraph:
     def __init__(self):
         self.subjects = []
         self.groups = []
+        self.heightsList = []
         # Create empty dictionary of lists
         self.ancestries = defaultdict(list)
         self.importer = importData.ImportAdmixData()
@@ -29,18 +30,19 @@ class AdmixGraph:
         self.groups = self.importer.import_admix_pheno(Phen_file_path, column)
 
     def plot_admix(self):
-        self.ax = self.fig.subplots(ncols=len(self.groups))
+        self.ax = self.fig.subplots()
 
         # for each in self.groups:
         #     self.ax.axes[each].xticks([])
-
+        ind = np.arange(len(self.subjects))
         print(len(self.groups))
 
-
+        # clear height list
+        self.heightsList = []
         i = 0
         for group in self.groups:
             # calculates where each column appears
-            ind = np.arange(len(group.subjects))
+
             self.ancestries = defaultdict(list)
             # Populate the dictionary with ancestry values
             for subject in group.subjects:
@@ -51,30 +53,32 @@ class AdmixGraph:
                         value += subject.values[j]
                     # Store the heights in a dictionary of lists
                     self.ancestries[key].append(value)
+                    self.heightsList.append(self.ancestries[key])
+                    print(len(self.heightsList))
 
 
 
-            if len(self.groups) > 1:
-                axes = self.ax[i]
-            else:
-                axes = self.ax
+            # if len(self.groups) > 1:
+            #     axes = self.ax[i]
+            # else:
+            #     axes = self.ax
 
             # Remove white horizontal space between subplots
             self.fig.subplots_adjust(wspace=0.0)
 
             # Loop through the dictionary plot each ancestry
-            for key in self.ancestries:
-                axes.bar(ind, height=self.ancestries[key], width=1.0)
-                axes.set_frame_on(False)
+            for key in range(len(self.heightsList)):
+                self.ax.bar(ind, height=self.heightsList[key], width=1.0)
+                self.ax.set_frame_on(False)
 
-                axes.set_xticks([])
-                axes.set_yticks([])
+                self.ax.set_xticks([])
+                self.ax.set_yticks([])
                 # axes.set_yticks([])
 
-                if i > 1:
-                    axes.get_shared_y_axes().join(self.ax[i],self.ax[i-1])
+                # if i > 1:
+                #     axes.get_shared_y_axes().join(self.ax[i],self.ax[i-1])
 
-            axes.set_xlabel(str(group.name))
+            self.ax.set_xlabel(str(group.name))
 
             i  += 1
             if i >= len(self.groups):
