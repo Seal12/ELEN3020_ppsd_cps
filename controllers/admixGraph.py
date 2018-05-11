@@ -31,9 +31,7 @@ class AdmixGraph:
 
     def plot_admix(self):
         self.ax = self.fig.subplots()
-
-        # for each in self.groups:
-        #     self.ax.axes[each].xticks([])
+        # attempted to solve the error related to single shape
         ind = np.arange(len(self.subjects))
         print(len(self.groups))
 
@@ -53,15 +51,11 @@ class AdmixGraph:
                         value += subject.values[j]
                     # Store the heights in a dictionary of lists
                     self.ancestries[key].append(value)
+                    # attempted to create the heights list
                     self.heightsList.append(self.ancestries[key])
-                    print(len(self.heightsList))
+                    #print(self.heightsList)
 
 
-
-            # if len(self.groups) > 1:
-            #     axes = self.ax[i]
-            # else:
-            #     axes = self.ax
 
             # Remove white horizontal space between subplots
             self.fig.subplots_adjust(wspace=0.0)
@@ -69,20 +63,12 @@ class AdmixGraph:
             # Loop through the dictionary plot each ancestry
             for key in range(len(self.heightsList)):
                 self.ax.bar(ind, height=self.heightsList[key], width=1.0)
-                self.ax.set_frame_on(False)
 
+                self.ax.set_frame_on(False)
                 self.ax.set_xticks([])
                 self.ax.set_yticks([])
-                # axes.set_yticks([])
-
-                # if i > 1:
-                #     axes.get_shared_y_axes().join(self.ax[i],self.ax[i-1])
 
             self.ax.set_xlabel(str(group.name))
-
-            i  += 1
-            if i >= len(self.groups):
-                break
 
 
 # Test functionality
