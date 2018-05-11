@@ -35,10 +35,10 @@ class AdmixGraph:
                 self.ancestries[key].extend(group.ancestries[key])
 
     def plot_admix(self):
-
-        temp = self.groups[3]
-        self.groups[3] = self.groups[0]
-        self.groups[0] = temp
+        # Swapping the order of group 0 and group 3
+        # temp = self.groups[3]
+        # self.groups[3] = self.groups[0]
+        # self.groups[0] = temp
 
         self.organise_ancestries()
 
