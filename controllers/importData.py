@@ -87,10 +87,10 @@ class ImportAdmixData:
 
 
     def import_admix_pheno(self, file_path, column):
-        # group_names = []
-
+        # Create groups and populate them with subjects
         with open(file_path, 'r') as f:
 
+            # List of all lines in the file
             all_lines = f.readlines()
 
             for i in range(0, len(all_lines)):
@@ -113,6 +113,18 @@ class ImportAdmixData:
                             population_group = self.group_list[group_pos]
 
                         population_group.add_subject(subject)
+
+        # Making an dictionary of the different ancestry heights per group
+        for group in self.group_list:
+            # Populate the dictionary with ancestry values
+            for subject in group.subjects:
+                # Calculate the height of the ancestry bar graphs
+                for key in range(0, len(subject.values)):
+                    value = 0
+                    for j in range(key, len(subject.values)):
+                        value += subject.values[j]
+                    # Store the heights in a dictionary of lists
+                    group.ancestries[key].append(value)
 
         return self.group_list
 
