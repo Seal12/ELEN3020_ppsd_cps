@@ -10,14 +10,17 @@ class AdmixGraph:
         self.subjects = []
         self.groups = []
         self.ancestries = defaultdict(list)
+        # A list of labels
+        self.labelsList = []
+        # a list of locations the labels appear
+        self.xtickPos = []
         self.importer = importData.ImportAdmixData()
         # Create Figure and Axes instances
         self.fig = plt.figure()
        # self.fig.tight_layout(pad=0, w_pad=0)
         self.ax = self.fig.subplots(1)
-        # self.axes = plt.axes()
-        # self.axes.yaxis.set_major_locator(plt.NullLocator())
-        # self.axes.xaxis.set_major_formatter(plt.NullFormatter())
+        self.ax.yaxis.set_major_locator(plt.NullLocator())
+        self.ax.xaxis.set_major_formatter(plt.NullFormatter())
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
@@ -40,44 +43,40 @@ class AdmixGraph:
         # self.groups[3] = self.groups[0]
         # self.groups[0] = temp
 
+        # a dummy list
+        placeToStart = []
+
         self.organise_ancestries()
 
+        # populate the list of labels and where they appear
+        for eachGroup in range(0, len(self.groups)):
+            self.labelsList.append(str(self.groups[eachGroup].name))
+            #print(str(self.groups[eachGroup].name))
+            placeToStart.append(len(self.groups[eachGroup].subjects))
+
+        print (placeToStart)
+        # variable to shift where the x tick appears
+        xshift = 0
+        for index in range(0, len(self.groups)):
+            xshift += placeToStart[index]
+            self.xtickPos.append(xshift-placeToStart[index]/2)
+
+
+        # where each column appears
         ind = np.arange(0, len(self.subjects))
 
         for key in self.ancestries:
             self.ax.bar(ind, self.ancestries[key], width=1.0)
 
-        # self.ax = self.fig.subplots(ncols=len(self.groups))
-
-        # for each in self.groups:
-        #     self.ax.axes[each].xticks([])
-
-        # print(len(self.groups))
-        #
-        #     # Loop through the dictionary plot each ancestry
-        #     for key in self.ancestries:
-        #         axes.bar(ind, height=self.ancestries[key], width=1.0)
-        #         axes.set_frame_on(False)
-        #
-        #         axes.set_xticks([])
-        #         axes.set_yticks([])
-        #         # axes.set_yticks([])
-        #
-        #         if i > 1:
-        #             axes.get_shared_y_axes().join(self.ax[i],self.ax[i-1])
-        #
-        #     axes.set_xlabel(str(group.name))
-        #
-        #     i  += 1
-        #     if i >= len(self.groups):
-        #         break
+        self.ax.set_xticks(self.xtickPos)
+        self.ax.set_xticklabels(self.labelsList)
 
 
 # Test functionality
 graph = AdmixGraph()
-fam_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
-Q_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
-phen_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.phe'
+fam_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
+Q_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
+phen_fp = 'C:\\Users\\Cedrick\\PycharmProjects\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.phe'
 graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp,Phen_file_path=phen_fp, column=3)
 
 graph.plot_admix()
