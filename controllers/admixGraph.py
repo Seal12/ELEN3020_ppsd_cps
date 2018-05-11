@@ -60,7 +60,11 @@ class AdmixGraph:
                 axes = self.ax
 
             # Remove white horizontal space between subplots
-            self.fig.subplots_adjust(wspace=0.0)
+            # self.fig.tight_layout(pad=0.0,w_pad=0.0)
+            # self.fig.subplots_adjust(wspace=0.0)
+
+            
+
 
             # Loop through the dictionary plot each ancestry
             for key in self.ancestries:
