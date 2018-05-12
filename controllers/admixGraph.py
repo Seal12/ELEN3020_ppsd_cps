@@ -8,44 +8,57 @@ from controllers import importData
 class AdmixGraph:
     def __init__(self):
         self.subjects = []
-        # Create empty dictionary of lists
+        self.groups = []
+        # This is the data that will be plotted
         self.ancestries = defaultdict(list)
+        # List of labels
+        self.labelsList = []
+        # List of locations the labels appear
+        self.xtickPos = []
         self.importer = importData.ImportAdmixData()
         # Create Figure and Axes instances
         self.fig = plt.figure()
+        # self.fig.tight_layout(pad=0, w_pad=0)
         self.ax = self.fig.subplots(1)
+        self.ax.yaxis.set_major_locator(plt.NullLocator())
+        self.ax.xaxis.set_major_formatter(plt.NullFormatter())
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
 
-    def import_ratios(self,fam_file_path,Q_file_path):
+    def import_data(self, fam_file_path, Q_file_path, pheno_file_path, column):
         self.importer.import_admix_fam(fam_file_path)
         self.subjects = self.importer.import_admix_Q(Q_file_path)
+        self.groups = self.importer.import_admix_pheno(pheno_file_path, column)
+
+    def organise_ancestries(self):
+        self.ancestries = defaultdict(list)
+
+        for group in self.groups:
+            for key in group.ancestries:
+                self.ancestries[key].extend(group.ancestries[key])
 
     def plot_admix(self):
-        # I actually don't know what ths value does
-        ind = np.arange(len(self.subjects))
+        # a dummy list
+        placeToStart = []
 
-        # Populate the dictionary with ancestry values
-        for subject in self.subjects:
-            # Calculate the height of the ancestry bar graphs
-            for key in range(0, len(subject.values)):
-                value = 0
-                for j in range(key, len(subject.values)):
-                    value += subject.values[j]
-                # Store the heights in a dictionary of lists
-                self.ancestries[key].append(value)
+        self.organise_ancestries()
 
-        # Loop through the dictionary plot each ancestry
+        # populate the list of labels and where they appear
+        for eachGroup in range(0, len(self.groups)):
+            self.labelsList.append(str(self.groups[eachGroup].name))
+            placeToStart.append(len(self.groups[eachGroup].subjects))
+
+        x_shift = 0  # Variable to shift where the x tick appears
+        for index in range(0, len(self.groups)):
+            x_shift += placeToStart[index]
+            self.xtickPos.append(x_shift-placeToStart[index]/2)
+
+        # Specify where each column appears
+        ind = np.arange(0, len(self.subjects))
+
         for key in self.ancestries:
-            self.ax.bar(ind, height=self.ancestries[key],width=1.0)
+            self.ax.bar(ind, self.ancestries[key], width=1.0)
 
-# Test functionality
-# graph = AdmixGraph()
-# fam_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
-# Q_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
-# graph.import_ratios(fam_file_path=fam_fp,Q_file_path=Q_fp)
-#
-# graph.plot_admix()
-#
-# plt.show()
+        self.ax.set_xticks(self.xtickPos)
+        self.ax.set_xticklabels(self.labelsList)

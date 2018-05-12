@@ -16,23 +16,29 @@ class PCAGraph(wx.Panel):
         self.groups = []
         self.importer = importData.ImportPCAData()
         # Default PC to plot
-        self.pcaX = 0
-        self.pcaY = 1
+        self.pc_x = 0
+        self.pc_y = 1
         # Create Figure and Axes instances
         self.figure = plt.figure()
         self.ax = self.figure.subplots(1)
+        # User Interface settings
         self.canvas = FigureCanvas(self, -1, self.figure)
+        self.sizer = wx.BoxSizer(wx.VERTICAL)
+        self.sizer.Add(self.canvas, 1, wx.LEFT | wx.RIGHT | wx.TOP | wx.GROW)
+
         self.toolbar = NavigationToolbar(self.canvas)
         self.toolbar.Realize()
+        self.sizer.Add(self.toolbar, 0, wx.LEFT | wx.EXPAND)
+
+        self.SetSizer(self.sizer)
+        self.Fit()
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
 
-        self.sizer = wx.BoxSizer(wx.VERTICAL)
-        self.sizer.Add(self.canvas, 1, wx.LEFT | wx.RIGHT | wx.TOP | wx.GROW)
-        self.sizer.Add(self.toolbar, 0, wx.LEFT | wx.EXPAND)
-        self.SetSizer(self.sizer)
-        self.Fit()
+    def import_data(self, evec_file_path, pheno_file_path, column):
+        self.importer.import_pca_evec(file_path=evec_file_path)
+        self.groups = self.importer.import_pca_pheno(file_path=pheno_file_path, column=column)
 
     def import_pca_file(self, file_path):
         self.importer.import_pca_evec(file_path)
@@ -40,38 +46,41 @@ class PCAGraph(wx.Panel):
     def import_pheno_file(self, file_path, column):
         self.groups = self.importer.import_pca_pheno(file_path, column)
 
-    def plot_pca(self, pcaX, pcaY):
-        self.pcaX = pcaX
-        self.pcaY = pcaY
+    def plot_pca(self, pc_x, pc_y):
+        self.pc_x = pc_x
+        self.pc_y = pc_y
 
-        plt.xlabel('PC{}'.format(pcaX))
-        plt.ylabel('PC{}'.format(pcaY))
+        plt.xlabel('PC{}'.format(pc_x))
+        plt.ylabel('PC{}'.format(pc_y))
 
         # Plot each group individually
         for group in self.groups:
             if group.visible:
-                self.ax.scatter(group.pca_dict[pcaX], group.pca_dict[pcaY], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
+                self.ax.scatter(group.pca_dict[pc_x], group.pca_dict[pc_y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
 
         # Create legend
         self.ax.legend(loc='best', frameon=False, prop={'size': 7})
 
-        # Set the ticks
+        # Get the min and max values of the plot
         v = plt.axis()
         x_min = v[0]
         x_max = v[1]
         y_min = v[2]
         y_max = v[3]
 
+        # Calculate major ticks
         major_x_step = (x_max - x_min)/2
         major_y_step = (y_max - y_min)/2
         x_major_ticks = np.arange(x_min, x_max, major_x_step)
         y_major_ticks = np.arange(y_min, y_max, major_y_step)
 
+        # Calculate minor ticks
         minor_x_step = (x_max - x_min)/10
         minor_y_step = (y_max - y_min)/10
         x_minor_ticks = np.arange(x_min, x_max, minor_x_step)
         y_minor_ticks = np.arange(y_min, y_max, minor_y_step)
 
+        # Set the grid spacing to the calculated ticks
         self.ax.set_xticks(x_major_ticks)
         self.ax.set_xticks(x_minor_ticks, minor=True)
         self.ax.set_yticks(y_major_ticks)
@@ -85,7 +94,7 @@ class PCAGraph(wx.Panel):
         self.ax.grid(which='major', alpha=0.5, zorder=0)
         self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
 
-        self.ax.set_title("Title")
+        self.ax.set_title("PC{} vs. PC{}".format(pc_x, pc_y))
 
         return self.figure
 
@@ -102,7 +111,7 @@ class PCAGraph(wx.Panel):
             if group.name == group_name:
                 return group
 
-        return 'No group with that name'
+        return 'No group by the name {}'.format(group_name)
 
     def set_all_markers(self, marker, size):
         for group in self.groups:
@@ -129,22 +138,3 @@ class PCAGraph(wx.Panel):
 
     def set_graph_title(self, title):
         self.ax.set_title(title)
-
-# Testing functionality
-# graph = PCAGraph()
-# graph.import_fam_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm-SYMCL.pca.evec')
-# graph.import_pheno_file('C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\PCA\\comm.phe')
-#
-# graph.plot_pca(0,2)
-# graph.set_graph_title('PCA')
-#
-# print(graph.importer.group_names)
-# plt.show()
-
-# # graph.set_group_marker(group_name='CEU:EUR', marker='x')
-# # graph.set_group_colour(group_name='CEU:EUR', colour='k')
-# # graph.set_all_markers(size=1, marker='o')
-# # graph.set_group_marker_size(group_name='CHD:ASN', size=10)
-# # #graph.plot_pca(0,1)
-# #
-# # #plt.show()
