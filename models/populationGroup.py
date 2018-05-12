@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""populationGroup.py: population group model storing the groups subjects and the collective data of all subjects in the group in a dictionary"""
+"""populationGroup.py: population group model storing the groups subjects and the collective data of all subjects"""
 
 __author__ = "Phatho Pukwana"
 __credits__ = ["Phatho Pukwana"]
@@ -16,7 +16,7 @@ class PopulationGroup:
         self.name = name
         self.visible = True
         self.subjects = []
-        # Create empty dictionary of lists
+        # This is the cumulative data of all subjects in a group
         self.data_dict = defaultdict(list)
 
     def add_subject(self, subject):

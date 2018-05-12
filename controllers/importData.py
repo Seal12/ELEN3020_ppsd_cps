@@ -20,7 +20,8 @@ class ImportPCAData:
         self.group_names = []
 
     def import_pca_evec(self, file_path):
-        """Imports the evec file for PCA, creates the subjects and returns a list of these subjects
+        """
+        Imports the evec file for PCA, creates the subjects and returns a list of these subjects
 
         Keyword arguments:
             file_path -- the file path of the evec file
@@ -48,15 +49,14 @@ class ImportPCAData:
     def import_pca_pheno(self, file_path, column=2):
         """Imports the phenotype file for PCA, creates the population groups and populates them with subjects
 
+        :Restrictions:
+            column argument should either be 2 or 3 if this is not the case the class won'nt throw an exception but rather set the column to a relevant value
+
+            This method requires that the import_pca_evec method to have been run prior to it being called otherwise there won't be any subjects to populate the groups with
+
         Keyword arguments:
             file_path -- the file path of the phenotype file
             column -- the column which the relevant phenotype data is on (default 2)
-
-        column argument should either be 2 or 3
-        if this is not the case the class won'nt throw an exception but rather set the column to a relevant value
-
-        This method requires that the import_pca_evec method to have been run prior to it being called
-        otherwise there won't be any subjects to populate the groups with
         """
 
         # Ensure that valid phenotype columns are selected
@@ -127,12 +127,14 @@ class ImportAdmixData:
     def import_admix_pheno(self, file_path, column=2):
         """Imports the phenotype file for admixture plots, creates the population groups and populates them with subjects
 
+        :Note:
+            This method requires import_admix_fam and import_admix_Q to have been run prior to it being called if not there wont be subjects with relevant data to populate the groups
+
         Keyword arguments:
             file_path -- the file path of the phenotype file
             column -- the column which the relevant phenotype data is on (default 2)
 
-        This method requires import_admix_fam and import_admix_Q to have been run prior to it being called
-        If not there wont be subjects with relevant data to populate the groups
+
         """
 
         with open(file_path, 'r') as f:
