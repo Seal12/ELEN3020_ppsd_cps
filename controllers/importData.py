@@ -32,8 +32,7 @@ class ImportPCAData:
         return self.subject_list
 
     def import_pca_pheno(self, file_path, column):
-        # group_names = []
-
+        # Create groups and populate them with subjects
         with open(file_path, 'r') as f:
 
             all_lines = f.readlines()
@@ -84,7 +83,6 @@ class ImportAdmixData:
                 self.subject_list.append(individual)
 
         return self.subject_list
-
 
     def import_admix_pheno(self, file_path, column):
         # Create groups and populate them with subjects
