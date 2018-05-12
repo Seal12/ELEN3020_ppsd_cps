@@ -1,8 +1,17 @@
+#!/usr/bin/env python
+
+"""pcaGraph.py: Description"""
+
+__author__ = "Phatho Pukwana"
+__credits__ = ["Phatho Pukwana"]
+__email__ = "1388857@students.wits.ac.za"
+__status__ = "Development"
+
+import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
-import numpy as np
 import wx
 
 from controllers import importData
@@ -30,7 +39,10 @@ class PCAGraph(wx.Panel):
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
 
-    def import_data(self, evec_file_path, pheno_file_path, column):
+    def import_data(self, evec_file_path, pheno_file_path, column=2):
+        """Imports the required data files for a pca plot
+
+        """
         self.importer.import_pca_evec(file_path=evec_file_path)
         self.groups = self.importer.import_pca_pheno(file_path=pheno_file_path, column=column)
 
@@ -40,7 +52,7 @@ class PCAGraph(wx.Panel):
     def import_pheno_file(self, file_path, column):
         self.groups = self.importer.import_pca_pheno(file_path, column)
 
-    def plot_pca(self, pc_x, pc_y):
+    def plot_pca(self, pc_x=0, pc_y=1):
         self.pc_x = pc_x
         self.pc_y = pc_y
 

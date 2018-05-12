@@ -1,7 +1,18 @@
-import matplotlib.pyplot as plt
-from matplotlib import rcParams
+#!/usr/bin/env python
+
+"""admixGraph.py: Description"""
+
+__author__ = "Phatho Pukwana, Cedrick Platt"
+__credits__ = ["Phatho Pukwana", "Cedrick Platt"]
+__email__ = "1388857@students.wits.ac.za, 1500728@students.wits.ac.za"
+__status__ = "Development"
+
 import numpy as np
 from collections import defaultdict
+
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+
 from controllers import importData
 
 
@@ -27,6 +38,14 @@ class AdmixGraph:
         rcParams['font.sans-serif'] = ['Tahoma']
 
     def import_data(self, fam_file_path, Q_file_path, pheno_file_path, column):
+        """Imports the data files for admixture plot
+
+        Keyword arguments:
+            fam_file_path -- the file path of the fam file
+            Q_file_path -- the file path of the Q file
+            pheno_file_path -- the file path of the phenotype file
+        """
+
         self.importer.import_admix_fam(fam_file_path)
         self.subjects = self.importer.import_admix_Q(Q_file_path)
         self.groups = self.importer.import_admix_pheno(pheno_file_path, column)
@@ -35,13 +54,15 @@ class AdmixGraph:
         self.ancestries = defaultdict(list)
 
         for group in self.groups:
-            for key in group.ancestries:
-                self.ancestries[key].extend(group.ancestries[key])
+            if group.visible:
+                for key in group.ancestries:
+                    self.ancestries[key].extend(group.ancestries[key])
 
     def plot_admix(self):
         # a dummy list
         placeToStart = []
 
+        # Organise the data by group
         self.organise_ancestries()
 
         # populate the list of labels and where they appear
@@ -57,8 +78,10 @@ class AdmixGraph:
         # Specify where each column appears
         ind = np.arange(0, len(self.subjects))
 
+        # Plot the data
         for key in self.ancestries:
             self.ax.bar(ind, self.ancestries[key], width=1.0)
 
+        # Set the ticks
         self.ax.set_xticks(self.xtickPos)
         self.ax.set_xticklabels(self.labelsList)

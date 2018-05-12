@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+
+"""subject.py: Subject model storing each individual subjects id, values, icon and group"""
+
+__author__ = "Phatho Pukwana"
+__credits__ = ["Phatho Pukwana"]
+__email__ = "1388857@students.wits.ac.za"
+__status__ = "Development"
+
+
 class Subject:
 
     def __init__(self, id_num, values):

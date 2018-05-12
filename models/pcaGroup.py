@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""pcaGroup.py: Description"""
+
+__author__ = "Phatho Pukwana"
+__credits__ = ["Phatho Pukwana"]
+__email__ = "1388857@students.wits.ac.za"
+__status__ = "Development"
+
 from models.populationGroup import PopulationGroup
 from collections import defaultdict
 

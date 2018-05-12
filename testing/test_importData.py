@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""test_importData.py: Testing for the importData.py file"""
+
+__author__ = "Phatho Pukwana"
+__credits__ = ["Phatho Pukwana"]
+__email__ = "1388857@students.wits.ac.za"
+__status__ = "Development"
+
 import unittest
 import os
 from controllers import importData

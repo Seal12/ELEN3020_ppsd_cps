@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""populationGroup.py: population group model storing the groups subjects"""
+
+__author__ = "Phatho Pukwana"
+__credits__ = ["Phatho Pukwana"]
+__email__ = "1388857@students.wits.ac.za"
+__status__ = "Development"
+
 from collections import defaultdict
 
 
