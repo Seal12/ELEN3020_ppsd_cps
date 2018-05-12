@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+from matplotlib.backends.backend_wxagg import NavigationToolbar2WxAgg as NavigationToolbar
+import numpy as np
 import wx
 
 from controllers import importData
@@ -35,6 +37,11 @@ class PCAGraph(wx.Panel):
         self.canvas = FigureCanvas(self, -1, self.figure)
         self.sizer = wx.BoxSizer(wx.VERTICAL)
         self.sizer.Add(self.canvas, 1, wx.LEFT | wx.RIGHT | wx.TOP | wx.GROW)
+
+        self.toolbar = NavigationToolbar(self.canvas)
+        self.toolbar.Realize()
+        self.sizer.Add(self.toolbar, 0, wx.LEFT | wx.EXPAND)
+
         self.SetSizer(self.sizer)
         self.Fit()
         # Set Font

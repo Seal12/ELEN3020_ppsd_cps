@@ -10,6 +10,8 @@ __email__ = "1388857@students.wits.ac.za, 1500728@students.wits.ac.za"
 __status__ = "Development"
 
 import numpy as np
+import wx
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
 from collections import defaultdict
 
 import matplotlib.pyplot as plt
@@ -18,8 +20,10 @@ from matplotlib import rcParams
 from controllers import importData
 
 
-class AdmixGraph:
-    def __init__(self):
+class AdmixGraph(wx.Panel):
+    def __init__(self, parent):
+        wx.Panel.__init__(self, parent)
+
         self.subjects = []
         self.groups = []
         # This is the data that will be plotted
@@ -35,6 +39,15 @@ class AdmixGraph:
         self.ax = self.fig.subplots(1)
         self.ax.yaxis.set_major_locator(plt.NullLocator())
         self.ax.xaxis.set_major_formatter(plt.NullFormatter())
+
+        # User Interface settings
+        self.canvas = FigureCanvas(self, -1, self.fig)
+        self.sizer = wx.BoxSizer(wx.VERTICAL)
+        self.sizer.Add(self.canvas, 1, wx.LEFT | wx.RIGHT | wx.TOP | wx.GROW)
+
+        self.SetSizer(self.sizer)
+        self.Fit()
+
         # Set Font
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']

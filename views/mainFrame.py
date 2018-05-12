@@ -4,6 +4,7 @@ from helpers import identityCodes
 from views.mainMenu import mainMenuViews
 from views.plotGraph import PlotGraphFrame
 from controllers import pcaGraph
+from controllers import admixGraph
 from views import graphTabs
 
 
@@ -85,6 +86,13 @@ class MyFrame(wx.Frame):
                 newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
 
                 self.tabInterface.addGraphPage(newCanvasPanel, "PCA")
+            elif self.plotForm.plotType == "Admix":
+                newCanvasPanel = admixGraph.AdmixGraph(self.tabInterface.Notebook3)
+                newCanvasPanel.import_data(self.plotForm.famFile, self.plotForm.dataFile, self.plotForm.phenotypeFile, 1)
+                newCanvasPanel.plot_admix()
+
+                self.tabInterface.addGraphPage(newCanvasPanel, "Admix")
+
 
     def OnFindIndividual(self, event):
         print("Find Nemo")

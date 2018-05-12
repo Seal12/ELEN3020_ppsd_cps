@@ -83,7 +83,7 @@ class PlotGraphFrame(wx.Frame):
 
         hbox5.Add(btn2, flag=wx.LEFT | wx.BOTTOM, border=5)
 
-        btn1 = wx.Button(self.Panel, label='Plot', size=(70, 30))
+        btn1 = wx.Button(self.Panel, id=identityCodes.PLOT_SUBMIT, label='Plot', size=(70, 30))
         hbox5.Add(btn1)
         self.vBox.Add(hbox5, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
 
@@ -92,6 +92,7 @@ class PlotGraphFrame(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnBrowseFam, id=identityCodes.PLOT_BROWSE_FAM)
         self.Bind(wx.EVT_BUTTON, self.OnBrowsePheno, id=identityCodes.PLOT_BROWSE_PHENO)
         self.Bind(wx.EVT_BUTTON, self.OnClose, id=identityCodes.PLOT_CLOSE)
+        self.Bind(wx.EVT_BUTTON, self.OnPlotClick, id=identityCodes.PLOT_SUBMIT)
 
     def InitPCAUI(self):
         # Phenotype file
@@ -207,9 +208,10 @@ class PlotGraphFrame(wx.Frame):
         if self.dataFile is None or self.phenotypeFile is None:
             print("Need data")
             return
-        if self.pcaX is None or self.pcaY is None:
-            print("Must choose")
-            return
+        if self.plotType == "PCA":
+            if self.pcaX is None or self.pcaY is None:
+                print("Must choose")
+                return
         self.plotGraph = True
         self.Close()
 
