@@ -6,6 +6,7 @@ from helpers import identityCodes
 class PlotGraphFrame(wx.Frame):
 
     title = "Input files: "
+    plotType = ""
     dataFile = None
     famFile = None
     phenotypeFile = None
@@ -14,9 +15,12 @@ class PlotGraphFrame(wx.Frame):
     pcaY = None
     pcaZ = None
 
+    plotGraph = False
+
     def __init__(self, parent, type):
-        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(500, 250))
+        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(500, 300))
         self.Panel = wx.Panel(self)
+        self.plotType = type
         self.vBox = wx.BoxSizer(wx.VERTICAL)
         self.title = self.title + type
 
@@ -30,11 +34,11 @@ class PlotGraphFrame(wx.Frame):
         hbox1.Add(browse_file1, flag=wx.LEFT, border=8)
         self.vBox.Add(hbox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
 
-        self.Bind(wx.EVT_BUTTON, self.OnBrowseData, id=identityCodes.PLOT_BROWSE_DATA)
-
         if type == "Admix":
+            self.Bind(wx.EVT_BUTTON, self.OnBrowseAdmixData, id=identityCodes.PLOT_BROWSE_DATA)
             self.InitAdmixUI()
         elif type == "PCA":
+            self.Bind(wx.EVT_BUTTON, self.OnBrowsePCAData, id=identityCodes.PLOT_BROWSE_DATA)
             self.InitPCAUI()
 
 
@@ -60,7 +64,7 @@ class PlotGraphFrame(wx.Frame):
         self.vBox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
         self.vBox.Add((-1, 10))
 
-        # Choose pheno data column
+        # Choose pca_pheno data column
         hbox4 = wx.BoxSizer(wx.HORIZONTAL)
         text = "Which column represents the phenotype data?"
         st1 = wx.StaticText(self.Panel, label=text)
@@ -72,14 +76,14 @@ class PlotGraphFrame(wx.Frame):
 
         self.vBox.Add(hbox4, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
 
-        self.vBox.Add((-1, 25))
+        self.vBox.Add((-1, 70))
 
         hbox5 = wx.BoxSizer(wx.HORIZONTAL)
         btn2 = wx.Button(self.Panel, id=identityCodes.PLOT_CLOSE, label='Cancel', size=(70, 30))
 
         hbox5.Add(btn2, flag=wx.LEFT | wx.BOTTOM, border=5)
 
-        btn1 = wx.Button(self.Panel, label='Plot', size=(70, 30))
+        btn1 = wx.Button(self.Panel, id=identityCodes.PLOT_SUBMIT, label='Plot', size=(70, 30))
         hbox5.Add(btn1)
         self.vBox.Add(hbox5, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
 
@@ -88,6 +92,7 @@ class PlotGraphFrame(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnBrowseFam, id=identityCodes.PLOT_BROWSE_FAM)
         self.Bind(wx.EVT_BUTTON, self.OnBrowsePheno, id=identityCodes.PLOT_BROWSE_PHENO)
         self.Bind(wx.EVT_BUTTON, self.OnClose, id=identityCodes.PLOT_CLOSE)
+        self.Bind(wx.EVT_BUTTON, self.OnPlotClick, id=identityCodes.PLOT_SUBMIT)
 
     def InitPCAUI(self):
         # Phenotype file
@@ -135,7 +140,7 @@ class PlotGraphFrame(wx.Frame):
         self.vBox.Add((-1, 25))
 
 
-        # Choose pheno data column
+        # Choose pca_pheno data column
         hbox5 = wx.BoxSizer(wx.HORIZONTAL)
         text = "Which column represents the phenotype data?"
         st1 = wx.StaticText(self.Panel, label=text)
@@ -154,7 +159,7 @@ class PlotGraphFrame(wx.Frame):
 
         hbox6.Add(btn2, flag=wx.LEFT | wx.BOTTOM, border=5)
 
-        btn1 = wx.Button(self.Panel, label='Plot', size=(70, 30))
+        btn1 = wx.Button(self.Panel, id=identityCodes.PLOT_SUBMIT, label='Plot', size=(70, 30))
         hbox6.Add(btn1)
         self.vBox.Add(hbox6, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
 
@@ -162,13 +167,21 @@ class PlotGraphFrame(wx.Frame):
 
         self.Bind(wx.EVT_BUTTON, self.OnBrowsePheno, id=identityCodes.PLOT_BROWSE_PHENO)
         self.Bind(wx.EVT_CHOICE, self.OnChangeX, id=identityCodes.PLOT_PCA_CHOICE_X)
+        self.Bind(wx.EVT_CHOICE, self.OnChangeY, id=identityCodes.PLOT_PCA_CHOICE_Y)
+        self.Bind(wx.EVT_BUTTON, self.OnPlotClick, id=identityCodes.PLOT_SUBMIT)
         self.Bind(wx.EVT_BUTTON, self.OnClose, id=identityCodes.PLOT_CLOSE)
 
     def OnClose(self, event):
         self.Close()
 
-    def OnBrowseData(self, event):
+    def OnBrowseAdmixData(self, event):
         self.dataFile = browseFiles.get_file_dir(self, "Data File", ".Q.*")
+        if self.dataFile:
+            self.dataTC.write(self.dataFile)
+
+
+    def OnBrowsePCAData(self, event):
+        self.dataFile = browseFiles.get_file_dir(self, "Data File", ".pca.*")
         if self.dataFile:
             self.dataTC.write(self.dataFile)
 
@@ -192,7 +205,15 @@ class PlotGraphFrame(wx.Frame):
         self.pcaZ = self.pcaChoiceZ.GetCurrentSelection()
 
     def OnPlotClick(self, event):
-        print("Pass data to print method")
+        if self.dataFile is None or self.phenotypeFile is None:
+            print("Need data")
+            return
+        if self.plotType == "PCA":
+            if self.pcaX is None or self.pcaY is None:
+                print("Must choose")
+                return
+        self.plotGraph = True
+        self.Close()
 
     def GetColumnList(self, text, numCols):
         cols = []
