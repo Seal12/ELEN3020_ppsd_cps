@@ -80,8 +80,9 @@ class MyFrame(wx.Frame):
         if self.plotForm.plotGraph:
             if self.plotForm.plotType == "PCA":
                 newCanvasPanel = pcaGraph.PCAGraph(self.tabInterface.Notebook3)
-                newCanvasPanel.import_pca_file(file_path=self.plotForm.dataFile)
-                newCanvasPanel.import_pheno_file(file_path=self.plotForm.phenotypeFile, column=2)
+                newCanvasPanel.import_data(evec_file_path=self.plotForm.dataFile,
+                                           pheno_file_path=self.plotForm.phenotypeFile,
+                                           column=2)
                 newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
 
                 self.tabInterface.addGraphPage(newCanvasPanel, "PCA")

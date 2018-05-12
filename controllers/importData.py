@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""importData.py: includes classes for importing the data files necessary for creating a PCA plot and Admixture Plot"""
+
+__author__ = "Phatho Pukwana"
+__credits__ = ["Phatho Pukwana", "Cedrick Platt"]
+__email__ = "1388857@students.wits.ac.za"
+__status__ = "Development"
+
 from models.subject import Subject
 from models.pcaGroup import PCAGroup
 from models.populationGroup import PopulationGroup
@@ -11,6 +20,12 @@ class ImportPCAData:
         self.group_names = []
 
     def import_pca_evec(self, file_path):
+        """
+        Imports the evec file for PCA, creates the subjects and returns a list of these subjects
+
+        Keyword arguments:
+            file_path -- the file path of the evec file
+        """
 
         with open(file_path, 'r') as f:
             # List of all lines in the file
@@ -31,7 +46,26 @@ class ImportPCAData:
 
         return self.subject_list
 
-    def import_pca_pheno(self, file_path, column):
+    def import_pca_pheno(self, file_path, column=2):
+        """Imports the phenotype file for PCA, creates the population groups and populates them with subjects
+
+        :Restrictions:
+            column argument should either be 2 or 3 if this is not the case the class won'nt throw an exception but rather set the column to a relevant value
+
+            This method requires that the import_pca_evec method to have been run prior to it being called otherwise there won't be any subjects to populate the groups with
+
+        Keyword arguments:
+            file_path -- the file path of the phenotype file
+            column -- the column which the relevant phenotype data is on (default 2)
+        """
+
+        # Ensure that valid phenotype columns are selected
+        if column != 2 or column != 3:
+            if column < 2:
+                column = 2
+            elif column > 3:
+                column = 3
+
         # Create groups and populate them with subjects
         with open(file_path, 'r') as f:
 
@@ -68,7 +102,13 @@ class ImportAdmixData:
         self.group_list = []
         self.group_names = []
 
-    def import_admix_fam(self,file_path):
+    def import_admix_fam(self, file_path):
+        """Imports the fam file necessary for an admixture plot, creates the subjects and returns a list of these subjects
+
+        Keyword arguments:
+            file_path -- the file path of the Q file
+        """
+
         with open(file_path, 'r') as f:
             # List of all lines in the file
             all_lines = f.readlines()
@@ -84,8 +124,19 @@ class ImportAdmixData:
 
         return self.subject_list
 
-    def import_admix_pheno(self, file_path, column):
-        # Create groups and populate them with subjects
+    def import_admix_pheno(self, file_path, column=2):
+        """Imports the phenotype file for admixture plots, creates the population groups and populates them with subjects
+
+        :Note:
+            This method requires import_admix_fam and import_admix_Q to have been run prior to it being called if not there wont be subjects with relevant data to populate the groups
+
+        Keyword arguments:
+            file_path -- the file path of the phenotype file
+            column -- the column which the relevant phenotype data is on (default 2)
+
+
+        """
+
         with open(file_path, 'r') as f:
 
             # List of all lines in the file
@@ -122,11 +173,19 @@ class ImportAdmixData:
                     for j in range(key, len(subject.values)):
                         value += subject.values[j]
                     # Store the heights in a dictionary of lists
-                    group.ancestries[key].append(value)
+                    group.data_dict[key].append(value)
 
         return self.group_list
 
     def import_admix_Q(self,file_path):
+        """Imports the Q file for admixture plot, iterates through the subjects and sets their ratios
+
+        Keyword arguments:
+            file_path -- the file path of the Q file
+
+        This method requires the import_admix_fam method to have been called prior to calling this method
+        If not there will not be any subjects to fill values with
+        """
         with open(file_path, 'r') as f:
             all_lines = f.readlines()
 
@@ -145,6 +204,12 @@ class ImportAdmixData:
                 return 'fam file and Q file do not match'
 
     def normalize_ratios(self, ratios):
+        """Ensures that all the subject ratios add up to 100%
+
+         Keyword arguments:
+            file_path -- the file path of the Q file
+        """
+
         total = sum(ratios)
 
         for i in range(0, len(ratios)):
