@@ -5,7 +5,7 @@ admixGraph.py: This file is responsible for creating the admixture plot
 """
 
 __author__ = "Phatho Pukwana, Cedrick Platt"
-__credits__ = ["Phatho Pukwana", "Cedrick Platt"]
+__credits__ = ["Phatho Pukwana", "Cedrick Platt", "Seale Rapolai"]
 __email__ = "1388857@students.wits.ac.za, 1500728@students.wits.ac.za"
 __status__ = "Development"
 

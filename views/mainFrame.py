@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""mainFrame.py: Description"""
+
+__author__ = "Seale Rapolai"
+__credits__ = ["Seale Rapolai","Phatho Pukwana"]
+__email__ = "109800@students.wits.ac.za"
+__status__ = "Development"
+
 import wx
 
 from helpers import identityCodes
@@ -82,13 +91,17 @@ class MyFrame(wx.Frame):
                 newCanvasPanel = pcaGraph.PCAGraph(self.tabInterface.Notebook3)
                 newCanvasPanel.import_data(evec_file_path=self.plotForm.dataFile,
                                            pheno_file_path=self.plotForm.phenotypeFile,
-                                           column=2)
+                                           column=self.plotForm.phenotype_column)
                 newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
 
                 self.tabInterface.addGraphPage(newCanvasPanel, "PCA")
+
             elif self.plotForm.plotType == "Admix":
                 newCanvasPanel = admixGraph.AdmixGraph(self.tabInterface.Notebook3)
-                newCanvasPanel.import_data(self.plotForm.famFile, self.plotForm.dataFile, self.plotForm.phenotypeFile, 1)
+                newCanvasPanel.import_data(fam_file_path=self.plotForm.famFile,
+                                           Q_file_path=self.plotForm.dataFile,
+                                           pheno_file_path=self.plotForm.phenotypeFile,
+                                           column=self.plotForm.phenotype_column)
                 newCanvasPanel.plot_admix()
 
                 self.tabInterface.addGraphPage(newCanvasPanel, "Admix")

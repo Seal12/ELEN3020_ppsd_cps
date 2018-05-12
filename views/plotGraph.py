@@ -1,4 +1,15 @@
+#!/usr/bin/env python
+
+"""plotGraph.py: Description"""
+
+__author__ = "Seale Rapolai, Phatho Pukwana"
+__credits__ = ["Seale Rapolai","Phatho Pukwana"]
+__email__ = "109800@students.wits.ac.za"
+__status__ = "Development"
+
+
 import wx
+
 from views import browseFiles
 from helpers import identityCodes
 
@@ -10,6 +21,7 @@ class PlotGraphFrame(wx.Frame):
     dataFile = None
     famFile = None
     phenotypeFile = None
+    phenotype_column = None
 
     pcaX = None
     pcaY = None
@@ -64,15 +76,17 @@ class PlotGraphFrame(wx.Frame):
         self.vBox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
         self.vBox.Add((-1, 10))
 
-        # Choose pca_pheno data column
+        # Choose admix_pheno data column
         hbox4 = wx.BoxSizer(wx.HORIZONTAL)
         text = "Which column represents the phenotype data?"
         st1 = wx.StaticText(self.Panel, label=text)
         hbox4.Add(st1, flag=wx.LEFT, border=8)
 
-        choiseList = self.GetColumnList("Column", 5)
-        choice = wx.Choice(self.Panel, choices=choiseList)
-        hbox4.Add(choice, flag=wx.LEFT | wx.RIGHT, border=8)
+        choice_list = self.GetColumnList("Column", firstCol=2, lastCol=6)
+        self.column_choice = wx.Choice(self.Panel, choices=choice_list)
+        hbox4.Add(self.column_choice, flag=wx.LEFT | wx.RIGHT, border=8)
+
+        self.column_choice.Bind(wx.EVT_CHOICE, self.OnSelectColumn)
 
         self.vBox.Add(hbox4, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
 
@@ -117,22 +131,22 @@ class PlotGraphFrame(wx.Frame):
         xLabel = wx.StaticText(self.Panel, label='X: ', size=(30, 25))
         hbox4.Add(xLabel, flag=wx.LEFT, border=4)
 
-        choiseList = self.GetColumnList("PCA", 5)
-        self.pcaChoiceX = wx.Choice(self.Panel, choices=choiseList, id=identityCodes.PLOT_PCA_CHOICE_X)
+        choice_list = self.GetColumnList("PCA", lastCol=10)
+        self.pcaChoiceX = wx.Choice(self.Panel, choices=choice_list, id=identityCodes.PLOT_PCA_CHOICE_X)
         hbox4.Add(self.pcaChoiceX, flag=wx.LEFT | wx.RIGHT, border=8)
 
         yLabel = wx.StaticText(self.Panel, label='Y: ', size=(30, 25))
         hbox4.Add(yLabel, flag=wx.LEFT, border=4)
 
-        choiseList = self.GetColumnList("PCA", 5)
-        self.pcaChoiceY = wx.Choice(self.Panel, choices=choiseList, id=identityCodes.PLOT_PCA_CHOICE_Y)
+        choice_list = self.GetColumnList("PCA", lastCol=10)
+        self.pcaChoiceY = wx.Choice(self.Panel, choices=choice_list, id=identityCodes.PLOT_PCA_CHOICE_Y)
         hbox4.Add(self.pcaChoiceY, flag=wx.LEFT | wx.RIGHT, border=8)
 
         zLabel = wx.StaticText(self.Panel, label='Z: ', size=(30, 25))
         hbox4.Add(zLabel, flag=wx.LEFT, border=4)
 
-        choiseList = self.GetColumnList("PCA", 5)
-        self.pcaChoiceZ = wx.Choice(self.Panel, choices=choiseList, id=identityCodes.PLOT_PCA_CHOICE_Z)
+        choice_list = self.GetColumnList("PCA", lastCol=10)
+        self.pcaChoiceZ = wx.Choice(self.Panel, choices=choice_list, id=identityCodes.PLOT_PCA_CHOICE_Z)
         hbox4.Add(self.pcaChoiceZ, flag=wx.LEFT | wx.RIGHT, border=8)
 
         self.vBox.Add(hbox4, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
@@ -146,9 +160,11 @@ class PlotGraphFrame(wx.Frame):
         st1 = wx.StaticText(self.Panel, label=text)
         hbox5.Add(st1, flag=wx.LEFT, border=8)
 
-        choiseList = self.GetColumnList("Column", 5)
-        self.ChoicePheno = wx.Choice(self.Panel, choices=choiseList)
-        hbox5.Add(self.ChoicePheno, flag=wx.LEFT | wx.RIGHT, border=8)
+        choice_list = self.GetColumnList("Column", firstCol=2, lastCol=4)
+        self.column_choice = wx.Choice(self.Panel, choices=choice_list)
+        hbox5.Add(self.column_choice, flag=wx.LEFT | wx.RIGHT, border=8)
+
+        self.column_choice.Bind(wx.EVT_CHOICE, self.OnSelectColumn)
 
         self.vBox.Add(hbox5, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
 
@@ -204,6 +220,9 @@ class PlotGraphFrame(wx.Frame):
     def OnChangeZ(self, event):
         self.pcaZ = self.pcaChoiceZ.GetCurrentSelection()
 
+    def OnSelectColumn(self, event):
+        self.phenotype_column = self.column_choice.GetCurrentSelection()
+
     def OnPlotClick(self, event):
         if self.dataFile is None or self.phenotypeFile is None:
             print("Need data")
@@ -215,9 +234,9 @@ class PlotGraphFrame(wx.Frame):
         self.plotGraph = True
         self.Close()
 
-    def GetColumnList(self, text, numCols):
+    def GetColumnList(self, text, firstCol=0, lastCol=4):
         cols = []
-        for i in range(0, numCols):
-            cols.append(text + " " + str(i+1))
+        for i in range(firstCol, lastCol):
+            cols.append(text + " " + str(i))
 
         return cols

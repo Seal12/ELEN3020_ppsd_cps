@@ -5,7 +5,7 @@ pcaGraph.py: This file is responsible for generating and customising a PCA plot
 """
 
 __author__ = "Phatho Pukwana"
-__credits__ = ["Phatho Pukwana"]
+__credits__ = ["Phatho Pukwana, Seale Rapolai"]
 __email__ = "1388857@students.wits.ac.za"
 __status__ = "Development"
 
@@ -50,7 +50,7 @@ class PCAGraph(wx.Panel):
 
     # <editor-fold desc="Importing data methods">
 
-    def import_data(self, evec_file_path, pheno_file_path, column=2):
+    def import_data(self, evec_file_path, pheno_file_path, column=0):
         """
         Imports the data files required for PCA plot
 
@@ -79,6 +79,13 @@ class PCAGraph(wx.Panel):
 
         Each groups data is plotted as an individual scatter plot onto the same subplot
         """
+        max_pc = len(self.importer.subject_list[0].values)
+
+        if pc_x > max_pc:
+            pc_x = max_pc
+
+        if pc_y > max_pc:
+            pc_y = max_pc
 
         self.pc_x = pc_x
         self.pc_y = pc_y
