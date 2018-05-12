@@ -173,7 +173,7 @@ class ImportAdmixData:
                     for j in range(key, len(subject.values)):
                         value += subject.values[j]
                     # Store the heights in a dictionary of lists
-                    group.ancestries[key].append(value)
+                    group.data_dict[key].append(value)
 
         return self.group_list
 
