@@ -1,8 +1,19 @@
+#!/usr/bin/env python
+
+"""
+pcaGraph.py: This file is responsible for generating and customising a PCA plot
+"""
+
+__author__ = "Phatho Pukwana"
+__credits__ = ["Phatho Pukwana"]
+__email__ = "1388857@students.wits.ac.za"
+__status__ = "Development"
+
+import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
-import numpy as np
 import wx
 
 from controllers import importData
@@ -30,17 +41,38 @@ class PCAGraph(wx.Panel):
         rcParams['font.family'] = 'sans-serif'
         rcParams['font.sans-serif'] = ['Tahoma']
 
-    def import_data(self, evec_file_path, pheno_file_path, column):
+    # <editor-fold desc="Importing data methods">
+
+    def import_data(self, evec_file_path, pheno_file_path, column=2):
+        """
+        Imports the data files required for PCA plot
+
+        :Note: none of the data files are optional and both evec and pheno files are required to generate a plot
+
+        Keyword arguments:
+            evec_file_path -- the file path of the evec file
+            pheno_file_path -- the file path of the phenotype file
+            column -- column where the relevant phenotype data is
+        """
+
         self.importer.import_pca_evec(file_path=evec_file_path)
         self.groups = self.importer.import_pca_pheno(file_path=pheno_file_path, column=column)
 
-    def import_pca_file(self, file_path):
-        self.importer.import_pca_evec(file_path)
+    # </editor-fold>
 
-    def import_pheno_file(self, file_path, column):
-        self.groups = self.importer.import_pca_pheno(file_path, column)
+    # <editor-fold desc="Plotting">
 
-    def plot_pca(self, pc_x, pc_y):
+    def plot_pca(self, pc_x=0, pc_y=1):
+        """
+        Generates a scatter plot of PCA data
+
+        Keyword arguments:
+            pc_x -- the principle component to be plotted on the x axis(default 0)
+            pc_y -- the principle component to be plotted on the y axis(default 1)
+
+        Each groups data is plotted as an individual scatter plot onto the same subplot
+        """
+
         self.pc_x = pc_x
         self.pc_y = pc_y
 
@@ -50,10 +82,24 @@ class PCAGraph(wx.Panel):
         # Plot each group individually
         for group in self.groups:
             if group.visible:
-                self.ax.scatter(group.pca_dict[pc_x], group.pca_dict[pc_y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
+                self.ax.scatter(group.data_dict[pc_x], group.data_dict[pc_y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
 
         # Create legend
         self.ax.legend(loc='best', frameon=False, prop={'size': 7})
+
+        self.set_up_grid(grid_division=10)
+
+        self.ax.set_title("PC{} vs. PC{}".format(pc_x, pc_y))
+
+        return self.figure
+
+    def set_up_grid(self, grid_division):
+        """
+        Creates a grid for the scatter plot
+
+        Keyword arguments:
+            grid_division: -- How many times the grid should be subdivided
+        """
 
         # Get the min and max values of the plot
         v = plt.axis()
@@ -69,8 +115,8 @@ class PCAGraph(wx.Panel):
         y_major_ticks = np.arange(y_min, y_max, major_y_step)
 
         # Calculate minor ticks
-        minor_x_step = (x_max - x_min)/10
-        minor_y_step = (y_max - y_min)/10
+        minor_x_step = (x_max - x_min)/grid_division
+        minor_y_step = (y_max - y_min)/grid_division
         x_minor_ticks = np.arange(x_min, x_max, minor_x_step)
         y_minor_ticks = np.arange(y_min, y_max, minor_y_step)
 
@@ -88,11 +134,21 @@ class PCAGraph(wx.Panel):
         self.ax.grid(which='major', alpha=0.5, zorder=0)
         self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
 
-        self.ax.set_title("PC{} vs. PC{}".format(pc_x, pc_y))
+    # </editor-fold>
 
-        return self.figure
-
+    # <editor-fold desc="Searching Functionality">
     def find_subject(self, subject_id):
+        """
+        Finds a subject based of subjects identification number
+
+        :returns:
+            subject
+
+            if subject is not found returns a string message
+
+        Keyword arguments:
+            subject_id -- subjects identification number (String)
+        """
         for group in self.groups:
             for subject in group.subjects:
                 if subject.id_num == subject_id:
@@ -101,12 +157,26 @@ class PCAGraph(wx.Panel):
         return 'No subject with id {}'.format(subject_id)
 
     def find_group(self, group_name):
+        """
+        Finds a group based of groups name
+
+        Keyword arguments:
+            group_name: -- subjects identification number (String)
+
+        :returns:
+            group
+
+            if group is not found returns a string message
+        """
         for group in self.groups:
             if group.name == group_name:
                 return group
 
         return 'No group by the name {}'.format(group_name)
 
+    # </editor-fold>
+
+    # <editor-fold desc="Customization Functionality">
     def set_all_markers(self, marker, size):
         for group in self.groups:
             group.marker = marker
@@ -119,12 +189,10 @@ class PCAGraph(wx.Panel):
     def set_group_marker(self,group_name, marker):
         group = self.find_group(group_name)
         group.marker = marker
-        # return self.plot_pca(self.pcaX, self.pcaY)
 
     def set_group_colour(self,group_name, colour):
         group = self.find_group(group_name)
         group.colour = colour
-        # return self.plot_pca(self.pcaX, self.pcaY)
 
     def set_group_visibility(self, group_name, visible):
         group = self.find_group(group_name)
@@ -132,3 +200,5 @@ class PCAGraph(wx.Panel):
 
     def set_graph_title(self, title):
         self.ax.set_title(title)
+
+    # </editor-fold>
