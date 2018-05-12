@@ -18,7 +18,6 @@ class PCAGroup(PopulationGroup):
         self.marker = None
         self.marker_size= None
         self.colour = None
-        self.pca_dict = defaultdict(list)
         super(PCAGroup, self).__init__(name)
 
     def add_subject(self, subject):
@@ -27,4 +26,4 @@ class PCAGroup(PopulationGroup):
 
     def add_to_pca_dictionary(self, subject):
         for i in range(0, len(subject.values)):
-            self.pca_dict[i].append(subject.values[i])
+            self.data_dict[i].append(subject.values[i])

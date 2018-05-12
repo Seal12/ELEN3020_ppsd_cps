@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""populationGroup.py: population group model storing the groups subjects"""
+"""populationGroup.py: population group model storing the groups subjects and the collective data of all subjects in the group in a dictionary"""
 
 __author__ = "Phatho Pukwana"
 __credits__ = ["Phatho Pukwana"]
@@ -17,7 +17,7 @@ class PopulationGroup:
         self.visible = True
         self.subjects = []
         # Create empty dictionary of lists
-        self.ancestries = defaultdict(list)
+        self.data_dict = defaultdict(list)
 
     def add_subject(self, subject):
         self.subjects.append(subject)

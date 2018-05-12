@@ -62,7 +62,7 @@ class PCAGraph(wx.Panel):
         # Plot each group individually
         for group in self.groups:
             if group.visible:
-                self.ax.scatter(group.pca_dict[pc_x], group.pca_dict[pc_y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
+                self.ax.scatter(group.data_dict[pc_x], group.data_dict[pc_y], label=group.name, marker=group.marker, c=group.colour, s=group.marker_size, zorder=3)
 
         # Create legend
         self.ax.legend(loc='best', frameon=False, prop={'size': 7})
