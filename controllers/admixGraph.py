@@ -113,13 +113,3 @@ class AdmixGraph:
         self.ax.set_xticklabels(self.labelsList)
 
     # </editor-fold>
-
-
-graph = AdmixGraph()
-fam_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.fam'
-Q_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.Q.4'
-phen_fp = 'C:\\Users\\Phatho\\Desktop\\ELEN3020_ppsd_cps\\exampleData\\Admix\\small.phe'
-graph.import_data(fam_file_path=fam_fp,Q_file_path=Q_fp,pheno_file_path=phen_fp, column=3)
-
-graph.plot_admix()
-plt.show()
