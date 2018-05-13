@@ -155,13 +155,13 @@ class PCAGraph(wx.Panel):
         """
         Finds a subject based of subjects identification number
 
+        Keyword arguments:
+            subject_id -- subjects identification number (String)
+
         :returns:
             subject
 
             if subject is not found returns a string message
-
-        Keyword arguments:
-            subject_id -- subjects identification number (String)
         """
         for group in self.groups:
             for subject in group.subjects:

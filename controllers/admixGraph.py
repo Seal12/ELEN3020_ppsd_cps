@@ -24,14 +24,13 @@ class AdmixGraph(wx.Panel):
     def __init__(self, parent):
         wx.Panel.__init__(self, parent)
 
-        self.subjects = []
         self.groups = []
         # This is the data that will be plotted
         self.ancestries = defaultdict(list)
         # List of labels
         self.labelsList = []
         # List of locations the labels appear
-        self.xtickPos = []
+        self.x_tickPos = []
         self.importer = importData.ImportAdmixData()
         # Create Figure and Axes instances
         self.fig = plt.figure()
@@ -65,7 +64,7 @@ class AdmixGraph(wx.Panel):
         """
 
         self.importer.import_admix_fam(fam_file_path)
-        self.subjects = self.importer.import_admix_Q(Q_file_path)
+        self.importer.import_admix_Q(Q_file_path)
         self.groups = self.importer.import_admix_pheno(pheno_file_path, column)
 
     # </editor-fold>
@@ -112,17 +111,17 @@ class AdmixGraph(wx.Panel):
         x_shift = 0  # Variable to shift where the x tick appears
         for index in range(0, len(self.groups)):
             x_shift += place_to_start[index]
-            self.xtickPos.append(x_shift-place_to_start[index]/2)
+            self.x_tickPos.append(x_shift - place_to_start[index] / 2)
 
         # Specify where each column appears
-        ind = np.arange(0, len(self.subjects))
+        ind = np.arange(0, len(self.importer.subject_list))
 
         # Plot the data
         for key in self.ancestries:
             self.ax.bar(ind, self.ancestries[key], width=1.0)
 
         # Set the ticks
-        self.ax.set_xticks(self.xtickPos)
+        self.ax.set_xticks(self.x_tickPos)
         self.ax.set_xticklabels(self.labelsList)
 
     # </editor-fold>
