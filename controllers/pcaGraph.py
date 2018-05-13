@@ -228,6 +228,9 @@ class PCAGraph(wx.Panel):
     def set_graph_title(self, title):
         self.ax.set_title(title)
 
+    def refresh_graph(self):
+        self.figure.canvas.draw()
+
     def change_labling(self, title=None, ylabel=None, xlabel=None):
         self.ax.set_title(title)
 

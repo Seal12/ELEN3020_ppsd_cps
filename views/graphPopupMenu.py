@@ -16,7 +16,13 @@ class GraphPopupMenu(wx.Menu):
         self.Append(mmi)
         self.Bind(wx.EVT_MENU, self.OnEditTitle, mmi)
 
+        cmi = wx.MenuItem(self, wx.NewId(), 'Refresh')
+        self.Append(cmi)
+        self.Bind(wx.EVT_MENU, self.OnEditTitle, mmi)
+
 
     def OnEditTitle(self, event):
         self.editGraphLabels = editGraphLabels.EditGraphLabelingFrame(self.parent)
 
+    def OnRefesh(self):
+        self.parent.refresh_graph()
