@@ -108,7 +108,16 @@ class PCAGraph(wx.Panel):
         else:
             self.ax.set_title(title)
 
+        self.cid = self.figure.canvas.mpl_connect('button_press_event', self.OnPlotClick)
+
         return self.figure
+
+    def OnPlotClick(self, event):
+        if event.button == 3:
+            x, y = self.GetSize()
+            x = event.x
+            y = y - event.y - 30
+            self.PopupMenu(MyPopupMenu(self), (x, y))
 
     def set_up_grid(self, grid_division):
         """
@@ -218,4 +227,28 @@ class PCAGraph(wx.Panel):
     def set_graph_title(self, title):
         self.ax.set_title(title)
 
+    def change_labling(self, tile, ylabel, xlabel):
+        self.ax.set_title(tile)
+
+        self.figure.canvas.draw()
     # </editor-fold>
+
+
+class MyPopupMenu(wx.Menu):
+
+    def __init__(self, parent):
+        super(MyPopupMenu, self).__init__()
+
+        self.parent = parent
+
+        mmi = wx.MenuItem(self, wx.NewId(), 'Edit Title')
+        self.Append(mmi)
+        self.Bind(wx.EVT_MENU, self.OnMinimize, mmi)
+
+        cmi = wx.MenuItem(self, wx.NewId(), 'Close')
+        self.Append(cmi)
+        self.Bind(wx.EVT_MENU, self.OnClose, cmi)
+
+    def OnClose(self, e):
+        self.parent.Close()
+
