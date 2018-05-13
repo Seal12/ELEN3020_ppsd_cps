@@ -69,7 +69,7 @@ class PCAGraph(wx.Panel):
 
     # <editor-fold desc="Plotting">
 
-    def plot_pca(self, pc_x=0, pc_y=1):
+    def plot_pca(self, pc_x=0, pc_y=1, title=None):
         """
         Generates a scatter plot of PCA data
 
@@ -103,7 +103,10 @@ class PCAGraph(wx.Panel):
 
         self.set_up_grid(grid_division=10)
 
-        self.ax.set_title("PC{} vs. PC{}".format(pc_x, pc_y))
+        if title is None:
+            self.ax.set_title("PC{} vs. PC{}".format(pc_x, pc_y))
+        else:
+            self.ax.set_title(title)
 
         return self.figure
 

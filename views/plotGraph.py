@@ -23,6 +23,8 @@ class PlotGraphFrame(wx.Frame):
     phenotypeFile = None
     phenotype_column = None
 
+    graphTitle = None
+
     pcaX = None
     pcaY = None
     pcaZ = None
@@ -30,7 +32,7 @@ class PlotGraphFrame(wx.Frame):
     plotGraph = False
 
     def __init__(self, parent, type):
-        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(500, 300))
+        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(600, 400))
         self.Panel = wx.Panel(self)
         self.plotType = type
         self.vBox = wx.BoxSizer(wx.VERTICAL)
@@ -74,6 +76,15 @@ class PlotGraphFrame(wx.Frame):
         browseFile3 = wx.Button(self.Panel, id=identityCodes.PLOT_BROWSE_PHENO, label='...', size=(30, 25))
         hbox3.Add(browseFile3, flag=wx.LEFT, border=8)
         self.vBox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
+        self.vBox.Add((-1, 20))
+
+        # Graph Title
+        hbox2 = wx.BoxSizer(wx.HORIZONTAL)
+        st1 = wx.StaticText(self.Panel, label='Graph Title: ', size=(70, 25))
+        hbox2.Add(st1, flag=wx.RIGHT, border=8)
+        self.GraphTitle = wx.TextCtrl(self.Panel)
+        hbox2.Add(self.GraphTitle, proportion=1)
+        self.vBox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
         self.vBox.Add((-1, 10))
 
         # Choose admix_pheno data column
@@ -118,8 +129,16 @@ class PlotGraphFrame(wx.Frame):
         browseFile3 = wx.Button(self.Panel, id=identityCodes.PLOT_BROWSE_PHENO, label='...', size=(30, 25))
         hbox2.Add(browseFile3, flag=wx.LEFT, border=8)
         self.vBox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
-        self.vBox.Add((-1, 10))
+        self.vBox.Add((-1, 20))
 
+        # Graph Title
+        hbox2 = wx.BoxSizer(wx.HORIZONTAL)
+        st1 = wx.StaticText(self.Panel, label='Graph Title: ', size=(70, 25))
+        hbox2.Add(st1, flag=wx.RIGHT, border=8)
+        self.GraphTitle = wx.TextCtrl(self.Panel)
+        hbox2.Add(self.GraphTitle, proportion=1)
+        self.vBox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
+        self.vBox.Add((-1, 10))
 
         # PCA choices
         hbox3 = wx.BoxSizer(wx.HORIZONTAL)
@@ -141,13 +160,6 @@ class PlotGraphFrame(wx.Frame):
         choice_list = self.GetColumnList("PCA", lastCol=10)
         self.pcaChoiceY = wx.Choice(self.Panel, choices=choice_list, id=identityCodes.PLOT_PCA_CHOICE_Y)
         hbox4.Add(self.pcaChoiceY, flag=wx.LEFT | wx.RIGHT, border=8)
-
-        zLabel = wx.StaticText(self.Panel, label='Z: ', size=(30, 25))
-        hbox4.Add(zLabel, flag=wx.LEFT, border=4)
-
-        choice_list = self.GetColumnList("PCA", lastCol=10)
-        self.pcaChoiceZ = wx.Choice(self.Panel, choices=choice_list, id=identityCodes.PLOT_PCA_CHOICE_Z)
-        hbox4.Add(self.pcaChoiceZ, flag=wx.LEFT | wx.RIGHT, border=8)
 
         self.vBox.Add(hbox4, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
 
@@ -195,7 +207,6 @@ class PlotGraphFrame(wx.Frame):
         if self.dataFile:
             self.dataTC.write(self.dataFile)
 
-
     def OnBrowsePCAData(self, event):
         self.dataFile = browseFiles.get_file_dir(self, "Data File", ".pca.*")
         if self.dataFile:
@@ -216,9 +227,6 @@ class PlotGraphFrame(wx.Frame):
 
     def OnChangeY(self, event):
         self.pcaY = self.pcaChoiceY.GetCurrentSelection()
-
-    def OnChangeZ(self, event):
-        self.pcaZ = self.pcaChoiceZ.GetCurrentSelection()
 
     def OnSelectColumn(self, event):
         self.phenotype_column = self.column_choice.GetCurrentSelection()
@@ -241,6 +249,9 @@ class PlotGraphFrame(wx.Frame):
             wx.MessageBox("Please choose a Phenotype column.",
                           "Missing data", wx.OK | wx.ICON_INFORMATION, self)
             return
+
+        if self.GraphTitle.GetValue() is not None:
+            self.graphTitle = self.GraphTitle.GetValue()
 
         self.plotGraph = True
         self.Close()
