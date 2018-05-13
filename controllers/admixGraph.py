@@ -12,6 +12,7 @@ __status__ = "Development"
 import numpy as np
 import wx
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+from matplotlib.backends.backend_wxagg import NavigationToolbar2WxAgg as NavigationToolbar
 from collections import defaultdict
 
 import matplotlib.pyplot as plt
@@ -43,6 +44,10 @@ class AdmixGraph(wx.Panel):
         self.canvas = FigureCanvas(self, -1, self.fig)
         self.sizer = wx.BoxSizer(wx.VERTICAL)
         self.sizer.Add(self.canvas, 1, wx.LEFT | wx.RIGHT | wx.TOP | wx.GROW)
+
+        self.toolbar = NavigationToolbar(self.canvas)
+        self.toolbar.Realize()
+        self.sizer.Add(self.toolbar, 0, wx.LEFT | wx.EXPAND)
 
         self.SetSizer(self.sizer)
         self.Fit()
@@ -88,7 +93,7 @@ class AdmixGraph(wx.Panel):
                 for key in group.data_dict:
                     self.ancestries[key].extend(group.data_dict[key])
 
-    def plot_admix(self):
+    def plot_admix(self, title=None):
         """Creates the admixture plot
 
             This method plots a set of bar graphs per ancestry,
@@ -123,5 +128,7 @@ class AdmixGraph(wx.Panel):
         # Set the ticks
         self.ax.set_xticks(self.x_tickPos)
         self.ax.set_xticklabels(self.labelsList)
+
+        self.ax.set_title(title)
 
     # </editor-fold>
