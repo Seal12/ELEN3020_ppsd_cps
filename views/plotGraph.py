@@ -226,11 +226,22 @@ class PlotGraphFrame(wx.Frame):
     def OnPlotClick(self, event):
         if self.dataFile is None or self.phenotypeFile is None:
             print("Need data")
+            wx.MessageBox("Please choose a Data File and a Phenotype File.",
+                          "Missing data", wx.OK | wx.ICON_INFORMATION, self)
             return
         if self.plotType == "PCA":
             if self.pcaX is None or self.pcaY is None:
                 print("Must choose")
+                wx.MessageBox("Please choose PCAs to plot.",
+                              "Missing data", wx.OK | wx.ICON_INFORMATION, self)
                 return
+
+        if self.phenotype_column is None:
+            print("Need phenotype column")
+            wx.MessageBox("Please choose a Phenotype column.",
+                          "Missing data", wx.OK | wx.ICON_INFORMATION, self)
+            return
+
         self.plotGraph = True
         self.Close()
 
