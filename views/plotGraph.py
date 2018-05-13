@@ -55,6 +55,8 @@ class PlotGraphFrame(wx.Frame):
             self.Bind(wx.EVT_BUTTON, self.OnBrowsePCAData, id=identityCodes.PLOT_BROWSE_DATA)
             self.InitPCAUI()
 
+        self.SetFocus()
+
 
     def InitAdmixUI(self):
         # Fam file

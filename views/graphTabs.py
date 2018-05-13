@@ -29,13 +29,13 @@ class TabInterface(wx.Panel):
         pageTitle = "Page: {0}".format(str(self.pageCounter))
         self.Notebook3.AddPage(page, pageTitle)
 
-    def addGraphPage(self, panelGrph, type):
+    def addGraphPage(self, panelGraph, type):
         self.pageCounter += 1
         pageTitle = "Graph: {0}".format(str(self.pageCounter))
 
-        newGraphPanel = graph.Graph(self.pageCounter, type, panelGrph)
+        newGraphPanel = graph.Graph(self.pageCounter, type, panelGraph)
         self.GraphList.append(newGraphPanel)
-        self.Notebook3.AddPage(panelGrph, pageTitle)
+        self.Notebook3.AddPage(panelGraph, pageTitle)
 
     def removeGraph(self, graphId):
         index = 0

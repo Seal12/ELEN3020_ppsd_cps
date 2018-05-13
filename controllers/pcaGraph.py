@@ -19,6 +19,7 @@ import numpy as np
 import wx
 
 from controllers import importData
+from views import graphPopupMenu
 
 
 class PCAGraph(wx.Panel):
@@ -108,7 +109,16 @@ class PCAGraph(wx.Panel):
         else:
             self.ax.set_title(title)
 
+        self.cid = self.figure.canvas.mpl_connect('button_press_event', self.OnPlotClick)
+
         return self.figure
+
+    def OnPlotClick(self, event):
+        if event.button == 3:
+            x, y = self.GetSize()
+            x = event.x
+            y = y - event.y - 30
+            self.PopupMenu(graphPopupMenu.GraphPopupMenu(self), (x, y))
 
     def set_up_grid(self, grid_division):
         """
@@ -218,4 +228,9 @@ class PCAGraph(wx.Panel):
     def set_graph_title(self, title):
         self.ax.set_title(title)
 
+    def change_labling(self, title=None, ylabel=None, xlabel=None):
+        self.ax.set_title(title)
+
+        self.figure.canvas.draw()
     # </editor-fold>
+
