@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
 from controllers import importData
+from views import graphPopupMenu
 
 
 class AdmixGraph(wx.Panel):
@@ -131,5 +132,19 @@ class AdmixGraph(wx.Panel):
         self.ax.set_xticklabels(self.labelsList)
 
         self.ax.set_title(title)
+
+        self.cid = self.fig.canvas.mpl_connect('button_press_event', self.OnPlotClick)
+
+    def OnPlotClick(self, event):
+        if event.button == 3:
+            x, y = self.GetSize()
+            x = event.x
+            y = y - event.y - 30
+            self.PopupMenu(graphPopupMenu.GraphPopupMenu(self), (x, y))
+
+    def change_labling(self, title=None, ylabel=None, xlabel=None):
+        self.ax.set_title(title)
+
+        self.fig.canvas.draw()
 
     # </editor-fold>

@@ -102,7 +102,7 @@ class MyFrame(wx.Frame):
                                            Q_file_path=self.plotForm.dataFile,
                                            pheno_file_path=self.plotForm.phenotypeFile,
                                            column=self.plotForm.phenotype_column)
-                newCanvasPanel.plot_admix()
+                newCanvasPanel.plot_admix(self.plotForm.graphTitle)
 
                 self.tabInterface.addGraphPage(newCanvasPanel, "Admix")
 
