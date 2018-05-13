@@ -73,17 +73,17 @@ class MyFrame(wx.Frame):
 
     def OnPlotPCA(self, event):
         self.plotForm = PlotGraphFrame(self, "PCA")
-        self.plotForm.Bind(wx.EVT_CLOSE, self.OnPlotAdmixFormClose)
+        self.plotForm.Bind(wx.EVT_CLOSE, self.OnPlotFormClose)
         self.plotForm.Center()
         self.plotForm.Show()
 
     def OnPlotAdmix(self, event):
         self.plotForm = PlotGraphFrame(self, "Admix")
-        self.plotForm.Bind(wx.EVT_CLOSE, self.OnPlotAdmixFormClose)
+        self.plotForm.Bind(wx.EVT_CLOSE, self.OnPlotFormClose)
         self.plotForm.Center()
         self.plotForm.Show()
 
-    def OnPlotAdmixFormClose(self, event):
+    def OnPlotFormClose(self, event):
         event.Skip()
 
         if self.plotForm.plotGraph:
@@ -92,7 +92,7 @@ class MyFrame(wx.Frame):
                 newCanvasPanel.import_data(evec_file_path=self.plotForm.dataFile,
                                            pheno_file_path=self.plotForm.phenotypeFile,
                                            column=self.plotForm.phenotype_column)
-                newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY)
+                newCanvasPanel.plot_pca(self.plotForm.pcaX, self.plotForm.pcaY, self.plotForm.graphTitle)
 
                 self.tabInterface.addGraphPage(newCanvasPanel, "PCA")
 
