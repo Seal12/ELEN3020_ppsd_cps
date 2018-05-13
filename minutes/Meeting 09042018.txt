@@ -1,0 +1,33 @@
+PROGRAM: 		GENESIS
+MEETING PURPOSE: 	GENESIS SOURCE CODE ANALYSIS
+MEETING DATE: 		09_04_2018
+MEETING TIME: 		10:30
+MEETING LOCATION: 	SCIENCE STADIUM
+MEETING FACILITATOR:	SEALE
+ATTENDEES:		PHATHO, CEDRICK
+MINUTES ISSUED BY: 	CEDRICK
+
+NEXT STEPS:
+
+DISCUSSION:
+Genesis class/model breakdown and implementation
+
+Play with Scott's Genesis and note functionality
+
+Understanding the requirements
+	-Admix
+		- Data = subjects (admixture/structure)
+		- Group name and subject data
+		- Q file has the ratio of ancestory
+		  phen.type is what the person identifies
+		- ID and Name
+			- Need search function
+
+	-PCA
+		- subjectID
+			- Icon
+			- Reference group
+			- Colour
+		- Eigenvalues in .evec files contain principal
+		  component vectors
+		- 2D plot?, X and Y axes
