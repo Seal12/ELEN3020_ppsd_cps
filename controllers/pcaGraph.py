@@ -113,12 +113,14 @@ class PCAGraph(wx.Panel):
 
         return self.figure
 
+    # </editor-fold>
+
     def OnPlotClick(self, event):
         if event.button == 3:
             x, y = self.GetSize()
             x = event.x
             y = y - event.y - 30
-            self.PopupMenu(graphPopupMenu.GraphPopupMenu(self), (x, y))
+            self.PopupMenu(graphPopupMenu.GraphPopupMenu(self, "PCA"), (x, y))
 
     def set_up_grid(self, grid_division):
         """
@@ -160,8 +162,6 @@ class PCAGraph(wx.Panel):
         # Set the grid
         self.ax.grid(which='major', alpha=0.5, zorder=0)
         self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
-
-    # </editor-fold>
 
     # <editor-fold desc="Searching Functionality">
     def find_subject(self, subject_id):
@@ -227,6 +227,9 @@ class PCAGraph(wx.Panel):
 
     def set_graph_title(self, title):
         self.ax.set_title(title)
+
+    def get_groups(self):
+        return self.groups
 
     def refresh_graph(self):
         self.figure.canvas.draw()

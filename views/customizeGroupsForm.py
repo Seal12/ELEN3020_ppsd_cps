@@ -1,0 +1,60 @@
+import wx
+import wx.lib.scrolledpanel
+
+
+class CustomizeGroupsForm(wx.Frame):
+    title = "Customize PCA Groups: "
+    def __init__(self, parent, pcaGroupList):
+        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(600, 400))
+        self.Panel = wx.lib.scrolledpanel.ScrolledPanel(self)
+        self.Panel.SetupScrolling()
+        self.Panel.SetBackgroundColour("#FFFFFF")
+        self.Panel.SetScrollbar(20, 20, 50, 50)
+        self.vBox = wx.BoxSizer(wx.VERTICAL)
+
+        counter = 0
+        for group in pcaGroupList:
+            print(group.name)
+
+            # PCA choices
+            label = "Group " + str(counter) + ": " + group.name
+            hbox1 = wx.BoxSizer(wx.HORIZONTAL)
+            st1 = wx.StaticText(self.Panel, label=label)
+            hbox1.Add(st1)
+            self.vBox.Add(hbox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
+
+            hbox2 = wx.BoxSizer(wx.HORIZONTAL)
+            markerLabel = wx.StaticText(self.Panel, label='Marker: ', size=(60, 25))
+            hbox2.Add(markerLabel, flag=wx.LEFT, border=4)
+
+            choice_list = [ 'o', 'x', '*', '^']
+            self.markerChoice = wx.Choice(self.Panel, choices=choice_list, id=wx.ID_ANY)
+            hbox2.Add(self.markerChoice, flag=wx.LEFT | wx.RIGHT, border=8)
+
+            markerSizeLabel = wx.StaticText(self.Panel, label='Marker Size: ', size=(100, 25))
+            hbox2.Add(markerSizeLabel, flag=wx.LEFT, border=4)
+
+            self.markerSize = wx.SpinCtrl(self.Panel, id=wx.NewId())
+            hbox2.Add(self.markerSize, flag=wx.LEFT | wx.RIGHT, border=8)
+
+            self.vBox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
+            self.vBox.Add((-1, 30))
+            counter += 1
+
+
+        hbox6 = wx.BoxSizer(wx.HORIZONTAL)
+        btn2 = wx.Button(self.Panel, id=wx.ID_ANY, label='Cancel', size=(70, 30))
+
+        hbox6.Add(btn2, flag=wx.LEFT | wx.BOTTOM, border=5)
+
+        btn1 = wx.Button(self.Panel, id=wx.ID_ANY, label='Plot', size=(70, 30))
+        hbox6.Add(btn1)
+        self.vBox.Add(hbox6, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
+
+        self.Panel.SetSizer(self.vBox)
+
+        self.Center()
+        self.Show()
+
+
+
