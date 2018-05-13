@@ -19,6 +19,7 @@ import numpy as np
 import wx
 
 from controllers import importData
+from views import editGraphLabels
 
 
 class PCAGraph(wx.Panel):
@@ -227,14 +228,15 @@ class PCAGraph(wx.Panel):
     def set_graph_title(self, title):
         self.ax.set_title(title)
 
-    def change_labling(self, tile, ylabel, xlabel):
-        self.ax.set_title(tile)
+    def change_labling(self, title=None, ylabel=None, xlabel=None):
+        self.ax.set_title(title)
 
         self.figure.canvas.draw()
     # </editor-fold>
 
 
 class MyPopupMenu(wx.Menu):
+    edit = None
 
     def __init__(self, parent):
         super(MyPopupMenu, self).__init__()
@@ -243,12 +245,12 @@ class MyPopupMenu(wx.Menu):
 
         mmi = wx.MenuItem(self, wx.NewId(), 'Edit Title')
         self.Append(mmi)
-        self.Bind(wx.EVT_MENU, self.OnMinimize, mmi)
+        self.Bind(wx.EVT_MENU, self.OnEditTitle, mmi)
 
         cmi = wx.MenuItem(self, wx.NewId(), 'Close')
         self.Append(cmi)
-        self.Bind(wx.EVT_MENU, self.OnClose, cmi)
 
-    def OnClose(self, e):
-        self.parent.Close()
+
+    def OnEditTitle(self, event):
+        self.editGraphLabels = editGraphLabels.EditGraphLabelingFrame(self.parent)
 

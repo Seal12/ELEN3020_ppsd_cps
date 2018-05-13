@@ -13,9 +13,10 @@ import wx
 from helpers import identityCodes
 
 
-class PlotGraphFrame(wx.Frame):
-    def __init__(self, parent, type):
-        wx.Frame.__init__(self, parent, wx.ID_ANY, self.title, size=(300, 100))
+class EditGraphLabelingFrame(wx.Frame):
+    def __init__(self, parent):
+        wx.Frame.__init__(self, parent, wx.ID_ANY, "Edit Graph Labeling", size=(300, 150))
+        self.parent = parent
 
         self.Panel = wx.Panel(self)
         self.vBox = wx.BoxSizer(wx.VERTICAL)
@@ -40,4 +41,18 @@ class PlotGraphFrame(wx.Frame):
         self.vBox.Add(hbox2, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
 
         self.Panel.SetSizer(self.vBox)
+
+        self.Bind(wx.EVT_BUTTON, self.OnUpdateClick, btn1)
+        self.Bind(wx.EVT_BUTTON, self.OnCancelClick, btn2)
+
+        self.Center()
+        self.Show()
+
+    def OnCancelClick(self, event):
+        self.Close()
+
+    def OnUpdateClick(self, event):
+        newTitle = self.titleTC.GetValue()
+        self.parent.change_labling(newTitle)
+        self.Close()
 
