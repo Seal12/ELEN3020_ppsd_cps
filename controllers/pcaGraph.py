@@ -234,6 +234,8 @@ class PCAGraph(wx.Panel):
         return self.groups
 
     def refresh_graph(self):
+        plt.cla()
+        self.plot_pca(self.pc_x, self.pc_y)
         self.figure.canvas.draw()
 
     def change_labling(self, title=None, ylabel=None, xlabel=None):
