@@ -1,0 +1,2071 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module views.plotGraph</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="views.html"><font color="#ffffff">views</font></a>.plotGraph</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ccedrick%5Cpycharmprojects%5Celen3020_ppsd_cps%5Cviews%5Cplotgraph.py">c:\users\cedrick\pycharmprojects\elen3020_ppsd_cps\views\plotgraph.py</a></font></td></tr></table>
+    <p><tt>plotGraph.py:&nbsp;Description</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="views.browseFiles.html">views.browseFiles</a><br>
+</td><td width="25%" valign=top><a href="helpers.identityCodes.html">helpers.identityCodes</a><br>
+</td><td width="25%" valign=top><a href="wx.html">wx</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="wx._core.html#Frame">wx._core.Frame</a>(<a href="wx._core.html#TopLevelWindow">wx._core.TopLevelWindow</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="views.plotGraph.html#PlotGraphFrame">PlotGraphFrame</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PlotGraphFrame">class <strong>PlotGraphFrame</strong></a>(<a href="wx._core.html#Frame">wx._core.Frame</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="wx._core.html#Frame">Frame</a>()<br>
+<a href="wx._core.html#Frame">Frame</a>(parent,&nbsp;id=ID_ANY,&nbsp;title=EmptyString,&nbsp;pos=DefaultPosition,&nbsp;size=DefaultSize,&nbsp;style=DEFAULT_FRAME_STYLE,&nbsp;name=FrameNameStr)<br>
+&nbsp;<br>
+A&nbsp;frame&nbsp;is&nbsp;a&nbsp;window&nbsp;whose&nbsp;size&nbsp;and&nbsp;position&nbsp;can&nbsp;(usually)&nbsp;be&nbsp;changed<br>
+by&nbsp;the&nbsp;user.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="views.plotGraph.html#PlotGraphFrame">PlotGraphFrame</a></dd>
+<dd><a href="wx._core.html#Frame">wx._core.Frame</a></dd>
+<dd><a href="wx._core.html#TopLevelWindow">wx._core.TopLevelWindow</a></dd>
+<dd><a href="wx._core.html#NonOwnedWindow">wx._core.NonOwnedWindow</a></dd>
+<dd><a href="wx._core.html#Window">wx._core.Window</a></dd>
+<dd><a href="wx._core.html#WindowBase">wx._core.WindowBase</a></dd>
+<dd><a href="wx._core.html#EvtHandler">wx._core.EvtHandler</a></dd>
+<dd><a href="wx._core.html#Object">wx._core.Object</a></dd>
+<dd><a href="wx._core.html#Trackable">wx._core.Trackable</a></dd>
+<dd>sip.wrapper</dd>
+<dd>sip.simplewrapper</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="PlotGraphFrame-GetColumnList"><strong>GetColumnList</strong></a>(self, text, firstCol=0, lastCol=4)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-InitAdmixUI"><strong>InitAdmixUI</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-InitPCAUI"><strong>InitPCAUI</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnBrowseAdmixData"><strong>OnBrowseAdmixData</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnBrowseFam"><strong>OnBrowseFam</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnBrowsePCAData"><strong>OnBrowsePCAData</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnBrowsePheno"><strong>OnBrowsePheno</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnChangeX"><strong>OnChangeX</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnChangeY"><strong>OnChangeY</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnClose"><strong>OnClose</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnPlotClick"><strong>OnPlotClick</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnSelectColumn"><strong>OnSelectColumn</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-__init__"><strong>__init__</strong></a>(self, parent, type)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>dataFile</strong> = None</dl>
+
+<dl><dt><strong>famFile</strong> = None</dl>
+
+<dl><dt><strong>graphTitle</strong> = None</dl>
+
+<dl><dt><strong>pcaX</strong> = None</dl>
+
+<dl><dt><strong>pcaY</strong> = None</dl>
+
+<dl><dt><strong>pcaZ</strong> = None</dl>
+
+<dl><dt><strong>phenotypeFile</strong> = None</dl>
+
+<dl><dt><strong>phenotype_column</strong> = None</dl>
+
+<dl><dt><strong>plotGraph</strong> = False</dl>
+
+<dl><dt><strong>plotType</strong> = ''</dl>
+
+<dl><dt><strong>title</strong> = 'Input files: '</dl>
+
+<hr>
+Methods inherited from <a href="wx._core.html#Frame">wx._core.Frame</a>:<br>
+<dl><dt><a name="PlotGraphFrame-AcceptsFocus"><strong>AcceptsFocus</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AcceptsFocus">AcceptsFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-AcceptsFocusFromKeyboard"><strong>AcceptsFocusFromKeyboard</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AcceptsFocusFromKeyboard">AcceptsFocusFromKeyboard</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-AcceptsFocusRecursively"><strong>AcceptsFocusRecursively</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AcceptsFocusRecursively">AcceptsFocusRecursively</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-AddChild"><strong>AddChild</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AddChild">AddChild</a>(self,&nbsp;child:&nbsp;WindowBase)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Centre"><strong>Centre</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Centre">Centre</a>(direction=BOTH)<br>
+&nbsp;<br>
+Centres&nbsp;the&nbsp;frame&nbsp;on&nbsp;the&nbsp;display.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Create"><strong>Create</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Create">Create</a>(parent,&nbsp;id=ID_ANY,&nbsp;title=EmptyString,&nbsp;pos=DefaultPosition,&nbsp;size=DefaultSize,&nbsp;style=DEFAULT_FRAME_STYLE,&nbsp;name=FrameNameStr)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Used&nbsp;in&nbsp;two-step&nbsp;frame&nbsp;construction.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CreateStatusBar"><strong>CreateStatusBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CreateStatusBar">CreateStatusBar</a>(number=1,&nbsp;style=STB_DEFAULT_STYLE,&nbsp;id=0,&nbsp;name=StatusBarNameStr)&nbsp;-&gt;&nbsp;StatusBar<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;status&nbsp;bar&nbsp;at&nbsp;the&nbsp;bottom&nbsp;of&nbsp;the&nbsp;frame.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CreateToolBar"><strong>CreateToolBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CreateToolBar">CreateToolBar</a>(style=TB_DEFAULT_STYLE,&nbsp;id=ID_ANY,&nbsp;name=ToolBarNameStr)&nbsp;-&gt;&nbsp;ToolBar<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;toolbar&nbsp;at&nbsp;the&nbsp;top&nbsp;or&nbsp;left&nbsp;of&nbsp;the&nbsp;frame.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Destroy"><strong>Destroy</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Destroy">Destroy</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoEnable"><strong>DoEnable</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoEnable">DoEnable</a>(self,&nbsp;enable:&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoFreeze"><strong>DoFreeze</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoFreeze">DoFreeze</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoGetBestClientSize"><strong>DoGetBestClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoGetBestClientSize">DoGetBestClientSize</a>(self)&nbsp;-&gt;&nbsp;Size</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoGetBestSize"><strong>DoGetBestSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoGetBestSize">DoGetBestSize</a>(self)&nbsp;-&gt;&nbsp;Size</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoGetBorderSize"><strong>DoGetBorderSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoGetBorderSize">DoGetBorderSize</a>(self)&nbsp;-&gt;&nbsp;Size</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoGetClientSize"><strong>DoGetClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoGetClientSize">DoGetClientSize</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoGetPosition"><strong>DoGetPosition</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoGetPosition">DoGetPosition</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoGetSize"><strong>DoGetSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoGetSize">DoGetSize</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoMoveWindow"><strong>DoMoveWindow</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoMoveWindow">DoMoveWindow</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;width:&nbsp;int,&nbsp;height:&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoSetClientSize"><strong>DoSetClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoSetClientSize">DoSetClientSize</a>(self,&nbsp;width:&nbsp;int,&nbsp;height:&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoSetSize"><strong>DoSetSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoSetSize">DoSetSize</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;width:&nbsp;int,&nbsp;height:&nbsp;int,&nbsp;sizeFlags:&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoSetSizeHints"><strong>DoSetSizeHints</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoSetSizeHints">DoSetSizeHints</a>(self,&nbsp;minW:&nbsp;int,&nbsp;minH:&nbsp;int,&nbsp;maxW:&nbsp;int,&nbsp;maxH:&nbsp;int,&nbsp;incW:&nbsp;int,&nbsp;incH:&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoSetWindowVariant"><strong>DoSetWindowVariant</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoSetWindowVariant">DoSetWindowVariant</a>(self,&nbsp;variant:&nbsp;WindowVariant)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoThaw"><strong>DoThaw</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoThaw">DoThaw</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetClientAreaOrigin"><strong>GetClientAreaOrigin</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetClientAreaOrigin">GetClientAreaOrigin</a>()&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;origin&nbsp;of&nbsp;the&nbsp;frame&nbsp;client&nbsp;area&nbsp;(in&nbsp;client&nbsp;coordinates).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetDefaultBorder"><strong>GetDefaultBorder</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetDefaultBorder">GetDefaultBorder</a>(self)&nbsp;-&gt;&nbsp;Border</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetDefaultBorderForControl"><strong>GetDefaultBorderForControl</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetDefaultBorderForControl">GetDefaultBorderForControl</a>(self)&nbsp;-&gt;&nbsp;Border</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMainWindowOfCompositeControl"><strong>GetMainWindowOfCompositeControl</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMainWindowOfCompositeControl">GetMainWindowOfCompositeControl</a>(self)&nbsp;-&gt;&nbsp;Window</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMenuBar"><strong>GetMenuBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMenuBar">GetMenuBar</a>()&nbsp;-&gt;&nbsp;MenuBar<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;menubar&nbsp;currently&nbsp;associated&nbsp;with&nbsp;the&nbsp;frame<br>
+(if&nbsp;any).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetStatusBar"><strong>GetStatusBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetStatusBar">GetStatusBar</a>()&nbsp;-&gt;&nbsp;StatusBar<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;status&nbsp;bar&nbsp;currently&nbsp;associated&nbsp;with&nbsp;the<br>
+frame&nbsp;(if&nbsp;any).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetStatusBarPane"><strong>GetStatusBarPane</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetStatusBarPane">GetStatusBarPane</a>()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;status&nbsp;bar&nbsp;pane&nbsp;used&nbsp;to&nbsp;display&nbsp;menu&nbsp;and&nbsp;toolbar&nbsp;help.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetToolBar"><strong>GetToolBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetToolBar">GetToolBar</a>()&nbsp;-&gt;&nbsp;ToolBar<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;toolbar&nbsp;currently&nbsp;associated&nbsp;with&nbsp;the&nbsp;frame<br>
+(if&nbsp;any).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetValidator"><strong>GetValidator</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetValidator">GetValidator</a>(self)&nbsp;-&gt;&nbsp;Validator</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HasTransparentBackground"><strong>HasTransparentBackground</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HasTransparentBackground">HasTransparentBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-InformFirstDirection"><strong>InformFirstDirection</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-InformFirstDirection">InformFirstDirection</a>(self,&nbsp;direction:&nbsp;int,&nbsp;size:&nbsp;int,&nbsp;availableOtherDir:&nbsp;int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-InheritAttributes"><strong>InheritAttributes</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-InheritAttributes">InheritAttributes</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-InitDialog"><strong>InitDialog</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-InitDialog">InitDialog</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnCreateStatusBar"><strong>OnCreateStatusBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-OnCreateStatusBar">OnCreateStatusBar</a>(number,&nbsp;style,&nbsp;id,&nbsp;name)&nbsp;-&gt;&nbsp;StatusBar<br>
+&nbsp;<br>
+Virtual&nbsp;function&nbsp;called&nbsp;when&nbsp;a&nbsp;status&nbsp;bar&nbsp;is&nbsp;requested&nbsp;by<br>
+<a href="#PlotGraphFrame-CreateStatusBar">CreateStatusBar</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnCreateToolBar"><strong>OnCreateToolBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-OnCreateToolBar">OnCreateToolBar</a>(style,&nbsp;id,&nbsp;name)&nbsp;-&gt;&nbsp;ToolBar<br>
+&nbsp;<br>
+Virtual&nbsp;function&nbsp;called&nbsp;when&nbsp;a&nbsp;toolbar&nbsp;is&nbsp;requested&nbsp;by<br>
+<a href="#PlotGraphFrame-CreateToolBar">CreateToolBar</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-OnInternalIdle"><strong>OnInternalIdle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-OnInternalIdle">OnInternalIdle</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PopStatusText"><strong>PopStatusText</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PopStatusText">PopStatusText</a>(number=0)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ProcessCommand"><strong>ProcessCommand</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ProcessCommand">ProcessCommand</a>(id)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Simulate&nbsp;a&nbsp;menu&nbsp;command.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ProcessEvent"><strong>ProcessEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ProcessEvent">ProcessEvent</a>(self,&nbsp;event:&nbsp;Event)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PushStatusText"><strong>PushStatusText</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PushStatusText">PushStatusText</a>(text,&nbsp;number=0)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-RemoveChild"><strong>RemoveChild</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-RemoveChild">RemoveChild</a>(self,&nbsp;child:&nbsp;WindowBase)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SendDestroyEvent"><strong>SendDestroyEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetCanFocus"><strong>SetCanFocus</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetCanFocus">SetCanFocus</a>(self,&nbsp;canFocus:&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetMenuBar"><strong>SetMenuBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetMenuBar">SetMenuBar</a>(menuBar)<br>
+&nbsp;<br>
+Tells&nbsp;the&nbsp;frame&nbsp;to&nbsp;show&nbsp;the&nbsp;given&nbsp;menu&nbsp;bar.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetStatusBar"><strong>SetStatusBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetStatusBar">SetStatusBar</a>(statusBar)<br>
+&nbsp;<br>
+Associates&nbsp;a&nbsp;status&nbsp;bar&nbsp;with&nbsp;the&nbsp;frame.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetStatusBarPane"><strong>SetStatusBarPane</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetStatusBarPane">SetStatusBarPane</a>(n)<br>
+&nbsp;<br>
+Set&nbsp;the&nbsp;status&nbsp;bar&nbsp;pane&nbsp;used&nbsp;to&nbsp;display&nbsp;menu&nbsp;and&nbsp;toolbar&nbsp;help.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetStatusText"><strong>SetStatusText</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetStatusText">SetStatusText</a>(text,&nbsp;number=0)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;status&nbsp;bar&nbsp;text&nbsp;and&nbsp;redraws&nbsp;the&nbsp;status&nbsp;bar.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetStatusWidths"><strong>SetStatusWidths</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetStatusWidths">SetStatusWidths</a>(widths)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;widths&nbsp;of&nbsp;the&nbsp;fields&nbsp;in&nbsp;the&nbsp;status&nbsp;bar.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetToolBar"><strong>SetToolBar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetToolBar">SetToolBar</a>(toolBar)<br>
+&nbsp;<br>
+Associates&nbsp;a&nbsp;toolbar&nbsp;with&nbsp;the&nbsp;frame.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetValidator"><strong>SetValidator</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetValidator">SetValidator</a>(self,&nbsp;validator:&nbsp;Validator)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ShouldInheritColours"><strong>ShouldInheritColours</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ShouldInheritColours">ShouldInheritColours</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-TransferDataFromWindow"><strong>TransferDataFromWindow</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-TransferDataFromWindow">TransferDataFromWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-TransferDataToWindow"><strong>TransferDataToWindow</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-TransferDataToWindow">TransferDataToWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-TryAfter"><strong>TryAfter</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-TryAfter">TryAfter</a>(self,&nbsp;event:&nbsp;Event)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-TryBefore"><strong>TryBefore</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-TryBefore">TryBefore</a>(self,&nbsp;event:&nbsp;Event)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Validate"><strong>Validate</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Validate">Validate</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="wx._core.html#Frame">wx._core.Frame</a>:<br>
+<dl><dt><strong>MenuBar</strong></dt>
+<dd><tt>GetMenuBar()&nbsp;-&gt;&nbsp;MenuBar<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;menubar&nbsp;currently&nbsp;associated&nbsp;with&nbsp;the&nbsp;frame<br>
+(if&nbsp;any).</tt></dd>
+</dl>
+<dl><dt><strong>StatusBar</strong></dt>
+<dd><tt>GetStatusBar()&nbsp;-&gt;&nbsp;StatusBar<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;status&nbsp;bar&nbsp;currently&nbsp;associated&nbsp;with&nbsp;the<br>
+frame&nbsp;(if&nbsp;any).</tt></dd>
+</dl>
+<dl><dt><strong>StatusBarPane</strong></dt>
+<dd><tt>GetStatusBarPane()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;status&nbsp;bar&nbsp;pane&nbsp;used&nbsp;to&nbsp;display&nbsp;menu&nbsp;and&nbsp;toolbar&nbsp;help.</tt></dd>
+</dl>
+<dl><dt><strong>ToolBar</strong></dt>
+<dd><tt>GetToolBar()&nbsp;-&gt;&nbsp;ToolBar<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;toolbar&nbsp;currently&nbsp;associated&nbsp;with&nbsp;the&nbsp;frame<br>
+(if&nbsp;any).</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="wx._core.html#TopLevelWindow">wx._core.TopLevelWindow</a>:<br>
+<dl><dt><a name="PlotGraphFrame-CanSetTransparent"><strong>CanSetTransparent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CanSetTransparent">CanSetTransparent</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;platform&nbsp;supports&nbsp;making&nbsp;the&nbsp;window&nbsp;translucent.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CenterOnScreen"><strong>CenterOnScreen</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CenterOnScreen">CenterOnScreen</a>(direction=BOTH)<br>
+&nbsp;<br>
+A&nbsp;synonym&nbsp;for&nbsp;<a href="#PlotGraphFrame-CentreOnScreen">CentreOnScreen</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CentreOnScreen"><strong>CentreOnScreen</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CentreOnScreen">CentreOnScreen</a>(direction=BOTH)<br>
+&nbsp;<br>
+Centres&nbsp;the&nbsp;window&nbsp;on&nbsp;screen.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-EnableCloseButton"><strong>EnableCloseButton</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-EnableCloseButton">EnableCloseButton</a>(enable=True)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Enables&nbsp;or&nbsp;disables&nbsp;the&nbsp;Close&nbsp;button&nbsp;(most&nbsp;often&nbsp;in&nbsp;the&nbsp;right&nbsp;upper<br>
+corner&nbsp;of&nbsp;a&nbsp;dialog)&nbsp;and&nbsp;the&nbsp;Close&nbsp;entry&nbsp;of&nbsp;the&nbsp;system&nbsp;menu&nbsp;(most&nbsp;often<br>
+in&nbsp;the&nbsp;left&nbsp;upper&nbsp;corner&nbsp;of&nbsp;the&nbsp;dialog).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetDefaultItem"><strong>GetDefaultItem</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetDefaultItem">GetDefaultItem</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;button&nbsp;which&nbsp;is&nbsp;the&nbsp;default&nbsp;for&nbsp;this&nbsp;window,<br>
+or&nbsp;&nbsp;NULL.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetDefaultSize"><strong>GetDefaultSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetDefaultSize">GetDefaultSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;default&nbsp;size&nbsp;for&nbsp;a&nbsp;new&nbsp;top&nbsp;level&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetIcon"><strong>GetIcon</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetIcon">GetIcon</a>()&nbsp;-&gt;&nbsp;Icon<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;standard&nbsp;icon&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetIcons"><strong>GetIcons</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetIcons">GetIcons</a>()&nbsp;-&gt;&nbsp;IconBundle<br>
+&nbsp;<br>
+Returns&nbsp;all&nbsp;icons&nbsp;associated&nbsp;with&nbsp;the&nbsp;window,&nbsp;there&nbsp;will&nbsp;be&nbsp;none&nbsp;of<br>
+them&nbsp;if&nbsp;neither&nbsp;<a href="#PlotGraphFrame-SetIcon">SetIcon</a>()&nbsp;nor&nbsp;<a href="#PlotGraphFrame-SetIcons">SetIcons</a>()&nbsp;had&nbsp;been&nbsp;called&nbsp;before.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetTitle"><strong>GetTitle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetTitle">GetTitle</a>()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Gets&nbsp;a&nbsp;string&nbsp;containing&nbsp;the&nbsp;window&nbsp;title.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetTmpDefaultItem"><strong>GetTmpDefaultItem</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetTmpDefaultItem">GetTmpDefaultItem</a>()&nbsp;-&gt;&nbsp;Window</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Iconize"><strong>Iconize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Iconize">Iconize</a>(iconize=True)<br>
+&nbsp;<br>
+Iconizes&nbsp;or&nbsp;restores&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsActive"><strong>IsActive</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsActive">IsActive</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;is&nbsp;currently&nbsp;active,&nbsp;i.e.&nbsp;if&nbsp;the&nbsp;user&nbsp;is<br>
+currently&nbsp;working&nbsp;with&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsAlwaysMaximized"><strong>IsAlwaysMaximized</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsAlwaysMaximized">IsAlwaysMaximized</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;is&nbsp;expected&nbsp;to&nbsp;be&nbsp;always&nbsp;maximized,&nbsp;either<br>
+due&nbsp;to&nbsp;platform&nbsp;policy&nbsp;or&nbsp;due&nbsp;to&nbsp;local&nbsp;policy&nbsp;regarding&nbsp;particular<br>
+class.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsFullScreen"><strong>IsFullScreen</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsFullScreen">IsFullScreen</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;in&nbsp;fullscreen&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsIconized"><strong>IsIconized</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsIconized">IsIconized</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;iconized.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsMaximized"><strong>IsMaximized</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsMaximized">IsMaximized</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;maximized.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Layout"><strong>Layout</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Layout">Layout</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+See&nbsp;wxWindow::<a href="#PlotGraphFrame-SetAutoLayout">SetAutoLayout</a>():&nbsp;when&nbsp;auto&nbsp;layout&nbsp;is&nbsp;on,&nbsp;this&nbsp;function<br>
+gets&nbsp;called&nbsp;automatically&nbsp;when&nbsp;the&nbsp;window&nbsp;is&nbsp;resized.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MacGetMetalAppearance"><strong>MacGetMetalAppearance</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-MacGetMetalAppearance">MacGetMetalAppearance</a>()&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MacGetTopLevelWindowRef"><strong>MacGetTopLevelWindowRef</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-MacGetTopLevelWindowRef">MacGetTopLevelWindowRef</a>()&nbsp;-&gt;&nbsp;void</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MacGetUnifiedAppearance"><strong>MacGetUnifiedAppearance</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-MacGetUnifiedAppearance">MacGetUnifiedAppearance</a>()&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MacSetMetalAppearance"><strong>MacSetMetalAppearance</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-MacSetMetalAppearance">MacSetMetalAppearance</a>(on)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Maximize"><strong>Maximize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Maximize">Maximize</a>(maximize=True)<br>
+&nbsp;<br>
+Maximizes&nbsp;or&nbsp;restores&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-OSXIsModified"><strong>OSXIsModified</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-OSXIsModified">OSXIsModified</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;current&nbsp;modified&nbsp;state&nbsp;of&nbsp;the&nbsp;wxTopLevelWindow&nbsp;on&nbsp;OS&nbsp;X.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-OSXSetModified"><strong>OSXSetModified</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-OSXSetModified">OSXSetModified</a>(modified)<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;sets&nbsp;the&nbsp;wxTopLevelWindow's&nbsp;modified&nbsp;state&nbsp;on&nbsp;OS&nbsp;X,<br>
+which&nbsp;currently&nbsp;draws&nbsp;a&nbsp;black&nbsp;dot&nbsp;in&nbsp;the&nbsp;wxTopLevelWindow's&nbsp;close<br>
+button.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-RequestUserAttention"><strong>RequestUserAttention</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-RequestUserAttention">RequestUserAttention</a>(flags=USER_ATTENTION_INFO)<br>
+&nbsp;<br>
+Use&nbsp;a&nbsp;system-dependent&nbsp;way&nbsp;to&nbsp;attract&nbsp;users&nbsp;attention&nbsp;to&nbsp;the&nbsp;window<br>
+when&nbsp;it&nbsp;is&nbsp;in&nbsp;background.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Restore"><strong>Restore</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Restore">Restore</a>()<br>
+&nbsp;<br>
+Restore&nbsp;a&nbsp;previously&nbsp;iconized&nbsp;or&nbsp;maximized&nbsp;window&nbsp;to&nbsp;its&nbsp;normal&nbsp;state.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetDefaultItem"><strong>SetDefaultItem</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetDefaultItem">SetDefaultItem</a>(win)&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Changes&nbsp;the&nbsp;default&nbsp;item&nbsp;for&nbsp;the&nbsp;panel,&nbsp;usually&nbsp;win&nbsp;is&nbsp;a&nbsp;button.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetIcon"><strong>SetIcon</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetIcon">SetIcon</a>(icon)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;icon&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetIcons"><strong>SetIcons</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetIcons">SetIcons</a>(icons)<br>
+&nbsp;<br>
+Sets&nbsp;several&nbsp;icons&nbsp;of&nbsp;different&nbsp;sizes&nbsp;for&nbsp;this&nbsp;window:&nbsp;this&nbsp;allows&nbsp;to<br>
+use&nbsp;different&nbsp;icons&nbsp;for&nbsp;different&nbsp;situations&nbsp;(e.g.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetMaxSize"><strong>SetMaxSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetMaxSize">SetMaxSize</a>(size)<br>
+&nbsp;<br>
+A&nbsp;simpler&nbsp;interface&nbsp;for&nbsp;setting&nbsp;the&nbsp;size&nbsp;hints&nbsp;than&nbsp;<a href="#PlotGraphFrame-SetSizeHints">SetSizeHints</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetMinSize"><strong>SetMinSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetMinSize">SetMinSize</a>(size)<br>
+&nbsp;<br>
+A&nbsp;simpler&nbsp;interface&nbsp;for&nbsp;setting&nbsp;the&nbsp;size&nbsp;hints&nbsp;than&nbsp;<a href="#PlotGraphFrame-SetSizeHints">SetSizeHints</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetRepresentedFilename"><strong>SetRepresentedFilename</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetRepresentedFilename">SetRepresentedFilename</a>(filename)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;file&nbsp;name&nbsp;represented&nbsp;by&nbsp;this&nbsp;wxTopLevelWindow.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetSizeHints"><strong>SetSizeHints</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetSizeHints">SetSizeHints</a>(minW,&nbsp;minH,&nbsp;maxW=-1,&nbsp;maxH=-1,&nbsp;incW=-1,&nbsp;incH=-1)<br>
+<a href="#PlotGraphFrame-SetSizeHints">SetSizeHints</a>(minSize,&nbsp;maxSize=DefaultSize,&nbsp;incSize=DefaultSize)<br>
+&nbsp;<br>
+Allows&nbsp;specification&nbsp;of&nbsp;minimum&nbsp;and&nbsp;maximum&nbsp;window&nbsp;sizes,&nbsp;and&nbsp;window<br>
+size&nbsp;increments.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetTitle"><strong>SetTitle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetTitle">SetTitle</a>(title)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;window&nbsp;title.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetTmpDefaultItem"><strong>SetTmpDefaultItem</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetTmpDefaultItem">SetTmpDefaultItem</a>(win)&nbsp;-&gt;&nbsp;Window</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetTransparent"><strong>SetTransparent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetTransparent">SetTransparent</a>(alpha)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;platform&nbsp;supports&nbsp;it&nbsp;will&nbsp;set&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;translucent.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ShouldPreventAppExit"><strong>ShouldPreventAppExit</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ShouldPreventAppExit">ShouldPreventAppExit</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+This&nbsp;virtual&nbsp;function&nbsp;is&nbsp;not&nbsp;meant&nbsp;to&nbsp;be&nbsp;called&nbsp;directly&nbsp;but&nbsp;can&nbsp;be<br>
+overridden&nbsp;to&nbsp;return&nbsp;false&nbsp;(it&nbsp;returns&nbsp;true&nbsp;by&nbsp;default)&nbsp;to&nbsp;allow&nbsp;the<br>
+application&nbsp;to&nbsp;close&nbsp;even&nbsp;if&nbsp;this,&nbsp;presumably&nbsp;not&nbsp;very&nbsp;important,<br>
+window&nbsp;is&nbsp;still&nbsp;opened.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ShowFullScreen"><strong>ShowFullScreen</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ShowFullScreen">ShowFullScreen</a>(show,&nbsp;style=FULLSCREEN_ALL)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Depending&nbsp;on&nbsp;the&nbsp;value&nbsp;of&nbsp;show&nbsp;parameter&nbsp;the&nbsp;window&nbsp;is&nbsp;either&nbsp;shown<br>
+full&nbsp;screen&nbsp;or&nbsp;restored&nbsp;to&nbsp;its&nbsp;normal&nbsp;state.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ShowWithoutActivating"><strong>ShowWithoutActivating</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ShowWithoutActivating">ShowWithoutActivating</a>()<br>
+&nbsp;<br>
+Show&nbsp;the&nbsp;wxTopLevelWindow,&nbsp;but&nbsp;do&nbsp;not&nbsp;give&nbsp;it&nbsp;keyboard&nbsp;focus.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="wx._core.html#TopLevelWindow">wx._core.TopLevelWindow</a>:<br>
+<dl><dt><strong>DefaultItem</strong></dt>
+<dd><tt>GetDefaultItem()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;button&nbsp;which&nbsp;is&nbsp;the&nbsp;default&nbsp;for&nbsp;this&nbsp;window,<br>
+or&nbsp;&nbsp;NULL.</tt></dd>
+</dl>
+<dl><dt><strong>Icon</strong></dt>
+<dd><tt>GetIcon()&nbsp;-&gt;&nbsp;Icon<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;standard&nbsp;icon&nbsp;of&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>MacMetalAppearance</strong></dt>
+<dd><tt>MacGetMetalAppearance()&nbsp;-&gt;&nbsp;bool</tt></dd>
+</dl>
+<dl><dt><strong>OSXModified</strong></dt>
+<dd><tt>OSXIsModified()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;current&nbsp;modified&nbsp;state&nbsp;of&nbsp;the&nbsp;wxTopLevelWindow&nbsp;on&nbsp;OS&nbsp;X.</tt></dd>
+</dl>
+<dl><dt><strong>Title</strong></dt>
+<dd><tt>GetTitle()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Gets&nbsp;a&nbsp;string&nbsp;containing&nbsp;the&nbsp;window&nbsp;title.</tt></dd>
+</dl>
+<dl><dt><strong>TmpDefaultItem</strong></dt>
+<dd><tt>GetTmpDefaultItem()&nbsp;-&gt;&nbsp;Window</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="wx._core.html#NonOwnedWindow">wx._core.NonOwnedWindow</a>:<br>
+<dl><dt><a name="PlotGraphFrame-SetShape"><strong>SetShape</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetShape">SetShape</a>(region)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#PlotGraphFrame-SetShape">SetShape</a>(path)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;platform&nbsp;supports&nbsp;it,&nbsp;sets&nbsp;the&nbsp;shape&nbsp;of&nbsp;the&nbsp;window&nbsp;to&nbsp;that<br>
+depicted&nbsp;by&nbsp;region.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="wx._core.html#Window">wx._core.Window</a>:<br>
+<dl><dt><a name="PlotGraphFrame-AdjustForLayoutDirection"><strong>AdjustForLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AdjustForLayoutDirection">AdjustForLayoutDirection</a>(x,&nbsp;width,&nbsp;widthTotal)&nbsp;-&gt;&nbsp;Coord<br>
+&nbsp;<br>
+Mirror&nbsp;coordinates&nbsp;for&nbsp;RTL&nbsp;layout&nbsp;if&nbsp;this&nbsp;window&nbsp;uses&nbsp;it&nbsp;and&nbsp;if&nbsp;the<br>
+mirroring&nbsp;is&nbsp;not&nbsp;done&nbsp;automatically&nbsp;like&nbsp;Win32.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-AlwaysShowScrollbars"><strong>AlwaysShowScrollbars</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AlwaysShowScrollbars">AlwaysShowScrollbars</a>(hflag=True,&nbsp;vflag=True)<br>
+&nbsp;<br>
+Call&nbsp;this&nbsp;function&nbsp;to&nbsp;force&nbsp;one&nbsp;or&nbsp;both&nbsp;scrollbars&nbsp;to&nbsp;be&nbsp;always&nbsp;shown,<br>
+even&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;big&nbsp;enough&nbsp;to&nbsp;show&nbsp;its&nbsp;entire&nbsp;contents&nbsp;without<br>
+scrolling.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-AssociateHandle"><strong>AssociateHandle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AssociateHandle">AssociateHandle</a>(handle)<br>
+&nbsp;<br>
+Associate&nbsp;the&nbsp;window&nbsp;with&nbsp;a&nbsp;new&nbsp;native&nbsp;handle</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-BeginRepositioningChildren"><strong>BeginRepositioningChildren</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-BeginRepositioningChildren">BeginRepositioningChildren</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Prepare&nbsp;for&nbsp;changing&nbsp;positions&nbsp;of&nbsp;multiple&nbsp;child&nbsp;windows.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CacheBestSize"><strong>CacheBestSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CacheBestSize">CacheBestSize</a>(size)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;cached&nbsp;best&nbsp;size&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CanAcceptFocus"><strong>CanAcceptFocus</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CanAcceptFocus">CanAcceptFocus</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Can&nbsp;this&nbsp;window&nbsp;have&nbsp;focus&nbsp;right&nbsp;now?</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CanAcceptFocusFromKeyboard"><strong>CanAcceptFocusFromKeyboard</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CanAcceptFocusFromKeyboard">CanAcceptFocusFromKeyboard</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Can&nbsp;this&nbsp;window&nbsp;be&nbsp;assigned&nbsp;focus&nbsp;from&nbsp;keyboard&nbsp;right&nbsp;now?</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CanScroll"><strong>CanScroll</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CanScroll">CanScroll</a>(orient)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;can&nbsp;have&nbsp;a&nbsp;scroll&nbsp;bar&nbsp;in&nbsp;this&nbsp;orientation.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CaptureMouse"><strong>CaptureMouse</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CaptureMouse">CaptureMouse</a>()<br>
+&nbsp;<br>
+Directs&nbsp;all&nbsp;mouse&nbsp;input&nbsp;to&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Center"><strong>Center</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Center">Center</a>(dir=BOTH)<br>
+&nbsp;<br>
+A&nbsp;synonym&nbsp;for&nbsp;<a href="#PlotGraphFrame-Centre">Centre</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CenterOnParent"><strong>CenterOnParent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CenterOnParent">CenterOnParent</a>(dir=BOTH)<br>
+&nbsp;<br>
+A&nbsp;synonym&nbsp;for&nbsp;<a href="#PlotGraphFrame-CentreOnParent">CentreOnParent</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-CentreOnParent"><strong>CentreOnParent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-CentreOnParent">CentreOnParent</a>(direction=BOTH)<br>
+&nbsp;<br>
+Centres&nbsp;the&nbsp;window&nbsp;on&nbsp;its&nbsp;parent.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ClearBackground"><strong>ClearBackground</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ClearBackground">ClearBackground</a>()<br>
+&nbsp;<br>
+Clears&nbsp;the&nbsp;window&nbsp;by&nbsp;filling&nbsp;it&nbsp;with&nbsp;the&nbsp;current&nbsp;background&nbsp;colour.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ClientToScreen"><strong>ClientToScreen</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ClientToScreen">ClientToScreen</a>(x,&nbsp;y)&nbsp;-&gt;&nbsp;(x,&nbsp;y)<br>
+<a href="#PlotGraphFrame-ClientToScreen">ClientToScreen</a>(pt)&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+Converts&nbsp;to&nbsp;screen&nbsp;coordinates&nbsp;from&nbsp;coordinates&nbsp;relative&nbsp;to&nbsp;this<br>
+window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ClientToWindowSize"><strong>ClientToWindowSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ClientToWindowSize">ClientToWindowSize</a>(size)&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Converts&nbsp;client&nbsp;area&nbsp;size&nbsp;size&nbsp;to&nbsp;corresponding&nbsp;window&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Close"><strong>Close</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Close">Close</a>(force=False)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;simply&nbsp;generates&nbsp;a&nbsp;wxCloseEvent&nbsp;whose&nbsp;handler&nbsp;usually<br>
+tries&nbsp;to&nbsp;close&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ConvertDialogPointToPixels"><strong>ConvertDialogPointToPixels</strong></a> = _Window_ConvertDialogPointToPixels(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ConvertDialogSizeToPixels"><strong>ConvertDialogSizeToPixels</strong></a> = _Window_ConvertDialogSizeToPixels(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ConvertDialogToPixels"><strong>ConvertDialogToPixels</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ConvertDialogToPixels">ConvertDialogToPixels</a>(pt)&nbsp;-&gt;&nbsp;Point<br>
+<a href="#PlotGraphFrame-ConvertDialogToPixels">ConvertDialogToPixels</a>(sz)&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Converts&nbsp;a&nbsp;point&nbsp;or&nbsp;size&nbsp;from&nbsp;dialog&nbsp;units&nbsp;to&nbsp;pixels.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ConvertPixelsToDialog"><strong>ConvertPixelsToDialog</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ConvertPixelsToDialog">ConvertPixelsToDialog</a>(pt)&nbsp;-&gt;&nbsp;Point<br>
+<a href="#PlotGraphFrame-ConvertPixelsToDialog">ConvertPixelsToDialog</a>(sz)&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Converts&nbsp;a&nbsp;point&nbsp;or&nbsp;size&nbsp;from&nbsp;pixels&nbsp;to&nbsp;dialog&nbsp;units.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DLG_UNIT"><strong>DLG_UNIT</strong></a> = _Window_DLG_UNIT(self, dlg_unit)</dt><dd><tt>A&nbsp;convenience&nbsp;wrapper&nbsp;for&nbsp;:meth:`ConvertDialogToPixels`.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DestroyChildren"><strong>DestroyChildren</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DestroyChildren">DestroyChildren</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Destroys&nbsp;all&nbsp;children&nbsp;of&nbsp;a&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DestroyLater"><strong>DestroyLater</strong></a> = _Window_DestroyLater(self)</dt><dd><tt>Schedules&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;destroyed&nbsp;in&nbsp;the&nbsp;near&nbsp;future.<br>
+&nbsp;<br>
+This&nbsp;should&nbsp;be&nbsp;used&nbsp;whenever&nbsp;Destroy&nbsp;could&nbsp;happen&nbsp;too&nbsp;soon,&nbsp;such<br>
+as&nbsp;when&nbsp;there&nbsp;may&nbsp;still&nbsp;be&nbsp;events&nbsp;for&nbsp;this&nbsp;window&nbsp;or&nbsp;its&nbsp;children<br>
+waiting&nbsp;in&nbsp;the&nbsp;event&nbsp;queue.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Disable"><strong>Disable</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Disable">Disable</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Disables&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DissociateHandle"><strong>DissociateHandle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DissociateHandle">DissociateHandle</a>()<br>
+&nbsp;<br>
+Dissociate&nbsp;the&nbsp;current&nbsp;native&nbsp;handle&nbsp;from&nbsp;the&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DoUpdateWindowUI"><strong>DoUpdateWindowUI</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DoUpdateWindowUI">DoUpdateWindowUI</a>(event)<br>
+&nbsp;<br>
+Does&nbsp;the&nbsp;window-specific&nbsp;updating&nbsp;after&nbsp;processing&nbsp;the&nbsp;update&nbsp;event.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DragAcceptFiles"><strong>DragAcceptFiles</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DragAcceptFiles">DragAcceptFiles</a>(accept)<br>
+&nbsp;<br>
+Enables&nbsp;or&nbsp;disables&nbsp;eligibility&nbsp;for&nbsp;drop&nbsp;file&nbsp;events&nbsp;(OnDropFiles).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Enable"><strong>Enable</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Enable">Enable</a>(enable=True)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Enable&nbsp;or&nbsp;disable&nbsp;the&nbsp;window&nbsp;for&nbsp;user&nbsp;input.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-EndRepositioningChildren"><strong>EndRepositioningChildren</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-EndRepositioningChildren">EndRepositioningChildren</a>()<br>
+&nbsp;<br>
+Fix&nbsp;child&nbsp;window&nbsp;positions&nbsp;after&nbsp;setting&nbsp;all&nbsp;of&nbsp;them&nbsp;at&nbsp;once.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-FindFocus"><strong>FindFocus</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-FindFocus">FindFocus</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Finds&nbsp;the&nbsp;window&nbsp;or&nbsp;control&nbsp;which&nbsp;currently&nbsp;has&nbsp;the&nbsp;keyboard&nbsp;focus.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-FindWindow"><strong>FindWindow</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-FindWindow">FindWindow</a>(id)&nbsp;-&gt;&nbsp;Window<br>
+<a href="#PlotGraphFrame-FindWindow">FindWindow</a>(name)&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Find&nbsp;a&nbsp;child&nbsp;of&nbsp;this&nbsp;window,&nbsp;by&nbsp;id.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-FindWindowById"><strong>FindWindowById</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-FindWindowById">FindWindowById</a>(id,&nbsp;parent=None)&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Find&nbsp;the&nbsp;first&nbsp;window&nbsp;with&nbsp;the&nbsp;given&nbsp;id.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-FindWindowByLabel"><strong>FindWindowByLabel</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-FindWindowByLabel">FindWindowByLabel</a>(label,&nbsp;parent=None)&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Find&nbsp;a&nbsp;window&nbsp;by&nbsp;its&nbsp;label.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-FindWindowByName"><strong>FindWindowByName</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-FindWindowByName">FindWindowByName</a>(name,&nbsp;parent=None)&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Find&nbsp;a&nbsp;window&nbsp;by&nbsp;its&nbsp;name&nbsp;(as&nbsp;given&nbsp;in&nbsp;a&nbsp;window&nbsp;constructor&nbsp;or<br>
+<a href="#PlotGraphFrame-Create">Create</a>()&nbsp;function&nbsp;call).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Fit"><strong>Fit</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Fit">Fit</a>()<br>
+&nbsp;<br>
+Sizes&nbsp;the&nbsp;window&nbsp;so&nbsp;that&nbsp;it&nbsp;fits&nbsp;around&nbsp;its&nbsp;subwindows.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-FitInside"><strong>FitInside</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-FitInside">FitInside</a>()<br>
+&nbsp;<br>
+Similar&nbsp;to&nbsp;<a href="#PlotGraphFrame-Fit">Fit</a>(),&nbsp;but&nbsp;sizes&nbsp;the&nbsp;interior&nbsp;(virtual)&nbsp;size&nbsp;of&nbsp;a&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Freeze"><strong>Freeze</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Freeze">Freeze</a>()<br>
+&nbsp;<br>
+Freezes&nbsp;the&nbsp;window&nbsp;or,&nbsp;in&nbsp;other&nbsp;words,&nbsp;prevents&nbsp;any&nbsp;updates&nbsp;from<br>
+taking&nbsp;place&nbsp;on&nbsp;screen,&nbsp;the&nbsp;window&nbsp;is&nbsp;not&nbsp;redrawn&nbsp;at&nbsp;all.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetAcceleratorTable"><strong>GetAcceleratorTable</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetAcceleratorTable">GetAcceleratorTable</a>()&nbsp;-&gt;&nbsp;AcceleratorTable<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;accelerator&nbsp;table&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetAutoLayout"><strong>GetAutoLayout</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetAutoLayout">GetAutoLayout</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;sizer&nbsp;of&nbsp;which&nbsp;this&nbsp;window&nbsp;is&nbsp;a&nbsp;member,&nbsp;if&nbsp;any,&nbsp;otherwise<br>
+NULL.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetBackgroundColour"><strong>GetBackgroundColour</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetBackgroundColour">GetBackgroundColour</a>()&nbsp;-&gt;&nbsp;Colour<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;background&nbsp;colour&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetBackgroundStyle"><strong>GetBackgroundStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetBackgroundStyle">GetBackgroundStyle</a>()&nbsp;-&gt;&nbsp;BackgroundStyle<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;background&nbsp;style&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetBestHeight"><strong>GetBestHeight</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetBestHeight">GetBestHeight</a>(width)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;best&nbsp;height&nbsp;needed&nbsp;by&nbsp;this&nbsp;window&nbsp;if&nbsp;it&nbsp;had&nbsp;the&nbsp;given<br>
+width.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetBestSize"><strong>GetBestSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetBestSize">GetBestSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+This&nbsp;functions&nbsp;returns&nbsp;the&nbsp;best&nbsp;acceptable&nbsp;minimal&nbsp;size&nbsp;for&nbsp;the<br>
+window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetBestVirtualSize"><strong>GetBestVirtualSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetBestVirtualSize">GetBestVirtualSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;largest&nbsp;of&nbsp;ClientSize&nbsp;and&nbsp;BestSize&nbsp;(as&nbsp;determined&nbsp;by&nbsp;a<br>
+sizer,&nbsp;interior&nbsp;children,&nbsp;or&nbsp;other&nbsp;means)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetBestWidth"><strong>GetBestWidth</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetBestWidth">GetBestWidth</a>(height)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;best&nbsp;width&nbsp;needed&nbsp;by&nbsp;this&nbsp;window&nbsp;if&nbsp;it&nbsp;had&nbsp;the&nbsp;given<br>
+height.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetBorder"><strong>GetBorder</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetBorder">GetBorder</a>(flags)&nbsp;-&gt;&nbsp;Border<br>
+<a href="#PlotGraphFrame-GetBorder">GetBorder</a>()&nbsp;-&gt;&nbsp;Border<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;window&nbsp;border&nbsp;style&nbsp;from&nbsp;the&nbsp;given&nbsp;flags:&nbsp;this&nbsp;is&nbsp;different<br>
+from&nbsp;simply&nbsp;doing&nbsp;flags&nbsp;&amp;&nbsp;wxBORDER_MASK&nbsp;because&nbsp;it&nbsp;uses<br>
+<a href="#PlotGraphFrame-GetDefaultBorder">GetDefaultBorder</a>()&nbsp;to&nbsp;translate&nbsp;wxBORDER_DEFAULT&nbsp;to&nbsp;something<br>
+reasonable.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetCapture"><strong>GetCapture</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetCapture">GetCapture</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;currently&nbsp;captured&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetCaret"><strong>GetCaret</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetCaret">GetCaret</a>()&nbsp;-&gt;&nbsp;Caret<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;caret()&nbsp;associated&nbsp;with&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetCharHeight"><strong>GetCharHeight</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetCharHeight">GetCharHeight</a>()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;character&nbsp;height&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetCharWidth"><strong>GetCharWidth</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetCharWidth">GetCharWidth</a>()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;average&nbsp;character&nbsp;width&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetChildren"><strong>GetChildren</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetChildren">GetChildren</a>()&nbsp;-&gt;&nbsp;WindowList<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;list&nbsp;of&nbsp;the&nbsp;window's&nbsp;children.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetClassDefaultAttributes"><strong>GetClassDefaultAttributes</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetClassDefaultAttributes">GetClassDefaultAttributes</a>(variant=WINDOW_VARIANT_NORMAL)&nbsp;-&gt;&nbsp;VisualAttributes<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;default&nbsp;font&nbsp;and&nbsp;colours&nbsp;which&nbsp;are&nbsp;used&nbsp;by&nbsp;the&nbsp;control.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetClientRect"><strong>GetClientRect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetClientRect">GetClientRect</a>()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;client&nbsp;rectangle&nbsp;in&nbsp;window&nbsp;(i.e.&nbsp;client)&nbsp;coordinates.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetClientSize"><strong>GetClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetClientSize">GetClientSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;'client&nbsp;area'&nbsp;in&nbsp;pixels.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetConstraints"><strong>GetConstraints</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetConstraints">GetConstraints</a>()&nbsp;-&gt;&nbsp;LayoutConstraints<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;window's&nbsp;layout&nbsp;constraints,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;there<br>
+are&nbsp;none.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetContainingSizer"><strong>GetContainingSizer</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetContainingSizer">GetContainingSizer</a>()&nbsp;-&gt;&nbsp;Sizer<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;sizer&nbsp;of&nbsp;which&nbsp;this&nbsp;window&nbsp;is&nbsp;a&nbsp;member,&nbsp;if&nbsp;any,&nbsp;otherwise<br>
+NULL.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetContentScaleFactor"><strong>GetContentScaleFactor</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetContentScaleFactor">GetContentScaleFactor</a>()&nbsp;-&gt;&nbsp;double<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;magnification&nbsp;of&nbsp;the&nbsp;backing&nbsp;store&nbsp;of&nbsp;this&nbsp;window,&nbsp;eg&nbsp;2.0<br>
+for&nbsp;a&nbsp;window&nbsp;on&nbsp;a&nbsp;retina&nbsp;screen.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetCursor"><strong>GetCursor</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetCursor">GetCursor</a>()&nbsp;-&gt;&nbsp;Cursor<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;cursor&nbsp;associated&nbsp;with&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetDefaultAttributes"><strong>GetDefaultAttributes</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetDefaultAttributes">GetDefaultAttributes</a>()&nbsp;-&gt;&nbsp;VisualAttributes<br>
+&nbsp;<br>
+Currently&nbsp;this&nbsp;is&nbsp;the&nbsp;same&nbsp;as&nbsp;calling<br>
+wxWindow::<a href="#PlotGraphFrame-GetClassDefaultAttributes">GetClassDefaultAttributes</a>(wxWindow::<a href="#PlotGraphFrame-GetWindowVariant">GetWindowVariant</a>()).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetDropTarget"><strong>GetDropTarget</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetDropTarget">GetDropTarget</a>()&nbsp;-&gt;&nbsp;DropTarget<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;associated&nbsp;drop&nbsp;target,&nbsp;which&nbsp;may&nbsp;be&nbsp;NULL.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetEffectiveMinSize"><strong>GetEffectiveMinSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetEffectiveMinSize">GetEffectiveMinSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Merges&nbsp;the&nbsp;window's&nbsp;best&nbsp;size&nbsp;into&nbsp;the&nbsp;min&nbsp;size&nbsp;and&nbsp;returns&nbsp;the<br>
+result.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetEventHandler"><strong>GetEventHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetEventHandler">GetEventHandler</a>()&nbsp;-&gt;&nbsp;EvtHandler<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;event&nbsp;handler&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetExtraStyle"><strong>GetExtraStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetExtraStyle">GetExtraStyle</a>()&nbsp;-&gt;&nbsp;long<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;extra&nbsp;style&nbsp;bits&nbsp;for&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetFont"><strong>GetFont</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetFont">GetFont</a>()&nbsp;-&gt;&nbsp;Font<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;font&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetForegroundColour"><strong>GetForegroundColour</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetForegroundColour">GetForegroundColour</a>()&nbsp;-&gt;&nbsp;Colour<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;foreground&nbsp;colour&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetFullTextExtent"><strong>GetFullTextExtent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetFullTextExtent">GetFullTextExtent</a>(string,&nbsp;font=None)&nbsp;-&gt;&nbsp;(w,&nbsp;h,&nbsp;descent,&nbsp;externalLeading)<br>
+<a href="#PlotGraphFrame-GetTextExtent">GetTextExtent</a>(string)&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;dimensions&nbsp;of&nbsp;the&nbsp;string&nbsp;as&nbsp;it&nbsp;would&nbsp;be&nbsp;drawn&nbsp;on&nbsp;the&nbsp;window<br>
+with&nbsp;the&nbsp;currently&nbsp;selected&nbsp;font.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetGrandParent"><strong>GetGrandParent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetGrandParent">GetGrandParent</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;grandparent&nbsp;of&nbsp;a&nbsp;window,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;there&nbsp;isn't&nbsp;one.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetGtkWidget"><strong>GetGtkWidget</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetGtkWidget">GetGtkWidget</a>()&nbsp;-&gt;&nbsp;void</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetHandle"><strong>GetHandle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetHandle">GetHandle</a>()&nbsp;-&gt;&nbsp;UIntPtr<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;platform-specific&nbsp;handle&nbsp;of&nbsp;the&nbsp;physical&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetHelpText"><strong>GetHelpText</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetHelpText">GetHelpText</a>()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;help&nbsp;text&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;context-sensitive&nbsp;help&nbsp;for&nbsp;this<br>
+window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetHelpTextAtPoint"><strong>GetHelpTextAtPoint</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetHelpTextAtPoint">GetHelpTextAtPoint</a>(point,&nbsp;origin)&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;help&nbsp;text&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;context-sensitive&nbsp;help&nbsp;for&nbsp;this<br>
+window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetId"><strong>GetId</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetId">GetId</a>()&nbsp;-&gt;&nbsp;WindowID<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;identifier&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetLabel"><strong>GetLabel</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetLabel">GetLabel</a>()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Generic&nbsp;way&nbsp;of&nbsp;getting&nbsp;a&nbsp;label&nbsp;from&nbsp;any&nbsp;window,&nbsp;for&nbsp;identification<br>
+purposes.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetLayoutDirection"><strong>GetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetLayoutDirection">GetLayoutDirection</a>()&nbsp;-&gt;&nbsp;LayoutDirection<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;layout&nbsp;direction&nbsp;for&nbsp;this&nbsp;window,&nbsp;Note&nbsp;that<br>
+wxLayout_Default&nbsp;is&nbsp;returned&nbsp;if&nbsp;layout&nbsp;direction&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMaxClientSize"><strong>GetMaxClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMaxClientSize">GetMaxClientSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;maximum&nbsp;size&nbsp;of&nbsp;window's&nbsp;client&nbsp;area.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMaxHeight"><strong>GetMaxHeight</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMaxHeight">GetMaxHeight</a>()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;vertical&nbsp;component&nbsp;of&nbsp;window&nbsp;maximal&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMaxSize"><strong>GetMaxSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMaxSize">GetMaxSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;maximum&nbsp;size&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMaxWidth"><strong>GetMaxWidth</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMaxWidth">GetMaxWidth</a>()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;horizontal&nbsp;component&nbsp;of&nbsp;window&nbsp;maximal&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMinClientSize"><strong>GetMinClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMinClientSize">GetMinClientSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;minimum&nbsp;size&nbsp;of&nbsp;window's&nbsp;client&nbsp;area,&nbsp;an&nbsp;indication&nbsp;to&nbsp;the<br>
+sizer&nbsp;layout&nbsp;mechanism&nbsp;that&nbsp;this&nbsp;is&nbsp;the&nbsp;minimum&nbsp;required&nbsp;size&nbsp;of&nbsp;its<br>
+client&nbsp;area.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMinHeight"><strong>GetMinHeight</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMinHeight">GetMinHeight</a>()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;vertical&nbsp;component&nbsp;of&nbsp;window&nbsp;minimal&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMinSize"><strong>GetMinSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMinSize">GetMinSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;minimum&nbsp;size&nbsp;of&nbsp;the&nbsp;window,&nbsp;an&nbsp;indication&nbsp;to&nbsp;the&nbsp;sizer<br>
+layout&nbsp;mechanism&nbsp;that&nbsp;this&nbsp;is&nbsp;the&nbsp;minimum&nbsp;required&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetMinWidth"><strong>GetMinWidth</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetMinWidth">GetMinWidth</a>()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;horizontal&nbsp;component&nbsp;of&nbsp;window&nbsp;minimal&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetName"><strong>GetName</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetName">GetName</a>()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;window's&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetNextSibling"><strong>GetNextSibling</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetNextSibling">GetNextSibling</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;next&nbsp;window&nbsp;after&nbsp;this&nbsp;one&nbsp;among&nbsp;the&nbsp;parent's&nbsp;children&nbsp;or<br>
+NULL&nbsp;if&nbsp;this&nbsp;window&nbsp;is&nbsp;the&nbsp;last&nbsp;child.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetParent"><strong>GetParent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetParent">GetParent</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;parent&nbsp;of&nbsp;the&nbsp;window,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;parent.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetPopupMenuSelectionFromUser"><strong>GetPopupMenuSelectionFromUser</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetPopupMenuSelectionFromUser">GetPopupMenuSelectionFromUser</a>(menu,&nbsp;pos=DefaultPosition)&nbsp;-&gt;&nbsp;int<br>
+<a href="#PlotGraphFrame-GetPopupMenuSelectionFromUser">GetPopupMenuSelectionFromUser</a>(menu,&nbsp;x,&nbsp;y)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;shows&nbsp;a&nbsp;popup&nbsp;menu&nbsp;at&nbsp;the&nbsp;given&nbsp;position&nbsp;in&nbsp;this&nbsp;window<br>
+and&nbsp;returns&nbsp;the&nbsp;selected&nbsp;id.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetPosition"><strong>GetPosition</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetPosition">GetPosition</a>()&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+This&nbsp;gets&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;window&nbsp;in&nbsp;pixels,&nbsp;relative&nbsp;to&nbsp;the&nbsp;parent<br>
+window&nbsp;for&nbsp;the&nbsp;child&nbsp;windows&nbsp;or&nbsp;relative&nbsp;to&nbsp;the&nbsp;display&nbsp;origin&nbsp;for&nbsp;the<br>
+top&nbsp;level&nbsp;windows.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetPositionTuple"><strong>GetPositionTuple</strong></a> = _Window_GetPositionTuple(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetPrevSibling"><strong>GetPrevSibling</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetPrevSibling">GetPrevSibling</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;previous&nbsp;window&nbsp;before&nbsp;this&nbsp;one&nbsp;among&nbsp;the&nbsp;parent's<br>
+children&nbsp;or&nbsp;&nbsp;NULL&nbsp;if&nbsp;this&nbsp;window&nbsp;is&nbsp;the&nbsp;first&nbsp;child.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetRect"><strong>GetRect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetRect">GetRect</a>()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;position&nbsp;and&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;as&nbsp;a&nbsp;wxRect&nbsp;object.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetScreenPosition"><strong>GetScreenPosition</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetScreenPosition">GetScreenPosition</a>()&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;window&nbsp;position&nbsp;in&nbsp;screen&nbsp;coordinates,&nbsp;whether&nbsp;the&nbsp;window<br>
+is&nbsp;a&nbsp;child&nbsp;window&nbsp;or&nbsp;a&nbsp;top&nbsp;level&nbsp;one.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetScreenRect"><strong>GetScreenRect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetScreenRect">GetScreenRect</a>()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;position&nbsp;and&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;on&nbsp;the&nbsp;screen&nbsp;as&nbsp;a&nbsp;wxRect<br>
+object.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetScrollPos"><strong>GetScrollPos</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetScrollPos">GetScrollPos</a>(orientation)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;built-in&nbsp;scrollbar&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetScrollRange"><strong>GetScrollRange</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetScrollRange">GetScrollRange</a>(orientation)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;built-in&nbsp;scrollbar&nbsp;range.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetScrollThumb"><strong>GetScrollThumb</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetScrollThumb">GetScrollThumb</a>(orientation)&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;built-in&nbsp;scrollbar&nbsp;thumb&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetSize"><strong>GetSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetSize">GetSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;entire&nbsp;window&nbsp;in&nbsp;pixels,&nbsp;including&nbsp;title&nbsp;bar,<br>
+border,&nbsp;scrollbars,&nbsp;etc.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetSizeTuple"><strong>GetSizeTuple</strong></a> = _Window_GetSizeTuple(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetSizer"><strong>GetSizer</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetSizer">GetSizer</a>()&nbsp;-&gt;&nbsp;Sizer<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;sizer&nbsp;associated&nbsp;with&nbsp;the&nbsp;window&nbsp;by&nbsp;a&nbsp;previous&nbsp;call&nbsp;to<br>
+<a href="#PlotGraphFrame-SetSizer">SetSizer</a>(),&nbsp;or&nbsp;NULL.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetTextExtent"><strong>GetTextExtent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetTextExtent">GetTextExtent</a>(self,&nbsp;string:&nbsp;object)&nbsp;-&gt;&nbsp;Size</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetThemeEnabled"><strong>GetThemeEnabled</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetThemeEnabled">GetThemeEnabled</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Clears&nbsp;the&nbsp;window&nbsp;by&nbsp;filling&nbsp;it&nbsp;with&nbsp;the&nbsp;current&nbsp;background&nbsp;colour.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetToolTip"><strong>GetToolTip</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetToolTip">GetToolTip</a>()&nbsp;-&gt;&nbsp;ToolTip<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;associated&nbsp;tooltip&nbsp;or&nbsp;NULL&nbsp;if&nbsp;none.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetToolTipText"><strong>GetToolTipText</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetToolTipText">GetToolTipText</a>()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;text&nbsp;of&nbsp;the&nbsp;associated&nbsp;tooltip&nbsp;or&nbsp;empty&nbsp;string&nbsp;if&nbsp;none.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetTopLevelParent"><strong>GetTopLevelParent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetTopLevelParent">GetTopLevelParent</a>()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;first&nbsp;ancestor&nbsp;of&nbsp;this&nbsp;window&nbsp;which&nbsp;is&nbsp;a&nbsp;top-level&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetUpdateClientRect"><strong>GetUpdateClientRect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetUpdateClientRect">GetUpdateClientRect</a>()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;update&nbsp;rectangle&nbsp;bounding&nbsp;box&nbsp;in&nbsp;client&nbsp;coords.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetUpdateRegion"><strong>GetUpdateRegion</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetUpdateRegion">GetUpdateRegion</a>()&nbsp;-&gt;&nbsp;Region<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;region&nbsp;specifying&nbsp;which&nbsp;parts&nbsp;of&nbsp;the&nbsp;window&nbsp;have&nbsp;been<br>
+damaged.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetVirtualSize"><strong>GetVirtualSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetVirtualSize">GetVirtualSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+This&nbsp;gets&nbsp;the&nbsp;virtual&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;in&nbsp;pixels.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetVirtualSizeTuple"><strong>GetVirtualSizeTuple</strong></a> = _Window_GetVirtualSizeTuple(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetWindowBorderSize"><strong>GetWindowBorderSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetWindowBorderSize">GetWindowBorderSize</a>()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;left/right&nbsp;and&nbsp;top/bottom&nbsp;borders&nbsp;of&nbsp;this<br>
+window&nbsp;in&nbsp;x&nbsp;and&nbsp;y&nbsp;components&nbsp;of&nbsp;the&nbsp;result&nbsp;respectively.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetWindowStyle"><strong>GetWindowStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetWindowStyle">GetWindowStyle</a>()&nbsp;-&gt;&nbsp;long<br>
+&nbsp;<br>
+See&nbsp;<a href="#PlotGraphFrame-GetWindowStyleFlag">GetWindowStyleFlag</a>()&nbsp;for&nbsp;more&nbsp;info.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetWindowStyleFlag"><strong>GetWindowStyleFlag</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetWindowStyleFlag">GetWindowStyleFlag</a>()&nbsp;-&gt;&nbsp;long<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;window&nbsp;style&nbsp;that&nbsp;was&nbsp;passed&nbsp;to&nbsp;the&nbsp;constructor&nbsp;or&nbsp;<a href="#PlotGraphFrame-Create">Create</a>()<br>
+method.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetWindowVariant"><strong>GetWindowVariant</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetWindowVariant">GetWindowVariant</a>()&nbsp;-&gt;&nbsp;WindowVariant<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;value&nbsp;previously&nbsp;passed&nbsp;to&nbsp;<a href="#PlotGraphFrame-SetWindowVariant">SetWindowVariant</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HandleAsNavigationKey"><strong>HandleAsNavigationKey</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HandleAsNavigationKey">HandleAsNavigationKey</a>(event)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;will&nbsp;generate&nbsp;the&nbsp;appropriate&nbsp;call&nbsp;to&nbsp;<a href="#PlotGraphFrame-Navigate">Navigate</a>()&nbsp;if&nbsp;the<br>
+key&nbsp;event&nbsp;is&nbsp;one&nbsp;normally&nbsp;used&nbsp;for&nbsp;keyboard&nbsp;navigation&nbsp;and&nbsp;return&nbsp;true<br>
+in&nbsp;this&nbsp;case.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HandleWindowEvent"><strong>HandleWindowEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HandleWindowEvent">HandleWindowEvent</a>(event)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Shorthand&nbsp;for:</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HasCapture"><strong>HasCapture</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HasCapture">HasCapture</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;has&nbsp;the&nbsp;current&nbsp;mouse&nbsp;capture.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HasExtraStyle"><strong>HasExtraStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HasExtraStyle">HasExtraStyle</a>(exFlag)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;has&nbsp;the&nbsp;given&nbsp;exFlag&nbsp;bit&nbsp;set&nbsp;in&nbsp;its&nbsp;extra<br>
+styles.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HasFlag"><strong>HasFlag</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HasFlag">HasFlag</a>(flag)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;has&nbsp;the&nbsp;given&nbsp;flag&nbsp;bit&nbsp;set.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HasFocus"><strong>HasFocus</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HasFocus">HasFocus</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;(or&nbsp;in&nbsp;case&nbsp;of&nbsp;composite&nbsp;controls,&nbsp;its&nbsp;main<br>
+child&nbsp;window)&nbsp;has&nbsp;focus.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HasMultiplePages"><strong>HasMultiplePages</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HasMultiplePages">HasMultiplePages</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;should&nbsp;be&nbsp;overridden&nbsp;to&nbsp;return&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;has<br>
+multiple&nbsp;pages.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HasScrollbar"><strong>HasScrollbar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HasScrollbar">HasScrollbar</a>(orient)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;currently&nbsp;has&nbsp;a&nbsp;scroll&nbsp;bar&nbsp;for&nbsp;this<br>
+orientation.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Hide"><strong>Hide</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Hide">Hide</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Equivalent&nbsp;to&nbsp;calling&nbsp;wxWindow::<a href="#PlotGraphFrame-Show">Show</a>(false).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HideWithEffect"><strong>HideWithEffect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HideWithEffect">HideWithEffect</a>(effect,&nbsp;timeout=0)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;hides&nbsp;a&nbsp;window,&nbsp;like&nbsp;<a href="#PlotGraphFrame-Hide">Hide</a>(),&nbsp;but&nbsp;using&nbsp;a&nbsp;special&nbsp;visual<br>
+effect&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-HitTest"><strong>HitTest</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-HitTest">HitTest</a>(x,&nbsp;y)&nbsp;-&gt;&nbsp;HitTest<br>
+<a href="#PlotGraphFrame-HitTest">HitTest</a>(pt)&nbsp;-&gt;&nbsp;HitTest<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;window&nbsp;border&nbsp;style&nbsp;from&nbsp;the&nbsp;given&nbsp;flags:&nbsp;this&nbsp;is&nbsp;different<br>
+from&nbsp;simply&nbsp;doing&nbsp;flags&nbsp;&amp;&nbsp;wxBORDER_MASK&nbsp;because&nbsp;it&nbsp;uses<br>
+<a href="#PlotGraphFrame-GetDefaultBorder">GetDefaultBorder</a>()&nbsp;to&nbsp;translate&nbsp;wxBORDER_DEFAULT&nbsp;to&nbsp;something<br>
+reasonable.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-InheritsBackgroundColour"><strong>InheritsBackgroundColour</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-InheritsBackgroundColour">InheritsBackgroundColour</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;inherits&nbsp;the&nbsp;background&nbsp;colour&nbsp;from&nbsp;its<br>
+parent.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-InvalidateBestSize"><strong>InvalidateBestSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-InvalidateBestSize">InvalidateBestSize</a>()<br>
+&nbsp;<br>
+Resets&nbsp;the&nbsp;cached&nbsp;best&nbsp;size&nbsp;value&nbsp;so&nbsp;it&nbsp;will&nbsp;be&nbsp;recalculated&nbsp;the&nbsp;next<br>
+time&nbsp;it&nbsp;is&nbsp;needed.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsBeingDeleted"><strong>IsBeingDeleted</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsBeingDeleted">IsBeingDeleted</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;is&nbsp;in&nbsp;process&nbsp;of&nbsp;being&nbsp;destroyed.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsDescendant"><strong>IsDescendant</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsDescendant">IsDescendant</a>(win)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Check&nbsp;if&nbsp;the&nbsp;specified&nbsp;window&nbsp;is&nbsp;a&nbsp;descendant&nbsp;of&nbsp;this&nbsp;one.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsDoubleBuffered"><strong>IsDoubleBuffered</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsDoubleBuffered">IsDoubleBuffered</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;contents&nbsp;is&nbsp;double-buffered&nbsp;by&nbsp;the&nbsp;system,<br>
+i.e.&nbsp;if&nbsp;any&nbsp;drawing&nbsp;done&nbsp;on&nbsp;the&nbsp;window&nbsp;is&nbsp;really&nbsp;done&nbsp;on&nbsp;a&nbsp;temporary<br>
+backing&nbsp;surface&nbsp;and&nbsp;transferred&nbsp;to&nbsp;the&nbsp;screen&nbsp;all&nbsp;at&nbsp;once&nbsp;later.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsEnabled"><strong>IsEnabled</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsEnabled">IsEnabled</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;enabled,&nbsp;i.e.&nbsp;if&nbsp;it&nbsp;accepts&nbsp;user&nbsp;input,<br>
+false&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsExposed"><strong>IsExposed</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsExposed">IsExposed</a>(x,&nbsp;y)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#PlotGraphFrame-IsExposed">IsExposed</a>(pt)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#PlotGraphFrame-IsExposed">IsExposed</a>(x,&nbsp;y,&nbsp;w,&nbsp;h)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#PlotGraphFrame-IsExposed">IsExposed</a>(rect)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;given&nbsp;point&nbsp;or&nbsp;rectangle&nbsp;area&nbsp;has&nbsp;been&nbsp;exposed<br>
+since&nbsp;the&nbsp;last&nbsp;repaint.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsFocusable"><strong>IsFocusable</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsFocusable">IsFocusable</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Can&nbsp;this&nbsp;window&nbsp;itself&nbsp;have&nbsp;focus?</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsFrozen"><strong>IsFrozen</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsFrozen">IsFrozen</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;currently&nbsp;frozen&nbsp;by&nbsp;a&nbsp;call&nbsp;to&nbsp;<a href="#PlotGraphFrame-Freeze">Freeze</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsRetained"><strong>IsRetained</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsRetained">IsRetained</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;retained,&nbsp;false&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsScrollbarAlwaysShown"><strong>IsScrollbarAlwaysShown</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsScrollbarAlwaysShown">IsScrollbarAlwaysShown</a>(orient)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;whether&nbsp;a&nbsp;scrollbar&nbsp;is&nbsp;always&nbsp;shown.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsShown"><strong>IsShown</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsShown">IsShown</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;shown,&nbsp;false&nbsp;if&nbsp;it&nbsp;has&nbsp;been&nbsp;hidden.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsShownOnScreen"><strong>IsShownOnScreen</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsShownOnScreen">IsShownOnScreen</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;physically&nbsp;visible&nbsp;on&nbsp;the&nbsp;screen,&nbsp;i.e.<br>
+it&nbsp;is&nbsp;shown&nbsp;and&nbsp;all&nbsp;its&nbsp;parents&nbsp;up&nbsp;to&nbsp;the&nbsp;toplevel&nbsp;window&nbsp;are&nbsp;shown&nbsp;as<br>
+well.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsThisEnabled"><strong>IsThisEnabled</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsThisEnabled">IsThisEnabled</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;window&nbsp;is&nbsp;intrinsically&nbsp;enabled,&nbsp;false&nbsp;otherwise,<br>
+i.e.&nbsp;if&nbsp;<a href="#PlotGraphFrame-Enable">Enable</a>()&nbsp;<a href="#PlotGraphFrame-Enable">Enable</a>(false)&nbsp;had&nbsp;been&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsTopLevel"><strong>IsTopLevel</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsTopLevel">IsTopLevel</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;given&nbsp;window&nbsp;is&nbsp;a&nbsp;top-level&nbsp;one.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsTransparentBackgroundSupported"><strong>IsTransparentBackgroundSupported</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsTransparentBackgroundSupported">IsTransparentBackgroundSupported</a>(reason=None)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Checks&nbsp;whether&nbsp;using&nbsp;transparent&nbsp;background&nbsp;might&nbsp;work.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-LineDown"><strong>LineDown</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-LineDown">LineDown</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Same&nbsp;as&nbsp;ScrollLines&nbsp;(1).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-LineUp"><strong>LineUp</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-LineUp">LineUp</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Same&nbsp;as&nbsp;ScrollLines&nbsp;(-1).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Lower"><strong>Lower</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Lower">Lower</a>()<br>
+&nbsp;<br>
+Lowers&nbsp;the&nbsp;window&nbsp;to&nbsp;the&nbsp;bottom&nbsp;of&nbsp;the&nbsp;window&nbsp;hierarchy&nbsp;(Z-order).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MacIsWindowScrollbar"><strong>MacIsWindowScrollbar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-MacIsWindowScrollbar">MacIsWindowScrollbar</a>(sb)<br>
+&nbsp;<br>
+Is&nbsp;the&nbsp;given&nbsp;widget&nbsp;one&nbsp;of&nbsp;this&nbsp;window's&nbsp;built-in&nbsp;scrollbars?&nbsp;&nbsp;Only<br>
+applicable&nbsp;on&nbsp;Mac.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Move"><strong>Move</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Move">Move</a>(x,&nbsp;y,&nbsp;flags=SIZE_USE_EXISTING)<br>
+<a href="#PlotGraphFrame-Move">Move</a>(pt,&nbsp;flags=SIZE_USE_EXISTING)<br>
+&nbsp;<br>
+Moves&nbsp;the&nbsp;window&nbsp;to&nbsp;the&nbsp;given&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MoveAfterInTabOrder"><strong>MoveAfterInTabOrder</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-MoveAfterInTabOrder">MoveAfterInTabOrder</a>(win)<br>
+&nbsp;<br>
+Moves&nbsp;this&nbsp;window&nbsp;in&nbsp;the&nbsp;tab&nbsp;navigation&nbsp;order&nbsp;after&nbsp;the&nbsp;specified&nbsp;win.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MoveBeforeInTabOrder"><strong>MoveBeforeInTabOrder</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-MoveBeforeInTabOrder">MoveBeforeInTabOrder</a>(win)<br>
+&nbsp;<br>
+Same&nbsp;as&nbsp;<a href="#PlotGraphFrame-MoveAfterInTabOrder">MoveAfterInTabOrder</a>()&nbsp;except&nbsp;that&nbsp;it&nbsp;inserts&nbsp;this&nbsp;window&nbsp;just<br>
+before&nbsp;win&nbsp;instead&nbsp;of&nbsp;putting&nbsp;it&nbsp;right&nbsp;after&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-MoveXY"><strong>MoveXY</strong></a> = _Window_MoveXY(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Navigate"><strong>Navigate</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Navigate">Navigate</a>(flags=NavigationKeyEvent.IsForward)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Performs&nbsp;a&nbsp;keyboard&nbsp;navigation&nbsp;action&nbsp;starting&nbsp;from&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-NavigateIn"><strong>NavigateIn</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-NavigateIn">NavigateIn</a>(flags=NavigationKeyEvent.IsForward)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Performs&nbsp;a&nbsp;keyboard&nbsp;navigation&nbsp;action&nbsp;inside&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-NewControlId"><strong>NewControlId</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-NewControlId">NewControlId</a>(count=1)&nbsp;-&gt;&nbsp;WindowID<br>
+&nbsp;<br>
+Create&nbsp;a&nbsp;new&nbsp;ID&nbsp;or&nbsp;range&nbsp;of&nbsp;IDs&nbsp;that&nbsp;are&nbsp;not&nbsp;currently&nbsp;in&nbsp;use.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PageDown"><strong>PageDown</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PageDown">PageDown</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Same&nbsp;as&nbsp;ScrollPages&nbsp;(1).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PageUp"><strong>PageUp</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PageUp">PageUp</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Same&nbsp;as&nbsp;ScrollPages&nbsp;(-1).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PopEventHandler"><strong>PopEventHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PopEventHandler">PopEventHandler</a>(deleteHandler=False)&nbsp;-&gt;&nbsp;EvtHandler<br>
+&nbsp;<br>
+Removes&nbsp;and&nbsp;returns&nbsp;the&nbsp;top-most&nbsp;event&nbsp;handler&nbsp;on&nbsp;the&nbsp;event&nbsp;handler<br>
+stack.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PopupMenu"><strong>PopupMenu</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PopupMenu">PopupMenu</a>(menu,&nbsp;pos=DefaultPosition)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#PlotGraphFrame-PopupMenu">PopupMenu</a>(menu,&nbsp;x,&nbsp;y)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Pops&nbsp;up&nbsp;the&nbsp;given&nbsp;menu&nbsp;at&nbsp;the&nbsp;specified&nbsp;coordinates,&nbsp;relative&nbsp;to&nbsp;this<br>
+window,&nbsp;and&nbsp;returns&nbsp;control&nbsp;when&nbsp;the&nbsp;user&nbsp;has&nbsp;dismissed&nbsp;the&nbsp;menu.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PostCreate"><strong>PostCreate</strong></a> = _Window_PostCreate(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PostSizeEvent"><strong>PostSizeEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PostSizeEvent">PostSizeEvent</a>()<br>
+&nbsp;<br>
+Posts&nbsp;a&nbsp;size&nbsp;event&nbsp;to&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PostSizeEventToParent"><strong>PostSizeEventToParent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PostSizeEventToParent">PostSizeEventToParent</a>()<br>
+&nbsp;<br>
+Posts&nbsp;a&nbsp;size&nbsp;event&nbsp;to&nbsp;the&nbsp;parent&nbsp;of&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ProcessWindowEvent"><strong>ProcessWindowEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ProcessWindowEvent">ProcessWindowEvent</a>(event)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Convenient&nbsp;wrapper&nbsp;for&nbsp;<a href="#PlotGraphFrame-ProcessEvent">ProcessEvent</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ProcessWindowEventLocally"><strong>ProcessWindowEventLocally</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ProcessWindowEventLocally">ProcessWindowEventLocally</a>(event)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Wrapper&nbsp;for&nbsp;wxEvtHandler::<a href="#PlotGraphFrame-ProcessEventLocally">ProcessEventLocally</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-PushEventHandler"><strong>PushEventHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-PushEventHandler">PushEventHandler</a>(handler)<br>
+&nbsp;<br>
+Pushes&nbsp;this&nbsp;event&nbsp;handler&nbsp;onto&nbsp;the&nbsp;event&nbsp;stack&nbsp;for&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Raise"><strong>Raise</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Raise">Raise</a>()<br>
+&nbsp;<br>
+Raises&nbsp;the&nbsp;window&nbsp;to&nbsp;the&nbsp;top&nbsp;of&nbsp;the&nbsp;window&nbsp;hierarchy&nbsp;(Z-order).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Refresh"><strong>Refresh</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Refresh">Refresh</a>(eraseBackground=True,&nbsp;rect=None)<br>
+&nbsp;<br>
+Causes&nbsp;this&nbsp;window,&nbsp;and&nbsp;all&nbsp;of&nbsp;its&nbsp;children&nbsp;recursively&nbsp;(except&nbsp;under<br>
+wxGTK1&nbsp;where&nbsp;this&nbsp;is&nbsp;not&nbsp;implemented),&nbsp;to&nbsp;be&nbsp;repainted.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-RefreshRect"><strong>RefreshRect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-RefreshRect">RefreshRect</a>(rect,&nbsp;eraseBackground=True)<br>
+&nbsp;<br>
+Redraws&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;given&nbsp;rectangle:&nbsp;only&nbsp;the&nbsp;area&nbsp;inside&nbsp;it<br>
+will&nbsp;be&nbsp;repainted.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-RegisterHotKey"><strong>RegisterHotKey</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-RegisterHotKey">RegisterHotKey</a>(hotkeyId,&nbsp;modifiers,&nbsp;virtualKeyCode)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Registers&nbsp;a&nbsp;system&nbsp;wide&nbsp;hotkey.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ReleaseMouse"><strong>ReleaseMouse</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ReleaseMouse">ReleaseMouse</a>()<br>
+&nbsp;<br>
+Releases&nbsp;mouse&nbsp;input&nbsp;captured&nbsp;with&nbsp;<a href="#PlotGraphFrame-CaptureMouse">CaptureMouse</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-RemoveEventHandler"><strong>RemoveEventHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-RemoveEventHandler">RemoveEventHandler</a>(handler)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Find&nbsp;the&nbsp;given&nbsp;handler&nbsp;in&nbsp;the&nbsp;windows&nbsp;event&nbsp;handler&nbsp;stack&nbsp;and&nbsp;removes<br>
+(but&nbsp;does&nbsp;not&nbsp;delete)&nbsp;it&nbsp;from&nbsp;the&nbsp;stack.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Reparent"><strong>Reparent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Reparent">Reparent</a>(newParent)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Reparents&nbsp;the&nbsp;window,&nbsp;i.e.&nbsp;the&nbsp;window&nbsp;will&nbsp;be&nbsp;removed&nbsp;from&nbsp;its&nbsp;current<br>
+parent&nbsp;window&nbsp;(e.g.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ScreenToClient"><strong>ScreenToClient</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ScreenToClient">ScreenToClient</a>(x,&nbsp;y)&nbsp;-&gt;&nbsp;(x,&nbsp;y)<br>
+<a href="#PlotGraphFrame-ScreenToClient">ScreenToClient</a>(pt)&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+Converts&nbsp;from&nbsp;screen&nbsp;to&nbsp;client&nbsp;window&nbsp;coordinates.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ScrollLines"><strong>ScrollLines</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ScrollLines">ScrollLines</a>(lines)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Scrolls&nbsp;the&nbsp;window&nbsp;by&nbsp;the&nbsp;given&nbsp;number&nbsp;of&nbsp;lines&nbsp;down&nbsp;(if&nbsp;lines&nbsp;is<br>
+positive)&nbsp;or&nbsp;up.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ScrollPages"><strong>ScrollPages</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ScrollPages">ScrollPages</a>(pages)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Scrolls&nbsp;the&nbsp;window&nbsp;by&nbsp;the&nbsp;given&nbsp;number&nbsp;of&nbsp;pages&nbsp;down&nbsp;(if&nbsp;pages&nbsp;is<br>
+positive)&nbsp;or&nbsp;up.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ScrollWindow"><strong>ScrollWindow</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ScrollWindow">ScrollWindow</a>(dx,&nbsp;dy,&nbsp;rect=None)<br>
+&nbsp;<br>
+Physically&nbsp;scrolls&nbsp;the&nbsp;pixels&nbsp;in&nbsp;the&nbsp;window&nbsp;and&nbsp;move&nbsp;child&nbsp;windows<br>
+accordingly.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SendIdleEvents"><strong>SendIdleEvents</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SendIdleEvents">SendIdleEvents</a>(event)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Send&nbsp;idle&nbsp;event&nbsp;to&nbsp;window&nbsp;and&nbsp;all&nbsp;subwindows.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SendSizeEvent"><strong>SendSizeEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SendSizeEvent">SendSizeEvent</a>(flags=0)<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;sends&nbsp;a&nbsp;dummy&nbsp;size&nbsp;event&nbsp;to&nbsp;the&nbsp;window&nbsp;allowing&nbsp;it&nbsp;to<br>
+re-layout&nbsp;its&nbsp;children&nbsp;positions.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SendSizeEventToParent"><strong>SendSizeEventToParent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SendSizeEventToParent">SendSizeEventToParent</a>(flags=0)<br>
+&nbsp;<br>
+Safe&nbsp;wrapper&nbsp;for&nbsp;<a href="#PlotGraphFrame-GetParent">GetParent</a>()-&gt;<a href="#PlotGraphFrame-SendSizeEvent">SendSizeEvent</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetAcceleratorTable"><strong>SetAcceleratorTable</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetAcceleratorTable">SetAcceleratorTable</a>(accel)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;accelerator&nbsp;table&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetAutoLayout"><strong>SetAutoLayout</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetAutoLayout">SetAutoLayout</a>(autoLayout)<br>
+&nbsp;<br>
+Determines&nbsp;whether&nbsp;the&nbsp;<a href="#PlotGraphFrame-Layout">Layout</a>()&nbsp;function&nbsp;will&nbsp;be&nbsp;called&nbsp;automatically<br>
+when&nbsp;the&nbsp;window&nbsp;is&nbsp;resized.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetBackgroundColour"><strong>SetBackgroundColour</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetBackgroundColour">SetBackgroundColour</a>(colour)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;background&nbsp;colour&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetBackgroundStyle"><strong>SetBackgroundStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetBackgroundStyle">SetBackgroundStyle</a>(style)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;background&nbsp;style&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetCaret"><strong>SetCaret</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetCaret">SetCaret</a>(caret)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;caret()&nbsp;associated&nbsp;with&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetClientRect"><strong>SetClientRect</strong></a> = _Window_SetClientRect(self, rect)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetClientSize"><strong>SetClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetClientSize">SetClientSize</a>(width,&nbsp;height)<br>
+<a href="#PlotGraphFrame-SetClientSize">SetClientSize</a>(size)<br>
+<a href="#PlotGraphFrame-SetClientSize">SetClientSize</a>(rect)<br>
+&nbsp;<br>
+This&nbsp;sets&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;client&nbsp;area&nbsp;in&nbsp;pixels.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetConstraints"><strong>SetConstraints</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetConstraints">SetConstraints</a>(constraints)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;window&nbsp;to&nbsp;have&nbsp;the&nbsp;given&nbsp;layout&nbsp;constraints.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetContainingSizer"><strong>SetContainingSizer</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetContainingSizer">SetContainingSizer</a>(sizer)<br>
+&nbsp;<br>
+This&nbsp;normally&nbsp;does&nbsp;not&nbsp;need&nbsp;to&nbsp;be&nbsp;called&nbsp;by&nbsp;user&nbsp;code.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetCursor"><strong>SetCursor</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetCursor">SetCursor</a>(cursor)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;window's&nbsp;cursor.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetDimensions"><strong>SetDimensions</strong></a>(*args, **kw)</dt><dd><tt><a href="#PlotGraphFrame-SetDimensions">SetDimensions</a>(x,&nbsp;y,&nbsp;width,&nbsp;height,&nbsp;sizeFlags=SIZE_AUTO)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetDoubleBuffered"><strong>SetDoubleBuffered</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetDoubleBuffered">SetDoubleBuffered</a>(on)<br>
+&nbsp;<br>
+Turn&nbsp;on&nbsp;or&nbsp;off&nbsp;double&nbsp;buffering&nbsp;of&nbsp;the&nbsp;window&nbsp;if&nbsp;the&nbsp;system&nbsp;supports<br>
+it.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetDropTarget"><strong>SetDropTarget</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetDropTarget">SetDropTarget</a>(target)<br>
+&nbsp;<br>
+Associates&nbsp;a&nbsp;drop&nbsp;target&nbsp;with&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetEventHandler"><strong>SetEventHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetEventHandler">SetEventHandler</a>(handler)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;event&nbsp;handler&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetExtraStyle"><strong>SetExtraStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetExtraStyle">SetExtraStyle</a>(exStyle)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;extra&nbsp;style&nbsp;bits&nbsp;for&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetFocus"><strong>SetFocus</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetFocus">SetFocus</a>()<br>
+&nbsp;<br>
+This&nbsp;sets&nbsp;the&nbsp;window&nbsp;to&nbsp;receive&nbsp;keyboard&nbsp;input.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetFocusFromKbd"><strong>SetFocusFromKbd</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetFocusFromKbd">SetFocusFromKbd</a>()<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;is&nbsp;called&nbsp;by&nbsp;wxWidgets&nbsp;keyboard&nbsp;navigation&nbsp;code&nbsp;when&nbsp;the<br>
+user&nbsp;gives&nbsp;the&nbsp;focus&nbsp;to&nbsp;this&nbsp;window&nbsp;from&nbsp;keyboard&nbsp;(e.g.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetFont"><strong>SetFont</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetFont">SetFont</a>(font)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;font&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetForegroundColour"><strong>SetForegroundColour</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetForegroundColour">SetForegroundColour</a>(colour)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;foreground&nbsp;colour&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetHelpText"><strong>SetHelpText</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetHelpText">SetHelpText</a>(helpText)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;help&nbsp;text&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;context-sensitive&nbsp;help&nbsp;for&nbsp;this<br>
+window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetId"><strong>SetId</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetId">SetId</a>(winid)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;identifier&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetInitialSize"><strong>SetInitialSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetInitialSize">SetInitialSize</a>(size=DefaultSize)<br>
+&nbsp;<br>
+A&nbsp;smart&nbsp;SetSize&nbsp;that&nbsp;will&nbsp;fill&nbsp;in&nbsp;default&nbsp;size&nbsp;components&nbsp;with&nbsp;the<br>
+window's&nbsp;best&nbsp;size&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetLabel"><strong>SetLabel</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetLabel">SetLabel</a>(label)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;window's&nbsp;label.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetLayoutDirection"><strong>SetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetLayoutDirection">SetLayoutDirection</a>(dir)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;layout&nbsp;direction&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetMaxClientSize"><strong>SetMaxClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetMaxClientSize">SetMaxClientSize</a>(size)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;maximum&nbsp;client&nbsp;size&nbsp;of&nbsp;the&nbsp;window,&nbsp;to&nbsp;indicate&nbsp;to&nbsp;the&nbsp;sizer<br>
+layout&nbsp;mechanism&nbsp;that&nbsp;this&nbsp;is&nbsp;the&nbsp;maximum&nbsp;possible&nbsp;size&nbsp;of&nbsp;its&nbsp;client<br>
+area.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetMinClientSize"><strong>SetMinClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetMinClientSize">SetMinClientSize</a>(size)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;minimum&nbsp;client&nbsp;size&nbsp;of&nbsp;the&nbsp;window,&nbsp;to&nbsp;indicate&nbsp;to&nbsp;the&nbsp;sizer<br>
+layout&nbsp;mechanism&nbsp;that&nbsp;this&nbsp;is&nbsp;the&nbsp;minimum&nbsp;required&nbsp;size&nbsp;of&nbsp;window's<br>
+client&nbsp;area.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetName"><strong>SetName</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetName">SetName</a>(name)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;window's&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetNextHandler"><strong>SetNextHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetNextHandler">SetNextHandler</a>(handler)<br>
+&nbsp;<br>
+wxWindows&nbsp;cannot&nbsp;be&nbsp;used&nbsp;to&nbsp;form&nbsp;event&nbsp;handler&nbsp;chains;&nbsp;this&nbsp;function<br>
+thus&nbsp;will&nbsp;assert&nbsp;when&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetOwnBackgroundColour"><strong>SetOwnBackgroundColour</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetOwnBackgroundColour">SetOwnBackgroundColour</a>(colour)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;background&nbsp;colour&nbsp;of&nbsp;the&nbsp;window&nbsp;but&nbsp;prevents&nbsp;it&nbsp;from&nbsp;being<br>
+inherited&nbsp;by&nbsp;the&nbsp;children&nbsp;of&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetOwnFont"><strong>SetOwnFont</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetOwnFont">SetOwnFont</a>(font)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;font&nbsp;of&nbsp;the&nbsp;window&nbsp;but&nbsp;prevents&nbsp;it&nbsp;from&nbsp;being&nbsp;inherited&nbsp;by<br>
+the&nbsp;children&nbsp;of&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetOwnForegroundColour"><strong>SetOwnForegroundColour</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetOwnForegroundColour">SetOwnForegroundColour</a>(colour)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;foreground&nbsp;colour&nbsp;of&nbsp;the&nbsp;window&nbsp;but&nbsp;prevents&nbsp;it&nbsp;from&nbsp;being<br>
+inherited&nbsp;by&nbsp;the&nbsp;children&nbsp;of&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetPalette"><strong>SetPalette</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetPalette">SetPalette</a>(pal)</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetPosition"><strong>SetPosition</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetPosition">SetPosition</a>(pt)<br>
+&nbsp;<br>
+Moves&nbsp;the&nbsp;window&nbsp;to&nbsp;the&nbsp;specified&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetPreviousHandler"><strong>SetPreviousHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetPreviousHandler">SetPreviousHandler</a>(handler)<br>
+&nbsp;<br>
+wxWindows&nbsp;cannot&nbsp;be&nbsp;used&nbsp;to&nbsp;form&nbsp;event&nbsp;handler&nbsp;chains;&nbsp;this&nbsp;function<br>
+thus&nbsp;will&nbsp;assert&nbsp;when&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetRect"><strong>SetRect</strong></a> = _Window_SetRect(self, rect)</dt></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetScrollPos"><strong>SetScrollPos</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetScrollPos">SetScrollPos</a>(orientation,&nbsp;pos,&nbsp;refresh=True)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;position&nbsp;of&nbsp;one&nbsp;of&nbsp;the&nbsp;built-in&nbsp;scrollbars.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetScrollbar"><strong>SetScrollbar</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetScrollbar">SetScrollbar</a>(orientation,&nbsp;position,&nbsp;thumbSize,&nbsp;range,&nbsp;refresh=True)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;scrollbar&nbsp;properties&nbsp;of&nbsp;a&nbsp;built-in&nbsp;scrollbar.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetSize"><strong>SetSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetSize">SetSize</a>(x,&nbsp;y,&nbsp;width,&nbsp;height,&nbsp;sizeFlags=SIZE_AUTO)<br>
+<a href="#PlotGraphFrame-SetSize">SetSize</a>(rect)<br>
+<a href="#PlotGraphFrame-SetSize">SetSize</a>(size)<br>
+<a href="#PlotGraphFrame-SetSize">SetSize</a>(width,&nbsp;height)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;in&nbsp;pixels.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetSizeHintsSz"><strong>SetSizeHintsSz</strong></a> = _Window_SetSizeHintsSz(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetSizeWH"><strong>SetSizeWH</strong></a> = _Window_SetSizeWH(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetSizer"><strong>SetSizer</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetSizer">SetSizer</a>(sizer,&nbsp;deleteOld=True)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;window&nbsp;to&nbsp;have&nbsp;the&nbsp;given&nbsp;layout&nbsp;sizer.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetSizerAndFit"><strong>SetSizerAndFit</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetSizerAndFit">SetSizerAndFit</a>(sizer,&nbsp;deleteOld=True)<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;calls&nbsp;<a href="#PlotGraphFrame-SetSizer">SetSizer</a>()&nbsp;and&nbsp;then&nbsp;wxSizer::SetSizeHints&nbsp;which&nbsp;sets<br>
+the&nbsp;initial&nbsp;window&nbsp;size&nbsp;to&nbsp;the&nbsp;size&nbsp;needed&nbsp;to&nbsp;accommodate&nbsp;all&nbsp;sizer<br>
+elements&nbsp;and&nbsp;sets&nbsp;the&nbsp;size&nbsp;hints&nbsp;which,&nbsp;if&nbsp;this&nbsp;window&nbsp;is&nbsp;a&nbsp;top&nbsp;level<br>
+one,&nbsp;prevent&nbsp;the&nbsp;user&nbsp;from&nbsp;resizing&nbsp;it&nbsp;to&nbsp;be&nbsp;less&nbsp;than&nbsp;this&nbsp;minimal<br>
+size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetThemeEnabled"><strong>SetThemeEnabled</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetThemeEnabled">SetThemeEnabled</a>(enable)<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;tells&nbsp;a&nbsp;window&nbsp;if&nbsp;it&nbsp;should&nbsp;use&nbsp;the&nbsp;system's&nbsp;"theme"<br>
+code&nbsp;to&nbsp;draw&nbsp;the&nbsp;windows'&nbsp;background&nbsp;instead&nbsp;of&nbsp;its&nbsp;own&nbsp;background<br>
+drawing&nbsp;code.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetToolTip"><strong>SetToolTip</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetToolTip">SetToolTip</a>(tipString)<br>
+<a href="#PlotGraphFrame-SetToolTip">SetToolTip</a>(tip)<br>
+&nbsp;<br>
+Attach&nbsp;a&nbsp;tooltip&nbsp;to&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetToolTipString"><strong>SetToolTipString</strong></a> = _Window_SetToolTipString(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetVirtualSize"><strong>SetVirtualSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetVirtualSize">SetVirtualSize</a>(width,&nbsp;height)<br>
+<a href="#PlotGraphFrame-SetVirtualSize">SetVirtualSize</a>(size)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;virtual&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;in&nbsp;pixels.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetVirtualSizeWH"><strong>SetVirtualSizeWH</strong></a> = _Window_SetVirtualSizeWH(*args, **kw)</dt><dd><tt>#&nbsp;wrap&nbsp;a&nbsp;new&nbsp;function&nbsp;around&nbsp;the&nbsp;callable</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetWindowStyle"><strong>SetWindowStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetWindowStyle">SetWindowStyle</a>(style)<br>
+&nbsp;<br>
+See&nbsp;<a href="#PlotGraphFrame-SetWindowStyleFlag">SetWindowStyleFlag</a>()&nbsp;for&nbsp;more&nbsp;info.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetWindowStyleFlag"><strong>SetWindowStyleFlag</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetWindowStyleFlag">SetWindowStyleFlag</a>(style)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;style&nbsp;of&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetWindowVariant"><strong>SetWindowVariant</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetWindowVariant">SetWindowVariant</a>(variant)<br>
+&nbsp;<br>
+Chooses&nbsp;a&nbsp;different&nbsp;variant&nbsp;of&nbsp;the&nbsp;window&nbsp;display&nbsp;to&nbsp;use.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Show"><strong>Show</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Show">Show</a>(show=True)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Shows&nbsp;or&nbsp;hides&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ShowWithEffect"><strong>ShowWithEffect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ShowWithEffect">ShowWithEffect</a>(effect,&nbsp;timeout=0)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;shows&nbsp;a&nbsp;window,&nbsp;like&nbsp;<a href="#PlotGraphFrame-Show">Show</a>(),&nbsp;but&nbsp;using&nbsp;a&nbsp;special&nbsp;visual<br>
+effect&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Thaw"><strong>Thaw</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Thaw">Thaw</a>()<br>
+&nbsp;<br>
+Re-enables&nbsp;window&nbsp;updating&nbsp;after&nbsp;a&nbsp;previous&nbsp;call&nbsp;to&nbsp;<a href="#PlotGraphFrame-Freeze">Freeze</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ToggleWindowStyle"><strong>ToggleWindowStyle</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ToggleWindowStyle">ToggleWindowStyle</a>(flag)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Turns&nbsp;the&nbsp;given&nbsp;flag&nbsp;on&nbsp;if&nbsp;it's&nbsp;currently&nbsp;turned&nbsp;off&nbsp;and&nbsp;vice&nbsp;versa.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-UnregisterHotKey"><strong>UnregisterHotKey</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-UnregisterHotKey">UnregisterHotKey</a>(hotkeyId)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Unregisters&nbsp;a&nbsp;system&nbsp;wide&nbsp;hotkey.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-UnreserveControlId"><strong>UnreserveControlId</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-UnreserveControlId">UnreserveControlId</a>(id,&nbsp;count=1)<br>
+&nbsp;<br>
+Unreserve&nbsp;an&nbsp;ID&nbsp;or&nbsp;range&nbsp;of&nbsp;IDs&nbsp;that&nbsp;was&nbsp;reserved&nbsp;by&nbsp;<a href="#PlotGraphFrame-NewControlId">NewControlId</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-UnsetToolTip"><strong>UnsetToolTip</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-UnsetToolTip">UnsetToolTip</a>()<br>
+&nbsp;<br>
+Unset&nbsp;any&nbsp;existing&nbsp;tooltip.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Update"><strong>Update</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Update">Update</a>()<br>
+&nbsp;<br>
+Calling&nbsp;this&nbsp;method&nbsp;immediately&nbsp;repaints&nbsp;the&nbsp;invalidated&nbsp;area&nbsp;of&nbsp;the<br>
+window&nbsp;and&nbsp;all&nbsp;of&nbsp;its&nbsp;children&nbsp;recursively&nbsp;(this&nbsp;normally&nbsp;only&nbsp;happens<br>
+when&nbsp;the&nbsp;flow&nbsp;of&nbsp;control&nbsp;returns&nbsp;to&nbsp;the&nbsp;event&nbsp;loop).</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-UpdateWindowUI"><strong>UpdateWindowUI</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-UpdateWindowUI">UpdateWindowUI</a>(flags=UPDATE_UI_NONE)<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;sends&nbsp;one&nbsp;or&nbsp;more&nbsp;wxUpdateUIEvent&nbsp;to&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-UseBgCol"><strong>UseBgCol</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-UseBgCol">UseBgCol</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;true&nbsp;if&nbsp;a&nbsp;background&nbsp;colour&nbsp;has&nbsp;been&nbsp;set&nbsp;for&nbsp;this&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-WarpPointer"><strong>WarpPointer</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-WarpPointer">WarpPointer</a>(x,&nbsp;y)<br>
+&nbsp;<br>
+Moves&nbsp;the&nbsp;pointer&nbsp;to&nbsp;the&nbsp;given&nbsp;position&nbsp;on&nbsp;the&nbsp;window.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-WindowToClientSize"><strong>WindowToClientSize</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-WindowToClientSize">WindowToClientSize</a>(size)&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Converts&nbsp;window&nbsp;size&nbsp;size&nbsp;to&nbsp;corresponding&nbsp;client&nbsp;area&nbsp;size&nbsp;In&nbsp;other<br>
+words,&nbsp;the&nbsp;returned&nbsp;value&nbsp;is&nbsp;what&nbsp;would&nbsp;<a href="#PlotGraphFrame-GetClientSize">GetClientSize</a>()&nbsp;return&nbsp;if&nbsp;this<br>
+window&nbsp;had&nbsp;given&nbsp;window&nbsp;size.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-__bool__"><strong>__bool__</strong></a> = _Window___nonzero__(self)</dt><dd><tt>Can&nbsp;be&nbsp;used&nbsp;to&nbsp;test&nbsp;if&nbsp;the&nbsp;C++&nbsp;part&nbsp;of&nbsp;the&nbsp;window&nbsp;still&nbsp;exists,&nbsp;with&nbsp;<br>
+code&nbsp;like&nbsp;this::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;theWindow:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doSomething()</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-__nonzero__"><strong>__nonzero__</strong></a> = _Window___nonzero__(self)</dt><dd><tt>Can&nbsp;be&nbsp;used&nbsp;to&nbsp;test&nbsp;if&nbsp;the&nbsp;C++&nbsp;part&nbsp;of&nbsp;the&nbsp;window&nbsp;still&nbsp;exists,&nbsp;with&nbsp;<br>
+code&nbsp;like&nbsp;this::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;theWindow:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doSomething()</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="wx._core.html#Window">wx._core.Window</a>:<br>
+<dl><dt><strong>AcceleratorTable</strong></dt>
+<dd><tt>GetAcceleratorTable()&nbsp;-&gt;&nbsp;AcceleratorTable<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;accelerator&nbsp;table&nbsp;for&nbsp;this&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>AutoLayout</strong></dt>
+<dd><tt>GetAutoLayout()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;sizer&nbsp;of&nbsp;which&nbsp;this&nbsp;window&nbsp;is&nbsp;a&nbsp;member,&nbsp;if&nbsp;any,&nbsp;otherwise<br>
+NULL.</tt></dd>
+</dl>
+<dl><dt><strong>BackgroundColour</strong></dt>
+<dd><tt>GetBackgroundColour()&nbsp;-&gt;&nbsp;Colour<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;background&nbsp;colour&nbsp;of&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>BackgroundStyle</strong></dt>
+<dd><tt>GetBackgroundStyle()&nbsp;-&gt;&nbsp;BackgroundStyle<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;background&nbsp;style&nbsp;of&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>BestSize</strong></dt>
+<dd><tt>GetBestSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+This&nbsp;functions&nbsp;returns&nbsp;the&nbsp;best&nbsp;acceptable&nbsp;minimal&nbsp;size&nbsp;for&nbsp;the<br>
+window.</tt></dd>
+</dl>
+<dl><dt><strong>BestVirtualSize</strong></dt>
+<dd><tt>GetBestVirtualSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;largest&nbsp;of&nbsp;ClientSize&nbsp;and&nbsp;BestSize&nbsp;(as&nbsp;determined&nbsp;by&nbsp;a<br>
+sizer,&nbsp;interior&nbsp;children,&nbsp;or&nbsp;other&nbsp;means)</tt></dd>
+</dl>
+<dl><dt><strong>Border</strong></dt>
+<dd><tt>GetBorder(flags)&nbsp;-&gt;&nbsp;Border<br>
+GetBorder()&nbsp;-&gt;&nbsp;Border<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;window&nbsp;border&nbsp;style&nbsp;from&nbsp;the&nbsp;given&nbsp;flags:&nbsp;this&nbsp;is&nbsp;different<br>
+from&nbsp;simply&nbsp;doing&nbsp;flags&nbsp;&amp;&nbsp;wxBORDER_MASK&nbsp;because&nbsp;it&nbsp;uses<br>
+GetDefaultBorder()&nbsp;to&nbsp;translate&nbsp;wxBORDER_DEFAULT&nbsp;to&nbsp;something<br>
+reasonable.</tt></dd>
+</dl>
+<dl><dt><strong>Caret</strong></dt>
+<dd><tt>GetCaret()&nbsp;-&gt;&nbsp;Caret<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;caret()&nbsp;associated&nbsp;with&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>CharHeight</strong></dt>
+<dd><tt>GetCharHeight()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;character&nbsp;height&nbsp;for&nbsp;this&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>CharWidth</strong></dt>
+<dd><tt>GetCharWidth()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;average&nbsp;character&nbsp;width&nbsp;for&nbsp;this&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>Children</strong></dt>
+<dd><tt>GetChildren()&nbsp;-&gt;&nbsp;WindowList<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;list&nbsp;of&nbsp;the&nbsp;window's&nbsp;children.</tt></dd>
+</dl>
+<dl><dt><strong>ClientAreaOrigin</strong></dt>
+<dd><tt>GetClientAreaOrigin()&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;origin&nbsp;of&nbsp;the&nbsp;client&nbsp;area&nbsp;of&nbsp;the&nbsp;window&nbsp;relative&nbsp;to&nbsp;the&nbsp;window<br>
+top&nbsp;left&nbsp;corner&nbsp;(the&nbsp;client&nbsp;area&nbsp;may&nbsp;be&nbsp;shifted&nbsp;because&nbsp;of&nbsp;the<br>
+borders,&nbsp;scrollbars,&nbsp;other&nbsp;decorations...)</tt></dd>
+</dl>
+<dl><dt><strong>ClientRect</strong></dt>
+<dd><tt>GetClientRect()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;client&nbsp;rectangle&nbsp;in&nbsp;window&nbsp;(i.e.&nbsp;client)&nbsp;coordinates.</tt></dd>
+</dl>
+<dl><dt><strong>ClientSize</strong></dt>
+<dd><tt>GetClientSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;'client&nbsp;area'&nbsp;in&nbsp;pixels.</tt></dd>
+</dl>
+<dl><dt><strong>Constraints</strong></dt>
+<dd><tt>GetConstraints()&nbsp;-&gt;&nbsp;LayoutConstraints<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;window's&nbsp;layout&nbsp;constraints,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;there<br>
+are&nbsp;none.</tt></dd>
+</dl>
+<dl><dt><strong>ContainingSizer</strong></dt>
+<dd><tt>GetContainingSizer()&nbsp;-&gt;&nbsp;Sizer<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;sizer&nbsp;of&nbsp;which&nbsp;this&nbsp;window&nbsp;is&nbsp;a&nbsp;member,&nbsp;if&nbsp;any,&nbsp;otherwise<br>
+NULL.</tt></dd>
+</dl>
+<dl><dt><strong>Cursor</strong></dt>
+<dd><tt>GetCursor()&nbsp;-&gt;&nbsp;Cursor<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;cursor&nbsp;associated&nbsp;with&nbsp;this&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>DefaultAttributes</strong></dt>
+<dd><tt>GetDefaultAttributes()&nbsp;-&gt;&nbsp;VisualAttributes<br>
+&nbsp;<br>
+Currently&nbsp;this&nbsp;is&nbsp;the&nbsp;same&nbsp;as&nbsp;calling<br>
+wxWindow::GetClassDefaultAttributes(wxWindow::GetWindowVariant()).</tt></dd>
+</dl>
+<dl><dt><strong>DropTarget</strong></dt>
+<dd><tt>GetDropTarget()&nbsp;-&gt;&nbsp;DropTarget<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;associated&nbsp;drop&nbsp;target,&nbsp;which&nbsp;may&nbsp;be&nbsp;NULL.</tt></dd>
+</dl>
+<dl><dt><strong>EffectiveMinSize</strong></dt>
+<dd><tt>GetEffectiveMinSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Merges&nbsp;the&nbsp;window's&nbsp;best&nbsp;size&nbsp;into&nbsp;the&nbsp;min&nbsp;size&nbsp;and&nbsp;returns&nbsp;the<br>
+result.</tt></dd>
+</dl>
+<dl><dt><strong>Enabled</strong></dt>
+<dd><tt>IsEnabled()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;enabled,&nbsp;i.e.&nbsp;if&nbsp;it&nbsp;accepts&nbsp;user&nbsp;input,<br>
+false&nbsp;otherwise.</tt></dd>
+</dl>
+<dl><dt><strong>EventHandler</strong></dt>
+<dd><tt>GetEventHandler()&nbsp;-&gt;&nbsp;EvtHandler<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;event&nbsp;handler&nbsp;for&nbsp;this&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>ExtraStyle</strong></dt>
+<dd><tt>GetExtraStyle()&nbsp;-&gt;&nbsp;long<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;extra&nbsp;style&nbsp;bits&nbsp;for&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>Font</strong></dt>
+<dd><tt>GetFont()&nbsp;-&gt;&nbsp;Font<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;font&nbsp;for&nbsp;this&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>ForegroundColour</strong></dt>
+<dd><tt>GetForegroundColour()&nbsp;-&gt;&nbsp;Colour<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;foreground&nbsp;colour&nbsp;of&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>GrandParent</strong></dt>
+<dd><tt>GetGrandParent()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;grandparent&nbsp;of&nbsp;a&nbsp;window,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;there&nbsp;isn't&nbsp;one.</tt></dd>
+</dl>
+<dl><dt><strong>Handle</strong></dt>
+<dd><tt>GetHandle()&nbsp;-&gt;&nbsp;UIntPtr<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;platform-specific&nbsp;handle&nbsp;of&nbsp;the&nbsp;physical&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>HelpText</strong></dt>
+<dd><tt>GetHelpText()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;help&nbsp;text&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;context-sensitive&nbsp;help&nbsp;for&nbsp;this<br>
+window.</tt></dd>
+</dl>
+<dl><dt><strong>Id</strong></dt>
+<dd><tt>GetId()&nbsp;-&gt;&nbsp;WindowID<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;identifier&nbsp;of&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>Label</strong></dt>
+<dd><tt>GetLabel()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Generic&nbsp;way&nbsp;of&nbsp;getting&nbsp;a&nbsp;label&nbsp;from&nbsp;any&nbsp;window,&nbsp;for&nbsp;identification<br>
+purposes.</tt></dd>
+</dl>
+<dl><dt><strong>LayoutDirection</strong></dt>
+<dd><tt>GetLayoutDirection()&nbsp;-&gt;&nbsp;LayoutDirection<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;layout&nbsp;direction&nbsp;for&nbsp;this&nbsp;window,&nbsp;Note&nbsp;that<br>
+wxLayout_Default&nbsp;is&nbsp;returned&nbsp;if&nbsp;layout&nbsp;direction&nbsp;is&nbsp;not&nbsp;supported.</tt></dd>
+</dl>
+<dl><dt><strong>MaxClientSize</strong></dt>
+<dd><tt>GetMaxClientSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;maximum&nbsp;size&nbsp;of&nbsp;window's&nbsp;client&nbsp;area.</tt></dd>
+</dl>
+<dl><dt><strong>MaxHeight</strong></dt>
+<dd><tt>GetMaxHeight()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;vertical&nbsp;component&nbsp;of&nbsp;window&nbsp;maximal&nbsp;size.</tt></dd>
+</dl>
+<dl><dt><strong>MaxSize</strong></dt>
+<dd><tt>GetMaxSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;maximum&nbsp;size&nbsp;of&nbsp;the&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>MaxWidth</strong></dt>
+<dd><tt>GetMaxWidth()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;horizontal&nbsp;component&nbsp;of&nbsp;window&nbsp;maximal&nbsp;size.</tt></dd>
+</dl>
+<dl><dt><strong>MinClientSize</strong></dt>
+<dd><tt>GetMinClientSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;minimum&nbsp;size&nbsp;of&nbsp;window's&nbsp;client&nbsp;area,&nbsp;an&nbsp;indication&nbsp;to&nbsp;the<br>
+sizer&nbsp;layout&nbsp;mechanism&nbsp;that&nbsp;this&nbsp;is&nbsp;the&nbsp;minimum&nbsp;required&nbsp;size&nbsp;of&nbsp;its<br>
+client&nbsp;area.</tt></dd>
+</dl>
+<dl><dt><strong>MinHeight</strong></dt>
+<dd><tt>GetMinHeight()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;vertical&nbsp;component&nbsp;of&nbsp;window&nbsp;minimal&nbsp;size.</tt></dd>
+</dl>
+<dl><dt><strong>MinSize</strong></dt>
+<dd><tt>GetMinSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;minimum&nbsp;size&nbsp;of&nbsp;the&nbsp;window,&nbsp;an&nbsp;indication&nbsp;to&nbsp;the&nbsp;sizer<br>
+layout&nbsp;mechanism&nbsp;that&nbsp;this&nbsp;is&nbsp;the&nbsp;minimum&nbsp;required&nbsp;size.</tt></dd>
+</dl>
+<dl><dt><strong>MinWidth</strong></dt>
+<dd><tt>GetMinWidth()&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;horizontal&nbsp;component&nbsp;of&nbsp;window&nbsp;minimal&nbsp;size.</tt></dd>
+</dl>
+<dl><dt><strong>Name</strong></dt>
+<dd><tt>GetName()&nbsp;-&gt;&nbsp;String<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;window's&nbsp;name.</tt></dd>
+</dl>
+<dl><dt><strong>Parent</strong></dt>
+<dd><tt>GetParent()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;parent&nbsp;of&nbsp;the&nbsp;window,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;parent.</tt></dd>
+</dl>
+<dl><dt><strong>Position</strong></dt>
+<dd><tt>GetPosition()&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+This&nbsp;gets&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;window&nbsp;in&nbsp;pixels,&nbsp;relative&nbsp;to&nbsp;the&nbsp;parent<br>
+window&nbsp;for&nbsp;the&nbsp;child&nbsp;windows&nbsp;or&nbsp;relative&nbsp;to&nbsp;the&nbsp;display&nbsp;origin&nbsp;for&nbsp;the<br>
+top&nbsp;level&nbsp;windows.</tt></dd>
+</dl>
+<dl><dt><strong>Rect</strong></dt>
+<dd><tt>GetRect()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;position&nbsp;and&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;as&nbsp;a&nbsp;wxRect&nbsp;object.</tt></dd>
+</dl>
+<dl><dt><strong>ScreenPosition</strong></dt>
+<dd><tt>GetScreenPosition()&nbsp;-&gt;&nbsp;Point<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;window&nbsp;position&nbsp;in&nbsp;screen&nbsp;coordinates,&nbsp;whether&nbsp;the&nbsp;window<br>
+is&nbsp;a&nbsp;child&nbsp;window&nbsp;or&nbsp;a&nbsp;top&nbsp;level&nbsp;one.</tt></dd>
+</dl>
+<dl><dt><strong>ScreenRect</strong></dt>
+<dd><tt>GetScreenRect()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;position&nbsp;and&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;on&nbsp;the&nbsp;screen&nbsp;as&nbsp;a&nbsp;wxRect<br>
+object.</tt></dd>
+</dl>
+<dl><dt><strong>Shown</strong></dt>
+<dd><tt>IsShown()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;window&nbsp;is&nbsp;shown,&nbsp;false&nbsp;if&nbsp;it&nbsp;has&nbsp;been&nbsp;hidden.</tt></dd>
+</dl>
+<dl><dt><strong>Size</strong></dt>
+<dd><tt>GetSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;entire&nbsp;window&nbsp;in&nbsp;pixels,&nbsp;including&nbsp;title&nbsp;bar,<br>
+border,&nbsp;scrollbars,&nbsp;etc.</tt></dd>
+</dl>
+<dl><dt><strong>Sizer</strong></dt>
+<dd><tt>GetSizer()&nbsp;-&gt;&nbsp;Sizer<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;sizer&nbsp;associated&nbsp;with&nbsp;the&nbsp;window&nbsp;by&nbsp;a&nbsp;previous&nbsp;call&nbsp;to<br>
+SetSizer(),&nbsp;or&nbsp;NULL.</tt></dd>
+</dl>
+<dl><dt><strong>ThemeEnabled</strong></dt>
+<dd><tt>GetThemeEnabled()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Clears&nbsp;the&nbsp;window&nbsp;by&nbsp;filling&nbsp;it&nbsp;with&nbsp;the&nbsp;current&nbsp;background&nbsp;colour.</tt></dd>
+</dl>
+<dl><dt><strong>ToolTip</strong></dt>
+<dd><tt>GetToolTip()&nbsp;-&gt;&nbsp;ToolTip<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;associated&nbsp;tooltip&nbsp;or&nbsp;NULL&nbsp;if&nbsp;none.</tt></dd>
+</dl>
+<dl><dt><strong>TopLevel</strong></dt>
+<dd><tt>IsTopLevel()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;given&nbsp;window&nbsp;is&nbsp;a&nbsp;top-level&nbsp;one.</tt></dd>
+</dl>
+<dl><dt><strong>TopLevelParent</strong></dt>
+<dd><tt>GetTopLevelParent()&nbsp;-&gt;&nbsp;Window<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;first&nbsp;ancestor&nbsp;of&nbsp;this&nbsp;window&nbsp;which&nbsp;is&nbsp;a&nbsp;top-level&nbsp;window.</tt></dd>
+</dl>
+<dl><dt><strong>UpdateClientRect</strong></dt>
+<dd><tt>GetUpdateClientRect()&nbsp;-&gt;&nbsp;Rect<br>
+&nbsp;<br>
+Get&nbsp;the&nbsp;update&nbsp;rectangle&nbsp;bounding&nbsp;box&nbsp;in&nbsp;client&nbsp;coords.</tt></dd>
+</dl>
+<dl><dt><strong>UpdateRegion</strong></dt>
+<dd><tt>GetUpdateRegion()&nbsp;-&gt;&nbsp;Region<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;region&nbsp;specifying&nbsp;which&nbsp;parts&nbsp;of&nbsp;the&nbsp;window&nbsp;have&nbsp;been<br>
+damaged.</tt></dd>
+</dl>
+<dl><dt><strong>Validator</strong></dt>
+<dd><tt>GetValidator()&nbsp;-&gt;&nbsp;Validator<br>
+&nbsp;<br>
+Validator&nbsp;functions.</tt></dd>
+</dl>
+<dl><dt><strong>VirtualSize</strong></dt>
+<dd><tt>GetVirtualSize()&nbsp;-&gt;&nbsp;Size<br>
+&nbsp;<br>
+This&nbsp;gets&nbsp;the&nbsp;virtual&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;in&nbsp;pixels.</tt></dd>
+</dl>
+<dl><dt><strong>WindowStyle</strong></dt>
+<dd><tt>GetWindowStyle()&nbsp;-&gt;&nbsp;long<br>
+&nbsp;<br>
+See&nbsp;GetWindowStyleFlag()&nbsp;for&nbsp;more&nbsp;info.</tt></dd>
+</dl>
+<dl><dt><strong>WindowStyleFlag</strong></dt>
+<dd><tt>GetWindowStyleFlag()&nbsp;-&gt;&nbsp;long<br>
+&nbsp;<br>
+Gets&nbsp;the&nbsp;window&nbsp;style&nbsp;that&nbsp;was&nbsp;passed&nbsp;to&nbsp;the&nbsp;constructor&nbsp;or&nbsp;Create()<br>
+method.</tt></dd>
+</dl>
+<dl><dt><strong>WindowVariant</strong></dt>
+<dd><tt>GetWindowVariant()&nbsp;-&gt;&nbsp;WindowVariant<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;value&nbsp;previously&nbsp;passed&nbsp;to&nbsp;SetWindowVariant().</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="wx._core.html#Window">wx._core.Window</a>:<br>
+<dl><dt><strong>ChildrenRepositioningGuard</strong> = &lt;class 'wx._core.ChildrenRepositioningGuard'&gt;<dd><tt><a href="#PlotGraphFrame-ChildrenRepositioningGuard">ChildrenRepositioningGuard</a>(win)<br>
+&nbsp;<br>
+Helper&nbsp;for&nbsp;ensuring&nbsp;<a href="#PlotGraphFrame-EndRepositioningChildren">EndRepositioningChildren</a>()&nbsp;is&nbsp;called&nbsp;correctly.</tt></dl>
+
+<hr>
+Methods inherited from <a href="wx._core.html#EvtHandler">wx._core.EvtHandler</a>:<br>
+<dl><dt><a name="PlotGraphFrame-AddFilter"><strong>AddFilter</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AddFilter">AddFilter</a>(filter)<br>
+&nbsp;<br>
+Add&nbsp;an&nbsp;event&nbsp;filter&nbsp;whose&nbsp;FilterEvent()&nbsp;method&nbsp;will&nbsp;be&nbsp;called&nbsp;for&nbsp;each<br>
+and&nbsp;every&nbsp;event&nbsp;processed&nbsp;by&nbsp;wxWidgets.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-AddPendingEvent"><strong>AddPendingEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-AddPendingEvent">AddPendingEvent</a>(event)<br>
+&nbsp;<br>
+Post&nbsp;an&nbsp;event&nbsp;to&nbsp;be&nbsp;processed&nbsp;later.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Bind"><strong>Bind</strong></a> = _EvtHandler_Bind(self, event, handler, source=None, id=-1, id2=-1)</dt><dd><tt>Bind&nbsp;an&nbsp;event&nbsp;to&nbsp;an&nbsp;event&nbsp;handler.<br>
+&nbsp;<br>
+:param&nbsp;event:&nbsp;One&nbsp;of&nbsp;the&nbsp;``EVT_*``&nbsp;event&nbsp;binder&nbsp;objects&nbsp;that<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifies&nbsp;the&nbsp;type&nbsp;of&nbsp;event&nbsp;to&nbsp;bind.<br>
+&nbsp;<br>
+:param&nbsp;handler:&nbsp;A&nbsp;callable&nbsp;object&nbsp;to&nbsp;be&nbsp;invoked&nbsp;when&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event&nbsp;is&nbsp;delivered&nbsp;to&nbsp;self.&nbsp;&nbsp;Pass&nbsp;``None``&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disconnect&nbsp;an&nbsp;event&nbsp;handler.<br>
+&nbsp;<br>
+:param&nbsp;source:&nbsp;Sometimes&nbsp;the&nbsp;event&nbsp;originates&nbsp;from&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;different&nbsp;window&nbsp;than&nbsp;self,&nbsp;but&nbsp;you&nbsp;still<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;want&nbsp;to&nbsp;catch&nbsp;it&nbsp;in&nbsp;self.&nbsp;&nbsp;(For&nbsp;example,&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button&nbsp;event&nbsp;delivered&nbsp;to&nbsp;a&nbsp;frame.)&nbsp;&nbsp;By<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;passing&nbsp;the&nbsp;source&nbsp;of&nbsp;the&nbsp;event,&nbsp;the&nbsp;event<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handling&nbsp;system&nbsp;is&nbsp;able&nbsp;to&nbsp;differentiate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;between&nbsp;the&nbsp;same&nbsp;event&nbsp;type&nbsp;from&nbsp;different<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controls.<br>
+&nbsp;<br>
+:param&nbsp;id:&nbsp;Used&nbsp;to&nbsp;spcify&nbsp;the&nbsp;event&nbsp;source&nbsp;by&nbsp;ID&nbsp;instead<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;instance.<br>
+&nbsp;<br>
+:param&nbsp;id2:&nbsp;Used&nbsp;when&nbsp;it&nbsp;is&nbsp;desirable&nbsp;to&nbsp;bind&nbsp;a&nbsp;handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;a&nbsp;range&nbsp;of&nbsp;IDs,&nbsp;such&nbsp;as&nbsp;with&nbsp;EVT_MENU_RANGE.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Connect"><strong>Connect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Connect">Connect</a>(id,&nbsp;lastId,&nbsp;eventType,&nbsp;func)<br>
+&nbsp;<br>
+Make&nbsp;an&nbsp;entry&nbsp;in&nbsp;the&nbsp;dynamic&nbsp;event&nbsp;table&nbsp;for&nbsp;an&nbsp;event&nbsp;binding.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-DeletePendingEvents"><strong>DeletePendingEvents</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-DeletePendingEvents">DeletePendingEvents</a>()<br>
+&nbsp;<br>
+Deletes&nbsp;all&nbsp;events&nbsp;queued&nbsp;on&nbsp;this&nbsp;event&nbsp;handler&nbsp;using&nbsp;<a href="#PlotGraphFrame-QueueEvent">QueueEvent</a>()&nbsp;or<br>
+<a href="#PlotGraphFrame-AddPendingEvent">AddPendingEvent</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Disconnect"><strong>Disconnect</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Disconnect">Disconnect</a>(id,&nbsp;lastId=-1,&nbsp;eventType=wxEVT_NULL,&nbsp;func=None)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Remove&nbsp;an&nbsp;event&nbsp;binding&nbsp;by&nbsp;removing&nbsp;its&nbsp;entry&nbsp;in&nbsp;the&nbsp;dynamic&nbsp;event<br>
+table.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetEvtHandlerEnabled"><strong>GetEvtHandlerEnabled</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetEvtHandlerEnabled">GetEvtHandlerEnabled</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;event&nbsp;handler&nbsp;is&nbsp;enabled,&nbsp;false&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetNextHandler"><strong>GetNextHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetNextHandler">GetNextHandler</a>()&nbsp;-&gt;&nbsp;EvtHandler<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;pointer&nbsp;to&nbsp;the&nbsp;next&nbsp;handler&nbsp;in&nbsp;the&nbsp;chain.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetPreviousHandler"><strong>GetPreviousHandler</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetPreviousHandler">GetPreviousHandler</a>()&nbsp;-&gt;&nbsp;EvtHandler<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;pointer&nbsp;to&nbsp;the&nbsp;previous&nbsp;handler&nbsp;in&nbsp;the&nbsp;chain.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsUnlinked"><strong>IsUnlinked</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsUnlinked">IsUnlinked</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;next&nbsp;and&nbsp;the&nbsp;previous&nbsp;handler&nbsp;pointers&nbsp;of&nbsp;this<br>
+event&nbsp;handler&nbsp;instance&nbsp;are&nbsp;NULL.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ProcessEventLocally"><strong>ProcessEventLocally</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ProcessEventLocally">ProcessEventLocally</a>(event)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Try&nbsp;to&nbsp;process&nbsp;the&nbsp;event&nbsp;in&nbsp;this&nbsp;handler&nbsp;and&nbsp;all&nbsp;those&nbsp;chained&nbsp;to&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-ProcessPendingEvents"><strong>ProcessPendingEvents</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-ProcessPendingEvents">ProcessPendingEvents</a>()<br>
+&nbsp;<br>
+Processes&nbsp;the&nbsp;pending&nbsp;events&nbsp;previously&nbsp;queued&nbsp;using&nbsp;<a href="#PlotGraphFrame-QueueEvent">QueueEvent</a>()&nbsp;or<br>
+<a href="#PlotGraphFrame-AddPendingEvent">AddPendingEvent</a>();&nbsp;you&nbsp;must&nbsp;call&nbsp;this&nbsp;function&nbsp;only&nbsp;if&nbsp;you&nbsp;are&nbsp;sure<br>
+there&nbsp;are&nbsp;pending&nbsp;events&nbsp;for&nbsp;this&nbsp;handler,&nbsp;otherwise&nbsp;a&nbsp;wxCHECK&nbsp;will<br>
+fail.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-QueueEvent"><strong>QueueEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-QueueEvent">QueueEvent</a>(event)<br>
+&nbsp;<br>
+Queue&nbsp;event&nbsp;for&nbsp;a&nbsp;later&nbsp;processing.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-RemoveFilter"><strong>RemoveFilter</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-RemoveFilter">RemoveFilter</a>(filter)<br>
+&nbsp;<br>
+Remove&nbsp;a&nbsp;filter&nbsp;previously&nbsp;installed&nbsp;with&nbsp;<a href="#PlotGraphFrame-AddFilter">AddFilter</a>().</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SafelyProcessEvent"><strong>SafelyProcessEvent</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SafelyProcessEvent">SafelyProcessEvent</a>(event)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Processes&nbsp;an&nbsp;event&nbsp;by&nbsp;calling&nbsp;<a href="#PlotGraphFrame-ProcessEvent">ProcessEvent</a>()&nbsp;and&nbsp;handles&nbsp;any<br>
+exceptions&nbsp;that&nbsp;occur&nbsp;in&nbsp;the&nbsp;process.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetEvtHandlerEnabled"><strong>SetEvtHandlerEnabled</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetEvtHandlerEnabled">SetEvtHandlerEnabled</a>(enabled)<br>
+&nbsp;<br>
+Enables&nbsp;or&nbsp;disables&nbsp;the&nbsp;event&nbsp;handler.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Unbind"><strong>Unbind</strong></a> = _EvtHandler_Unbind(self, event, source=None, id=-1, id2=-1, handler=None)</dt><dd><tt>Disconnects&nbsp;the&nbsp;event&nbsp;handler&nbsp;binding&nbsp;for&nbsp;event&nbsp;from&nbsp;`self`.<br>
+Returns&nbsp;``True``&nbsp;if&nbsp;successful.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Unlink"><strong>Unlink</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Unlink">Unlink</a>()<br>
+&nbsp;<br>
+Unlinks&nbsp;this&nbsp;event&nbsp;handler&nbsp;from&nbsp;the&nbsp;chain&nbsp;it's&nbsp;part&nbsp;of&nbsp;(if&nbsp;any);&nbsp;then<br>
+links&nbsp;the&nbsp;"previous"&nbsp;event&nbsp;handler&nbsp;to&nbsp;the&nbsp;"next"&nbsp;one&nbsp;(so&nbsp;that&nbsp;the<br>
+chain&nbsp;won't&nbsp;be&nbsp;interrupted).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="wx._core.html#EvtHandler">wx._core.EvtHandler</a>:<br>
+<dl><dt><strong>EvtHandlerEnabled</strong></dt>
+<dd><tt>GetEvtHandlerEnabled()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;event&nbsp;handler&nbsp;is&nbsp;enabled,&nbsp;false&nbsp;otherwise.</tt></dd>
+</dl>
+<dl><dt><strong>NextHandler</strong></dt>
+<dd><tt>GetNextHandler()&nbsp;-&gt;&nbsp;EvtHandler<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;pointer&nbsp;to&nbsp;the&nbsp;next&nbsp;handler&nbsp;in&nbsp;the&nbsp;chain.</tt></dd>
+</dl>
+<dl><dt><strong>PreviousHandler</strong></dt>
+<dd><tt>GetPreviousHandler()&nbsp;-&gt;&nbsp;EvtHandler<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;pointer&nbsp;to&nbsp;the&nbsp;previous&nbsp;handler&nbsp;in&nbsp;the&nbsp;chain.</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="wx._core.html#Object">wx._core.Object</a>:<br>
+<dl><dt><a name="PlotGraphFrame-GetClassName"><strong>GetClassName</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetClassName">GetClassName</a>()&nbsp;-&gt;&nbsp;Char<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;class&nbsp;name&nbsp;of&nbsp;the&nbsp;C++&nbsp;class&nbsp;using&nbsp;wxRTTI.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-GetRefData"><strong>GetRefData</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-GetRefData">GetRefData</a>()&nbsp;-&gt;&nbsp;ObjectRefData<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;wxObject::m_refData&nbsp;pointer,&nbsp;i.e.&nbsp;the&nbsp;data&nbsp;referenced&nbsp;by<br>
+this&nbsp;object.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-IsSameAs"><strong>IsSameAs</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-IsSameAs">IsSameAs</a>(obj)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Returns&nbsp;true&nbsp;if&nbsp;this&nbsp;object&nbsp;has&nbsp;the&nbsp;same&nbsp;data&nbsp;pointer&nbsp;as&nbsp;obj.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-Ref"><strong>Ref</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-Ref">Ref</a>(clone)<br>
+&nbsp;<br>
+Makes&nbsp;this&nbsp;object&nbsp;refer&nbsp;to&nbsp;the&nbsp;data&nbsp;in&nbsp;clone.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-SetRefData"><strong>SetRefData</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-SetRefData">SetRefData</a>(data)<br>
+&nbsp;<br>
+Sets&nbsp;the&nbsp;wxObject::m_refData&nbsp;pointer.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-UnRef"><strong>UnRef</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-UnRef">UnRef</a>()<br>
+&nbsp;<br>
+Decrements&nbsp;the&nbsp;reference&nbsp;count&nbsp;in&nbsp;the&nbsp;associated&nbsp;data,&nbsp;and&nbsp;if&nbsp;it&nbsp;is<br>
+zero,&nbsp;deletes&nbsp;the&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="PlotGraphFrame-UnShare"><strong>UnShare</strong></a>(...)</dt><dd><tt><a href="#PlotGraphFrame-UnShare">UnShare</a>()<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;same&nbsp;of&nbsp;AllocExclusive()&nbsp;but&nbsp;this&nbsp;method&nbsp;is&nbsp;public.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="wx._core.html#Object">wx._core.Object</a>:<br>
+<dl><dt><strong>ClassName</strong></dt>
+<dd><tt>GetClassName()&nbsp;-&gt;&nbsp;Char<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;class&nbsp;name&nbsp;of&nbsp;the&nbsp;C++&nbsp;class&nbsp;using&nbsp;wxRTTI.</tt></dd>
+</dl>
+<dl><dt><strong>RefData</strong></dt>
+<dd><tt>GetRefData()&nbsp;-&gt;&nbsp;ObjectRefData<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;wxObject::m_refData&nbsp;pointer,&nbsp;i.e.&nbsp;the&nbsp;data&nbsp;referenced&nbsp;by<br>
+this&nbsp;object.</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from sip.simplewrapper:<br>
+<dl><dt><a name="PlotGraphFrame-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from sip.wrappertype</font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from sip.simplewrapper:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__email__</strong> = '109800@students.wits.ac.za'<br>
+<strong>__status__</strong> = 'Development'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Seale&nbsp;Rapolai,&nbsp;Phatho&nbsp;Pukwana</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Credits</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">['Seale&nbsp;Rapolai',&nbsp;'Phatho&nbsp;Pukwana']</td></tr></table>
+</body></html>
