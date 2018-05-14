@@ -36,4 +36,4 @@ class GraphPopupMenu(wx.Menu):
     def OnEditGroups(self, event):
         print("Show edit groups interface")
         groupList = self.parent.get_groups()
-        customizeGroupsForm.CustomizeGroupsForm(self.parent, groupList)
+        self.customizeGroupsForm = customizeGroupsForm.CustomizeGroupsForm(self.parent, groupList)

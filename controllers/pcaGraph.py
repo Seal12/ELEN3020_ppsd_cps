@@ -214,6 +214,7 @@ class PCAGraph(wx.Panel):
         group.marker_size = size
 
     def set_group_marker(self,group_name, marker):
+        print("change {} with {}".format(group_name, marker))
         group = self.find_group(group_name)
         group.marker = marker
 
