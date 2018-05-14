@@ -139,7 +139,10 @@ class AdmixGraph(wx.Panel):
             x, y = self.GetSize()
             x = event.x
             y = y - event.y - 30
-            self.PopupMenu(graphPopupMenu.GraphPopupMenu(self), (x, y))
+            self.PopupMenu(graphPopupMenu.GraphPopupMenu(self, "Admix"), (x, y))
+
+    def refresh_graph(self):
+        self.fig.canvas.draw()
 
     def change_labling(self, title=None, ylabel=None, xlabel=None):
         self.ax.set_title(title)

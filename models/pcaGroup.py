@@ -16,6 +16,7 @@ class PCAGroup(PopulationGroup):
 
     def __init__(self, name):
         # Icon for the group
+        self.name = name
         self.marker = None
         self.marker_size= None
         self.colour = None
