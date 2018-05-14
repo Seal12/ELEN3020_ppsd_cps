@@ -5,7 +5,7 @@ pcaGraph.py: This file is responsible for generating and customising a PCA plot
 """
 
 __author__ = "Phatho Pukwana"
-__credits__ = ["Phatho Pukwana"]
+__credits__ = ["Phatho Pukwana, Seale Rapolai"]
 __email__ = "1388857@students.wits.ac.za"
 __status__ = "Development"
 
@@ -19,6 +19,7 @@ import numpy as np
 import wx
 
 from controllers import importData
+from views import graphPopupMenu
 
 
 class PCAGraph(wx.Panel):
@@ -50,7 +51,7 @@ class PCAGraph(wx.Panel):
 
     # <editor-fold desc="Importing data methods">
 
-    def import_data(self, evec_file_path, pheno_file_path, column=2):
+    def import_data(self, evec_file_path, pheno_file_path, column=0):
         """
         Imports the data files required for PCA plot
 
@@ -69,7 +70,7 @@ class PCAGraph(wx.Panel):
 
     # <editor-fold desc="Plotting">
 
-    def plot_pca(self, pc_x=0, pc_y=1):
+    def plot_pca(self, pc_x=0, pc_y=1, title=None):
         """
         Generates a scatter plot of PCA data
 
@@ -79,6 +80,13 @@ class PCAGraph(wx.Panel):
 
         Each groups data is plotted as an individual scatter plot onto the same subplot
         """
+        max_pc = len(self.importer.subject_list[0].values)
+
+        if pc_x > max_pc:
+            pc_x = max_pc
+
+        if pc_y > max_pc:
+            pc_y = max_pc
 
         self.pc_x = pc_x
         self.pc_y = pc_y
@@ -96,9 +104,23 @@ class PCAGraph(wx.Panel):
 
         self.set_up_grid(grid_division=10)
 
-        self.ax.set_title("PC{} vs. PC{}".format(pc_x, pc_y))
+        if title is None:
+            self.ax.set_title("PC{} vs. PC{}".format(pc_x, pc_y))
+        else:
+            self.ax.set_title(title)
+
+        self.cid = self.figure.canvas.mpl_connect('button_press_event', self.OnPlotClick)
 
         return self.figure
+
+    # </editor-fold>
+
+    def OnPlotClick(self, event):
+        if event.button == 3:
+            x, y = self.GetSize()
+            x = event.x
+            y = y - event.y - 30
+            self.PopupMenu(graphPopupMenu.GraphPopupMenu(self, "PCA"), (x, y))
 
     def set_up_grid(self, grid_division):
         """
@@ -141,20 +163,18 @@ class PCAGraph(wx.Panel):
         self.ax.grid(which='major', alpha=0.5, zorder=0)
         self.ax.grid(which='minor', alpha=0.5, ls='dotted', zorder=0)
 
-    # </editor-fold>
-
     # <editor-fold desc="Searching Functionality">
     def find_subject(self, subject_id):
         """
         Finds a subject based of subjects identification number
 
+        Keyword arguments:
+            subject_id -- subjects identification number (String)
+
         :returns:
             subject
 
             if subject is not found returns a string message
-
-        Keyword arguments:
-            subject_id -- subjects identification number (String)
         """
         for group in self.groups:
             for subject in group.subjects:
@@ -194,8 +214,10 @@ class PCAGraph(wx.Panel):
         group.marker_size = size
 
     def set_group_marker(self,group_name, marker):
+        print("change {} with {}".format(group_name, marker))
         group = self.find_group(group_name)
         group.marker = marker
+        self.refresh_graph()
 
     def set_group_colour(self,group_name, colour):
         group = self.find_group(group_name)
@@ -208,4 +230,17 @@ class PCAGraph(wx.Panel):
     def set_graph_title(self, title):
         self.ax.set_title(title)
 
+    def get_groups(self):
+        return self.groups
+
+    def refresh_graph(self):
+        plt.cla()
+        self.plot_pca(self.pc_x, self.pc_y)
+        self.figure.canvas.draw()
+
+    def change_labling(self, title=None, ylabel=None, xlabel=None):
+        self.ax.set_title(title)
+
+        self.figure.canvas.draw()
     # </editor-fold>
+

@@ -46,7 +46,7 @@ class ImportPCAData:
 
         return self.subject_list
 
-    def import_pca_pheno(self, file_path, column=2):
+    def import_pca_pheno(self, file_path, column=0):
         """Imports the phenotype file for PCA, creates the population groups and populates them with subjects
 
         :Restrictions:
@@ -59,14 +59,10 @@ class ImportPCAData:
             column -- the column which the relevant phenotype data is on (default 2)
         """
 
-        # Ensure that valid phenotype columns are selected
-        if column != 2 or column != 3:
-            if column < 2:
-                column = 2
-            elif column > 3:
-                column = 3
-
         # Create groups and populate them with subjects
+
+        column = column + 2
+
         with open(file_path, 'r') as f:
 
             all_lines = f.readlines()
@@ -124,7 +120,7 @@ class ImportAdmixData:
 
         return self.subject_list
 
-    def import_admix_pheno(self, file_path, column=2):
+    def import_admix_pheno(self, file_path, column=0):
         """Imports the phenotype file for admixture plots, creates the population groups and populates them with subjects
 
         :Note:
@@ -136,7 +132,7 @@ class ImportAdmixData:
 
 
         """
-
+        column = column + 2
         with open(file_path, 'r') as f:
 
             # List of all lines in the file

@@ -1,0 +1,32 @@
+PROGRAM: 		GENESIS
+MEETING PURPOSE: 	DOCUMENTATION REVIEW AND IMPLEMENTAION PLANNING
+MEETING DATE: 		03_04_2018
+MEETING TIME: 		15:30
+MEETING LOCATION: 	WITS ART MUSEUM CAFE
+MEETING FACILITATOR:	SEALE
+ATTENDEES:		PHATHO, CEDRICK
+MINUTES ISSUED BY: 	CEDRICK
+
+NEXT STEPS:
+Set up/configure development environment like git or IDE 		| ASSIGNED: ALL | DUE: ASAP
+Create an amalgamated project plan from group individual documents 	| ASSIGNED: ALL | DUE: 09_04_2018
+Research								| ASSIGNED: ALL | DUE: ONGOING
+
+DECISIONS MADE:
+Use Seale's document layout and approach to the introduction of project plan as his approach is most fleshed out and pragmatic
+Use Phatho's UML Class Diagrams as his diagrams are detailed and in depth
+
+DISCUSSION:
+	Individual document review
+		-Elaboration of each other's project plan
+		-UML and component analysis
+	Amalgamation of documentation
+		-Combination of individual docs for final use
+		 in implementation
+
+	MVC breakdown
+		-3 point breakdown of MVC for coding purposes
+
+	Git
+		-Git tutorial on slack and creation of repo
+

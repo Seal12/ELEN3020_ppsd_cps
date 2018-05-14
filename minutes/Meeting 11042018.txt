@@ -1,0 +1,30 @@
+PROGRAM: 		GENESIS
+MEETING PURPOSE: 	GENESIS MODEL DISCUSSIONS
+MEETING DATE: 		11_04_2018
+MEETING TIME: 		14:30
+MEETING LOCATION: 	WITS ART MUSEUM CAFE
+MEETING FACILITATOR:	SEALE
+ATTENDEES:		PHATHO, CEDRICK
+MINUTES ISSUED BY: 	CEDRICK
+
+NEXT STEPS:
+
+Coding and implementing Model classes		|| ASSIGNED: PHATHO and CEDRICK 	|| DUE: ASAP
+Set up Git 					|| ASSIGNED: SEALE			|| DUE: ASAP
+
+
+DISCUSSION:
+
+Software used (pyplot, wxPython) to be researched and understood
+
+Start deciding who will be doing which aspect of MVC
+	- python-built in data structures Model
+	- wxPython View
+	- Matplotlib.pyplot Controller
+
+Further review of Model and Controller w.r.t Genesis
+	- How are subject and groups working? Subjects manage their data groups manage subjects?
+
+Set up Git
+
+

@@ -1,0 +1,22 @@
+PROGRAM: 		GENESIS
+MEETING PURPOSE: 	PROG REPORT WITH SCOTT
+MEETING DATE: 		30_04_2018
+MEETING TIME: 		10:45
+MEETING LOCATION: 	WITS SCIENCE STADIUM
+MEETING FACILITATOR:	SEALE
+ATTENDEES:		PHATHO, CEDRICK
+MINUTES ISSUED BY: 	CEDRICK
+
+NEXT STEPS:
+
+File explorer/browser for file selection		| ASSIGNED: SEALE		| DUE: ASAP
+PCA Group customisation					| ASSIGNED: PHATHO		| DUE: ASAP
+Get Admix working in the barest form			| ASSGINED: CEDRICK		| DUE: ASAP
+
+DISCUSSION:
+
+Admixture plot incomplete
+
+UI coming along becoming fleshed out
+	-File Browser
+
