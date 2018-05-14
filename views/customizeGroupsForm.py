@@ -21,9 +21,7 @@ class CustomizeGroupsForm(wx.Frame):
 
         counter = 0
         for group in pcaGroupList:
-            print(group.name)
-
-            # PCA choices
+            # Group properties
             label = "Group " + str(counter) + ": " + group.name
             hbox1 = wx.BoxSizer(wx.HORIZONTAL)
             st1 = wx.StaticText(self.Panel, label=label)

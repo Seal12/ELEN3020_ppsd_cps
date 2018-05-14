@@ -217,6 +217,7 @@ class PCAGraph(wx.Panel):
         print("change {} with {}".format(group_name, marker))
         group = self.find_group(group_name)
         group.marker = marker
+        self.refresh_graph()
 
     def set_group_colour(self,group_name, colour):
         group = self.find_group(group_name)
