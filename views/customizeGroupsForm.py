@@ -76,6 +76,6 @@ class CustomizeGroupsForm(wx.Frame):
                 print("Group " + str(i) + ": " + newMarker)
                 self.parent.set_group_marker(self.pcaGroups[i].name, newMarker)
 
-            self.pcaGroups[i].marker_size = self.markerSizes[i].GetValue()
+            self.parent.set_group_marker_size(self.markerSizes[i].GetValue())
 
         self.Close()
